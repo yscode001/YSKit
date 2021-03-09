@@ -11,6 +11,8 @@
 		3105BB0E25BBC61C00A2E401 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105BB0D25BBC61C00A2E401 /* ViewController.swift */; };
 		3105BB1325BBC61C00A2E401 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3105BB1225BBC61C00A2E401 /* Assets.xcassets */; };
 		3105BB1625BBC61C00A2E401 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3105BB1425BBC61C00A2E401 /* LaunchScreen.storyboard */; };
+		3186CE7125F7625A00A92E7C /* CodableDefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3186CE7025F7625A00A92E7C /* CodableDefaultValue.swift */; };
+		3186CE7825F762A800A92E7C /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3186CE7725F762A800A92E7C /* People.swift */; };
 		D9AE2854C6066443E925EBFC /* Pods_YSKitProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0208AACAE7E8FFA2BF6FB57 /* Pods_YSKitProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +25,8 @@
 		3105BB1525BBC61C00A2E401 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3105BB1725BBC61C00A2E401 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3105BB2325BBC67700A2E401 /* YSKitProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YSKitProject-Bridging-Header.h"; sourceTree = "<group>"; };
+		3186CE7025F7625A00A92E7C /* CodableDefaultValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableDefaultValue.swift; sourceTree = "<group>"; };
+		3186CE7725F762A800A92E7C /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 		368CADDE3E956462A8DE5357 /* Pods-YSKitProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YSKitProject.debug.xcconfig"; path = "Target Support Files/Pods-YSKitProject/Pods-YSKitProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E0208AACAE7E8FFA2BF6FB57 /* Pods_YSKitProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YSKitProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -60,6 +64,7 @@
 		3105BB0825BBC61C00A2E401 /* YSKitProject */ = {
 			isa = PBXGroup;
 			children = (
+				3186CE7425F7628C00A92E7C /* CodableDefaultValue */,
 				3105BB2125BBC65700A2E401 /* AppDelegate */,
 				3105BB2225BBC66100A2E401 /* Class */,
 				3105BB2025BBC64900A2E401 /* SupportFiles */,
@@ -92,6 +97,23 @@
 				3105BB0D25BBC61C00A2E401 /* ViewController.swift */,
 			);
 			path = Class;
+			sourceTree = "<group>";
+		};
+		3186CE7425F7628C00A92E7C /* CodableDefaultValue */ = {
+			isa = PBXGroup;
+			children = (
+				3186CE7025F7625A00A92E7C /* CodableDefaultValue.swift */,
+				3186CE7625F7629E00A92E7C /* TestDemo */,
+			);
+			path = CodableDefaultValue;
+			sourceTree = "<group>";
+		};
+		3186CE7625F7629E00A92E7C /* TestDemo */ = {
+			isa = PBXGroup;
+			children = (
+				3186CE7725F762A800A92E7C /* People.swift */,
+			);
+			path = TestDemo;
 			sourceTree = "<group>";
 		};
 		501756EE1592A0D2AD945F59 /* Frameworks */ = {
@@ -225,8 +247,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3186CE7825F762A800A92E7C /* People.swift in Sources */,
 				3105BB0E25BBC61C00A2E401 /* ViewController.swift in Sources */,
 				3105BB0A25BBC61C00A2E401 /* AppDelegate.swift in Sources */,
+				3186CE7125F7625A00A92E7C /* CodableDefaultValue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

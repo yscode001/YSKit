@@ -5,6 +5,10 @@
 //  Created by yaoshuai on 2020/12/20.
 //
 
+/**
+ 这个扩展先留着，但不建议使用，因为codable的默认值得封装在工程中CodableDefaultValue。使用property wrapper对默认值进行封装
+ */
+
 import Foundation
 
 // MARK: - 解析单个属性，有默认值：false、""、0

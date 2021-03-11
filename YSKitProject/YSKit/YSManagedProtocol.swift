@@ -82,31 +82,38 @@ public extension YSManagedProtocol where Self: NSManagedObject {
     }
     
     /// 从数据库中查找
-    static func fetch(context: NSManagedObjectContext, configure: (NSFetchRequest<Self>) -> () = { _ in }) -> [Self]? {
+    static func fetch(context: NSManagedObjectContext, configure: ((NSFetchRequest<Self>) -> ()), complete: @escaping(([Self]?) -> ())){
         let request = NSFetchRequest<Self>(entityName: Self.entityName)
         configure(request)
-        return try? context.fetch(request)
+        context.perform({
+            complete(try? context.fetch(request))
+        })
     }
     
     /// 优先registeredObjects，其次数据库
-    static func materializedOrFetch(context: NSManagedObjectContext, predicate: NSPredicate) -> Self? {
-        guard let objectList = materialized(context: context, predicate: predicate) else{
-            return fetch(context: context) { (request) in
-                request.predicate = predicate
-                request.returnsObjectsAsFaults = false
-                request.fetchLimit = 1
-                request.fetchBatchSize = 1
-            }?.first
+    static func materializedOrFetch(context: NSManagedObjectContext, configure: (NSFetchRequest<Self>) -> () = { _ in }, complete: @escaping(([Self]?) -> ())){
+        let request = NSFetchRequest<Self>(entityName: Self.entityName)
+        configure(request)
+        guard let predicate = request.predicate else{
+            complete(nil)
+            return
         }
-        return objectList.first
+        guard let objectList = materialized(context: context, predicate: predicate) else{
+            fetch(context: context, configure: configure, complete: complete)
+            return
+        }
+        complete(objectList)
     }
     
-    static func count(in context: NSManagedObjectContext, configure: (NSFetchRequest<Self>) -> () = { _ in }) -> Int? {
+    /// 从数据库查找符合条件的个数
+    static func count(context: NSManagedObjectContext, configure: ((NSFetchRequest<Self>) -> ()), complete: @escaping((Int?) -> ())){
         let request = NSFetchRequest<Self>(entityName: entityName)
         configure(request)
         if request.resultType != .countResultType{
             request.resultType = .countResultType
         }
-        return try? context.count(for: request)
+        context.perform({
+            complete(try? context.count(for: request))
+        })
     }
 }

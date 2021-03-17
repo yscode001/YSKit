@@ -39,11 +39,8 @@ public class CoreDataManager{
             objc_sync_exit(self)
             return nil
         }
-        let dbPath = (cacheDir as NSString).appendingPathComponent(dbFileName) as String
-        guard let dbURL = URL(string: dbPath) else {
-            objc_sync_exit(self)
-            return nil
-        }
+        let dbPath = (cacheDir as NSString).appendingPathComponent(dbFileName)
+        let dbURL = URL(fileURLWithPath: dbPath)
         do{
             // 初始化"持久化存储协调器"
             _psc = NSPersistentStoreCoordinator(managedObjectModel: mom)

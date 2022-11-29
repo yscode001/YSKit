@@ -8,79 +8,79 @@
 import UIKit
 
 // MARK: - 设置属性
-public extension YSOriginalObjectProtocol where OriginalObjectType: UIScrollView{
+public extension YSOriginalProtocol where OriginalType: UIScrollView{
     
-    func set_paging_bounces(_ isPagingEnabled: Bool, _ bounces: Bool) -> OriginalObjectType{
-        originalObject.isPagingEnabled = isPagingEnabled
-        originalObject.bounces = bounces
-        return originalObject
+    func set_paging_bounces(_ isPagingEnabled: Bool, _ bounces: Bool) -> OriginalType{
+        originalObj.isPagingEnabled = isPagingEnabled
+        originalObj.bounces = bounces
+        return originalObj
     }
     
-    func setIndicator(_ horizontal: Bool, _ vertical: Bool) -> OriginalObjectType{
-        originalObject.showsHorizontalScrollIndicator = horizontal
-        originalObject.showsVerticalScrollIndicator = vertical
-        return originalObject
+    func setIndicator(_ horizontal: Bool, _ vertical: Bool) -> OriginalType{
+        originalObj.showsHorizontalScrollIndicator = horizontal
+        originalObj.showsVerticalScrollIndicator = vertical
+        return originalObj
     }
 }
 
 // MARK: - 偏移
-public extension YSOriginalObjectProtocol where OriginalObjectType: UIScrollView{
+public extension YSOriginalProtocol where OriginalType: UIScrollView{
     
     /// 最大偏移量x轴
     var maxOffsetX: Int{
-        return Int(originalObject.contentSize.width - originalObject.frame.width)
+        return Int(originalObj.contentSize.width - originalObj.frame.width)
     }
     
     /// 最大偏移量y轴
     var maxOffsetY: Int{
-        return Int(originalObject.contentSize.height - originalObject.frame.height)
+        return Int(originalObj.contentSize.height - originalObj.frame.height)
     }
     
     /// 是否滑动到了最底部
     var isScrolledBottom: Bool{
-        if Int(originalObject.contentSize.height) <= Int(originalObject.frame.height){
+        if Int(originalObj.contentSize.height) <= Int(originalObj.frame.height){
             return true
         }
         // 考虑到弹性特性，所以这里用>=
-        return Int(originalObject.contentOffset.y) >= Int(originalObject.contentSize.height - originalObject.frame.height)
+        return Int(originalObj.contentOffset.y) >= Int(originalObj.contentSize.height - originalObj.frame.height)
     }
     
     /// 是否滑动到了最右边
     var isScrolledRight: Bool{
-        if Int(originalObject.contentSize.width) <= Int(originalObject.frame.width){
+        if Int(originalObj.contentSize.width) <= Int(originalObj.frame.width){
             return true
         }
         // 考虑到弹性特性，所以这里用>=
-        return Int(originalObject.contentOffset.x) >= Int(originalObject.contentSize.width - originalObject.frame.width)
+        return Int(originalObj.contentOffset.x) >= Int(originalObj.contentSize.width - originalObj.frame.width)
     }
 }
 
 // MARK: - 快照
-public extension YSOriginalObjectProtocol where OriginalObjectType: UIScrollView{
+public extension YSOriginalProtocol where OriginalType: UIScrollView{
     
     /// 快照
     func snapshot(complete: @escaping((UIImage?) -> ())){
-        if originalObject.bounds.size.width <= 0 || originalObject.bounds.size.height <= 0{
+        if originalObj.bounds.size.width <= 0 || originalObj.bounds.size.height <= 0{
             complete(nil)
             return
         }
-        let contentW = originalObject.contentSize.width > 0 ? originalObject.contentSize.width : originalObject.bounds.width
-        let contentH = originalObject.contentSize.height > 0 ? originalObject.contentSize.height : originalObject.bounds.height
+        let contentW = originalObj.contentSize.width > 0 ? originalObj.contentSize.width : originalObj.bounds.width
+        let contentH = originalObj.contentSize.height > 0 ? originalObj.contentSize.height : originalObj.bounds.height
         
-        let savedContentOffSet = originalObject.contentOffset
-        let savedFrame = originalObject.frame
+        let savedContentOffSet = originalObj.contentOffset
+        let savedFrame = originalObj.frame
         
         UIGraphicsBeginImageContextWithOptions(CGSize(width: contentW, height: contentH), false, 0)
         
-        originalObject.contentOffset = .zero
-        originalObject.frame = CGRect(x: 0, y: 0, width: contentW, height: contentH)
+        originalObj.contentOffset = .zero
+        originalObj.frame = CGRect(x: 0, y: 0, width: contentW, height: contentH)
         
-        originalObject.drawHierarchy(in: originalObject.frame, afterScreenUpdates: true)
+        originalObj.drawHierarchy(in: originalObj.frame, afterScreenUpdates: true)
         
         let img = UIGraphicsGetImageFromCurrentImageContext()
         
-        originalObject.contentOffset = savedContentOffSet
-        originalObject.frame = savedFrame
+        originalObj.contentOffset = savedContentOffSet
+        originalObj.frame = savedFrame
         
         UIGraphicsEndImageContext()
         complete(img)
@@ -88,25 +88,25 @@ public extension YSOriginalObjectProtocol where OriginalObjectType: UIScrollView
 }
 
 // MARK: - 下面几个页码索引适用情况：整页左右滑动，并且每一页的宽度和SV的宽度相同
-public extension YSOriginalObjectProtocol where OriginalObjectType: UIScrollView{
+public extension YSOriginalProtocol where OriginalType: UIScrollView{
     
     /// 总页数
     var totalPageCount:Int{
         get{
-            if originalObject.contentSize.width <= 0 || originalObject.frame.width <= 0{
+            if originalObj.contentSize.width <= 0 || originalObj.frame.width <= 0{
                 return 0
             }
-            return Int(originalObject.contentSize.width / originalObject.frame.width)
+            return Int(originalObj.contentSize.width / originalObj.frame.width)
         }
     }
     
     /// 总页码索引
     var totalPageIndex:Int{
         get{
-            if originalObject.contentSize.width <= 0 || originalObject.frame.width <= 0{
+            if originalObj.contentSize.width <= 0 || originalObj.frame.width <= 0{
                 return 0
             }
-            return Int(originalObject.contentSize.width / originalObject.frame.width) - 1
+            return Int(originalObj.contentSize.width / originalObj.frame.width) - 1
         }
     }
     
@@ -117,18 +117,18 @@ public extension YSOriginalObjectProtocol where OriginalObjectType: UIScrollView
     ///   - pageIndex: 页码
     ///   - animate: 是否需要动画
     func scrollToPageIndex(languageLTR: Bool, pageIndex: Int, animated: Bool){
-        if originalObject.contentSize.width <= 0 || originalObject.frame.width <= 0{
+        if originalObj.contentSize.width <= 0 || originalObj.frame.width <= 0{
             return
         }
         if pageIndex < 0 || pageIndex > totalPageIndex{
             return
         }
         if languageLTR{
-            let offsetX = originalObject.frame.width * CGFloat(pageIndex)
-            originalObject.setContentOffset(CGPoint(x: offsetX, y: 0), animated: animated)
+            let offsetX = originalObj.frame.width * CGFloat(pageIndex)
+            originalObj.setContentOffset(CGPoint(x: offsetX, y: 0), animated: animated)
         } else{
-            let offsetX = originalObject.frame.width * CGFloat(totalPageIndex - pageIndex)
-            originalObject.setContentOffset(CGPoint(x: offsetX, y: 0), animated: animated)
+            let offsetX = originalObj.frame.width * CGFloat(totalPageIndex - pageIndex)
+            originalObj.setContentOffset(CGPoint(x: offsetX, y: 0), animated: animated)
         }
     }
     
@@ -137,11 +137,11 @@ public extension YSOriginalObjectProtocol where OriginalObjectType: UIScrollView
     /// - Parameter languageLTR: 国际化方向
     /// - Returns: 页码索引
     func currentPageIndex_scrollEnd(languageLTR: Bool) -> Int{
-        if originalObject.contentSize.width <= 0 || originalObject.frame.width <= 0{
+        if originalObj.contentSize.width <= 0 || originalObj.frame.width <= 0{
             return 0
         }
-        let offsetX = originalObject.contentOffset.x
-        let index = Int(offsetX / originalObject.frame.width)
+        let offsetX = originalObj.contentOffset.x
+        let index = Int(offsetX / originalObj.frame.width)
         if languageLTR{
             return index
         }
@@ -153,15 +153,15 @@ public extension YSOriginalObjectProtocol where OriginalObjectType: UIScrollView
     /// - Parameter languageLTR: 国际化语言方向
     /// - Returns: 两个页面的一些属性
     func twoPageProperty_scrolling(languageLTR: Bool) -> (frontIndex: Int, behindIndex: Int, frontScale: CGFloat, behindScale: CGFloat){
-        if originalObject.contentSize.width <= 0 || originalObject.frame.width <= 0{
+        if originalObj.contentSize.width <= 0 || originalObj.frame.width <= 0{
             return (0, 0, 0, 0)
         }
-        if !originalObject.isDragging && !originalObject.isDecelerating && !originalObject.isTracking{
+        if !originalObj.isDragging && !originalObj.isDecelerating && !originalObj.isTracking{
             return (0, 0, 0, 0)
         }
         
-        let offsetX = originalObject.contentOffset.x
-        let svWidth = originalObject.frame.width
+        let offsetX = originalObj.contentOffset.x
+        let svWidth = originalObj.frame.width
         
         let leftIndex = Int(offsetX / svWidth) // 左边选项的整形索引
         let leftIndex_float = offsetX / svWidth // 左边选项的浮点索引
@@ -216,15 +216,15 @@ public extension YSOriginalObjectProtocol where OriginalObjectType: UIScrollView
     /// - Parameter languageLTR: 国际化语言方向
     /// - Returns: 两个页面的一些属性
     func twoPageProperty_scrolling(languageLTR: Bool, currentPageIndex: Int) -> (scrollToFront: Bool, frontIndex: Int, behindIndex: Int, frontScale: CGFloat, behindScale: CGFloat){
-        if originalObject.contentSize.width <= 0 || originalObject.frame.width <= 0{
+        if originalObj.contentSize.width <= 0 || originalObj.frame.width <= 0{
             return (true, 0, 0, 0, 0)
         }
-        if !originalObject.isDragging && !originalObject.isDecelerating && !originalObject.isTracking{
+        if !originalObj.isDragging && !originalObj.isDecelerating && !originalObj.isTracking{
             return (true, 0, 0, 0, 0)
         }
         
-        let offsetX = originalObject.contentOffset.x
-        let svWidth = originalObject.frame.width
+        let offsetX = originalObj.contentOffset.x
+        let svWidth = originalObj.frame.width
         
         let leftIndex = Int(offsetX / svWidth) // 左边选项的整形索引
         let leftIndex_float = offsetX / svWidth // 左边选项的浮点索引

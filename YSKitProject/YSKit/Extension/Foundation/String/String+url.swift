@@ -7,11 +7,11 @@
 
 import Foundation
 
-public extension YSOriginalObjectProtocol where OriginalObjectType == String{
+public extension YSOriginalProtocol where OriginalType == String{
     
     /// 给URL添加参数
     @discardableResult func url_add_parm(_ parm: [String: Any]) -> String{
-        var str = originalObject
+        var str = originalObj
         var parmStr = ""
         if parm.count > 0{
             for (key, value) in parm{
@@ -56,7 +56,7 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == String{
     
     /// 移除URL的全部参数
     @discardableResult func url_remove_all_parms() -> String{
-        let str = originalObject
+        let str = originalObj
         if !str.contains("?"){
             return str
         }

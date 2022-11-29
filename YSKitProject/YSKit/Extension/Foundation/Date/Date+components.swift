@@ -7,11 +7,11 @@
 
 import Foundation
 
-public extension YSOriginalObjectProtocol where OriginalObjectType == Date{
+public extension YSOriginalProtocol where OriginalType == Date{
     
     /// 组件集合
     func components(calendar: Calendar? = nil) -> DateComponents{
         let cal = Calendar.getCalendar(calendar)
-        return cal.dateComponents([.year, .month, .day, .hour, .minute, .second, .nanosecond, .weekday, .era, .quarter, .timeZone, .weekdayOrdinal, .weekOfMonth, .weekOfYear, .yearForWeekOfYear, .calendar], from: originalObject)
+        return cal.dateComponents([.year, .month, .day, .hour, .minute, .second, .nanosecond, .weekday, .era, .quarter, .timeZone, .weekdayOrdinal, .weekOfMonth, .weekOfYear, .yearForWeekOfYear, .calendar], from: originalObj)
     }
 }

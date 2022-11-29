@@ -45,7 +45,7 @@ public class YSNavC: UINavigationController, UIGestureRecognizerDelegate{
     }
 }
 
-public extension YSOriginalObjectProtocol where OriginalObjectType == YSNavC{
+public extension YSOriginalProtocol where OriginalType == YSNavC{
     
     /// 创建自定义导航控制器
     /// - Parameters:
@@ -61,6 +61,6 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == YSNavC{
     /// 是否允许边缘侧滑手势
     /// - Parameter allowNavEdgeGesture: 是否允许边缘侧滑手势
     func setupData(allowNavEdgeGesture: Bool){
-        originalObject.allowNavEdgeGesture = allowNavEdgeGesture
+        originalObj.allowNavEdgeGesture = allowNavEdgeGesture
     }
 }

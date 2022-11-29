@@ -86,22 +86,22 @@ private extension YSPlaceholderProtocol where Self: UIView {
     }
 }
 
-extension YSOriginalObjectProtocol where OriginalObjectType: UIView & YSPlaceholderProtocol{
+extension YSOriginalProtocol where OriginalType: UIView & YSPlaceholderProtocol{
     
     /// 将当前view作为placeholderView添加到其他view的身上
     public func placeholder_addedToSuperView(superV: UIView){
-        originalObject.placeholder_addedToSuperView(superV: superV)
+        originalObj.placeholder_addedToSuperView(superV: superV)
     }
 }
 
 // MARK: - 当前view添加其他的placeholderView作为自己的子视图
 
-extension YSOriginalObjectProtocol where OriginalObjectType: UIView{
+extension YSOriginalProtocol where OriginalType: UIView{
     
     /// 当前view添加其他的placeholderView作为自己的子视图
     public func placeholder_add(_ placeholderView: (UIView & YSPlaceholderProtocol)...){
-        DispatchQueue.main.async { [weak originalObject] in
-            guard let originalView = originalObject else{ return }
+        DispatchQueue.main.async { [weak originalObj] in
+            guard let originalView = originalObj else{ return }
             for subv in placeholderView{
                 subv.placeholder_addedToSuperView(superV: originalView)
             }
@@ -110,8 +110,8 @@ extension YSOriginalObjectProtocol where OriginalObjectType: UIView{
     
     /// 当前view添加其他的placeholderView作为自己的子视图
     public func placeholder_add(_ placeholderViewList: [UIView & YSPlaceholderProtocol]){
-        DispatchQueue.main.async { [weak originalObject] in
-            guard let originalView = originalObject else{ return }
+        DispatchQueue.main.async { [weak originalObj] in
+            guard let originalView = originalObj else{ return }
             for subv in placeholderViewList{
                 subv.placeholder_addedToSuperView(superV: originalView)
             }
@@ -121,12 +121,12 @@ extension YSOriginalObjectProtocol where OriginalObjectType: UIView{
 
 // MARK: - 决定placeholderView是否显示
 
-extension YSOriginalObjectProtocol where OriginalObjectType: UIView{
+extension YSOriginalProtocol where OriginalType: UIView{
     
     /// 显示某种类型的placeholderView
     public func placeholder_show(type: YSPlaceholderType){
-        DispatchQueue.main.async { [weak originalObject] in
-            guard let originalView = originalObject else{ return }
+        DispatchQueue.main.async { [weak originalObj] in
+            guard let originalView = originalObj else{ return }
             if let loadingView = originalView.loadingV, loadingView.placeholderType == type, loadingView.isHidden{
                 originalView.bringSubviewToFront(loadingView)
                 loadingView.isHidden = false
@@ -152,8 +152,8 @@ extension YSOriginalObjectProtocol where OriginalObjectType: UIView{
     
     /// 隐藏所有的placeholderView
     public func placeholder_hide(){
-        DispatchQueue.main.async { [weak originalObject] in
-            guard let originalView = originalObject else{ return }
+        DispatchQueue.main.async { [weak originalObj] in
+            guard let originalView = originalObj else{ return }
             if let loadingView = originalView.loadingV, !loadingView.isHidden{
                 originalView.sendSubviewToBack(loadingView)
                 loadingView.isHidden = true

@@ -7,48 +7,48 @@
 
 import UIKit
 
-public extension YSOriginalObjectProtocol where OriginalObjectType: UICollectionView{
+public extension YSOriginalProtocol where OriginalType: UICollectionView{
     
-    @discardableResult func dataSource_delegate(_ dataSource: UICollectionViewDataSource?, _ delegate: UICollectionViewDelegate?) -> OriginalObjectType{
-        originalObject.dataSource = dataSource
-        originalObject.delegate = delegate
-        return originalObject
+    @discardableResult func dataSource_delegate(_ dataSource: UICollectionViewDataSource?, _ delegate: UICollectionViewDelegate?) -> OriginalType{
+        originalObj.dataSource = dataSource
+        originalObj.delegate = delegate
+        return originalObj
     }
     
-    @discardableResult func register(_ cells: [String: AnyClass]) -> OriginalObjectType{
+    @discardableResult func register(_ cells: [String: AnyClass]) -> OriginalType{
         for item in cells{
-            originalObject.register(item.value, forCellWithReuseIdentifier: item.key)
+            originalObj.register(item.value, forCellWithReuseIdentifier: item.key)
         }
-        return originalObject
+        return originalObj
     }
     
-    @discardableResult func register_sectionHeader(_ headers: [String: AnyClass]) -> OriginalObjectType{
+    @discardableResult func register_sectionHeader(_ headers: [String: AnyClass]) -> OriginalType{
         for item in headers{
-            originalObject.register(item.value, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: item.key)
+            originalObj.register(item.value, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: item.key)
         }
-        return originalObject
+        return originalObj
     }
     
-    @discardableResult func register_sectionFooter(_ footers: [String: AnyClass]) -> OriginalObjectType{
+    @discardableResult func register_sectionFooter(_ footers: [String: AnyClass]) -> OriginalType{
         for item in footers{
-            originalObject.register(item.value, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: item.key)
+            originalObj.register(item.value, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: item.key)
         }
-        return originalObject
+        return originalObj
     }
 }
 
 // MARK: - 重加载和删除的加固处理
-public extension YSOriginalObjectProtocol where OriginalObjectType: UICollectionView{
+public extension YSOriginalProtocol where OriginalType: UICollectionView{
     
     /// 判断是多secion还是单section
     var isMultiSections:Bool{
-        return originalObject.numberOfSections > 1
+        return originalObj.numberOfSections > 1
     }
     
     /// 删除，已加各种判断，外界直接使用
     func deleteItem(at: IndexPath){
-        DispatchQueue.main.async { [weak originalObject] in
-            guard let colv = originalObject else{ return }
+        DispatchQueue.main.async { [weak originalObj] in
+            guard let colv = originalObj else{ return }
             if at.section < 0 || at.item < 0 || colv.numberOfSections <= 0{
                 return
             }
@@ -79,8 +79,8 @@ public extension YSOriginalObjectProtocol where OriginalObjectType: UICollection
     
     /// 重新加载，已加各种判断，外界直接使用
     func reloadItem(at: IndexPath){
-        DispatchQueue.main.async { [weak originalObject] in
-            guard let colv = originalObject else{ return }
+        DispatchQueue.main.async { [weak originalObj] in
+            guard let colv = originalObj else{ return }
             if at.section < 0 || at.item < 0 || colv.numberOfSections <= 0{
                 return
             }

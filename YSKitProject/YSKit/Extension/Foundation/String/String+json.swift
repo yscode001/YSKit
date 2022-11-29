@@ -7,7 +7,7 @@
 
 import Foundation
 
-public extension YSOriginalObjectProtocol where OriginalObjectType == String{
+public extension YSOriginalProtocol where OriginalType == String{
     
     /// 对象->json字符串,obj的约束条件见JSONSerialization
     static func jsonString(_ obj: Any, encoding: String.Encoding? = .utf8) -> String?{

@@ -7,12 +7,12 @@
 
 import Foundation
 
-public extension YSOriginalObjectProtocol where OriginalObjectType == Date{
+public extension YSOriginalProtocol where OriginalType == Date{
     
     /// 某一天的开始时间，如：2019-06-18 00:00:00
     func start_day(calendar: Calendar? = nil) -> Date{
         let cal = Calendar.getCalendar(calendar)
-        return cal.startOfDay(for: originalObject)
+        return cal.startOfDay(for: originalObj)
     }
     
     /// 某一天的结束时间，如：2019-06-18 23:59:59
@@ -27,9 +27,9 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == Date{
     /// 某一天所在月份的开始时间，如：2019-06-01 00:00:00
     func start_month(calendar: Calendar? = nil) -> Date{
         let cal = Calendar.getCalendar(calendar)
-        var start = originalObject
+        var start = originalObj
         var interval:TimeInterval = 0
-        let _ = cal.dateInterval(of: .month, start: &start, interval: &interval, for: originalObject)
+        let _ = cal.dateInterval(of: .month, start: &start, interval: &interval, for: originalObj)
         return start
     }
     
@@ -45,9 +45,9 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == Date{
     /// 某一天所在年份的开始时间，如：2019-01-01 00:00:00
     func start_year(calendar: Calendar? = nil) -> Date{
         let cal = Calendar.getCalendar(calendar)
-        var start = originalObject
+        var start = originalObj
         var interval:TimeInterval = 0
-        let _ = cal.dateInterval(of: .year, start: &start, interval: &interval, for: originalObject)
+        let _ = cal.dateInterval(of: .year, start: &start, interval: &interval, for: originalObj)
         return start
     }
     

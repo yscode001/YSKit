@@ -7,25 +7,25 @@
 
 import Foundation
 
-public extension YSOriginalObjectProtocol where OriginalObjectType == String{
+public extension YSOriginalProtocol where OriginalType == String{
     
     @discardableResult func trim_startAndEnd() -> String{
         let whitespace = NSCharacterSet.whitespacesAndNewlines
-        return originalObject.trimmingCharacters(in: whitespace)
+        return originalObj.trimmingCharacters(in: whitespace)
     }
     
     @discardableResult func trim_all() -> String{
-        return originalObject.replacingOccurrences(of: " ", with: "")
+        return originalObj.replacingOccurrences(of: " ", with: "")
     }
     
     /// 是否为空串或全部是空格的串
     var isEmptyOrWhiteSpace:Bool{
-        return originalObject.isEmpty || trim_all().isEmpty
+        return originalObj.isEmpty || trim_all().isEmpty
     }
     
     /// 移除最后一个字符
     @discardableResult func removeLastCharacter() -> String{
-        var str = originalObject
+        var str = originalObj
         if str.count > 0{
             str.remove(at: str.index(before: str.endIndex))
         }
@@ -46,8 +46,8 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == String{
     
     /// 截取最大字数(最后面是否显示3个点)
     @discardableResult func substring(_ maxCount: Int, showMore: Bool) -> String{
-        if originalObject.count <= maxCount{
-            return originalObject
+        if originalObj.count <= maxCount{
+            return originalObj
         } else if showMore{
             return nsstring.substring(to: maxCount) + "..."
         } else{

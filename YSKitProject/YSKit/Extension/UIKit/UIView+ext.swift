@@ -8,32 +8,32 @@
 import UIKit
 
 // MARK: - 子视图管理
-public extension YSOriginalObjectProtocol where OriginalObjectType: UIView{
+public extension YSOriginalProtocol where OriginalType: UIView{
     
     /// 批量添加子视图
     func addSubviews(_ subviews: UIView...){
         for subV in subviews{
-            originalObject.addSubview(subV)
+            originalObj.addSubview(subV)
         }
     }
     
     /// 批量添加子视图
     func addSubviews(_ subviewList: [UIView]){
         for subV in subviewList{
-            originalObject.addSubview(subV)
+            originalObj.addSubview(subV)
         }
     }
     
     /// 移除全部子视图
     func removeAllSubviews(){
-        for subView in originalObject.subviews.reversed(){
+        for subView in originalObj.subviews.reversed(){
             subView.removeFromSuperview()
         }
     }
     
     /// 移除部分子视图
     func removeSomeSubviews(tags: Int...){
-        let subvs = originalObject.subviews.filter{ tags.contains($0.tag) }
+        let subvs = originalObj.subviews.filter{ tags.contains($0.tag) }
         for subView in subvs.reversed(){
             subView.removeFromSuperview()
         }
@@ -41,7 +41,7 @@ public extension YSOriginalObjectProtocol where OriginalObjectType: UIView{
     
     /// 移除部分子视图
     func removeSomeSubviews(tagList: [Int]){
-        let subvs = originalObject.subviews.filter{ tagList.contains($0.tag) }
+        let subvs = originalObj.subviews.filter{ tagList.contains($0.tag) }
         for subView in subvs.reversed(){
             subView.removeFromSuperview()
         }
@@ -49,7 +49,7 @@ public extension YSOriginalObjectProtocol where OriginalObjectType: UIView{
     
     /// 移除部分子视图
     func removeSomeSubviews(subviews: UIView...){
-        let subvs = originalObject.subviews.filter{ subviews.contains($0) }
+        let subvs = originalObj.subviews.filter{ subviews.contains($0) }
         for subView in subvs.reversed(){
             subView.removeFromSuperview()
         }
@@ -57,34 +57,34 @@ public extension YSOriginalObjectProtocol where OriginalObjectType: UIView{
     
     /// 移除部分子视图
     func removeSomeSubviews(subviewList: [UIView]){
-        let subvs = originalObject.subviews.filter{ subviewList.contains($0) }
+        let subvs = originalObj.subviews.filter{ subviewList.contains($0) }
         for subView in subvs.reversed(){
             subView.removeFromSuperview()
         }
     }
 }
 
-public extension YSOriginalObjectProtocol where OriginalObjectType: UIView{
+public extension YSOriginalProtocol where OriginalType: UIView{
     
     /// 添加点击手势
     func addTapListener(target: Any, action: Selector){
-        if let taps = originalObject.gestureRecognizers{
+        if let taps = originalObj.gestureRecognizers{
             let tapsfilter = taps.filter{ $0 is UITapGestureRecognizer }
             for tap in tapsfilter.reversed(){
-                originalObject.removeGestureRecognizer(tap)
+                originalObj.removeGestureRecognizer(tap)
             }
         }
-        originalObject.isUserInteractionEnabled = true
-        originalObject.addGestureRecognizer(UITapGestureRecognizer(target: target, action: action))
+        originalObj.isUserInteractionEnabled = true
+        originalObj.addGestureRecognizer(UITapGestureRecognizer(target: target, action: action))
     }
     
     /// 快照
     func snapshot(complete: @escaping((UIImage?) -> ())){
-        if originalObject.bounds.size.width <= 0 || originalObject.bounds.size.height <= 0{
+        if originalObj.bounds.size.width <= 0 || originalObj.bounds.size.height <= 0{
             complete(nil)
         } else{
-            UIGraphicsBeginImageContextWithOptions(originalObject.bounds.size, false, 0)
-            originalObject.drawHierarchy(in: originalObject.bounds, afterScreenUpdates: true)
+            UIGraphicsBeginImageContextWithOptions(originalObj.bounds.size, false, 0)
+            originalObj.drawHierarchy(in: originalObj.bounds, afterScreenUpdates: true)
             let img = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             complete(img)
@@ -98,7 +98,7 @@ public extension YSOriginalObjectProtocol where OriginalObjectType: UIView{
         }
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = UIBezierPath(ovalIn: rect).cgPath
-        originalObject.layer.mask = shapeLayer
+        originalObj.layer.mask = shapeLayer
     }
 }
 

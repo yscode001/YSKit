@@ -7,12 +7,12 @@
 
 import Foundation
 
-public extension YSOriginalObjectProtocol where OriginalObjectType == String{
+public extension YSOriginalProtocol where OriginalType == String{
     
     /// 16进制字符串转成emoji表情
     var emoji: String {
         // 1、在一段字符串中查找十六进制的字符串
-        let scanner = Scanner(string: originalObject)
+        let scanner = Scanner(string: originalObj)
         // 2、将查找的字符串转换为十六进制的数字
         var value: UInt32 = 0
         scanner.scanHexInt32(&value)

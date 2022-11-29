@@ -11,18 +11,18 @@ import Foundation
 public protocol YSCoreProtocol {
     
     /// YSCore关联类型
-    associatedtype YSCoreType
+    associatedtype CoreType
     
-    var ys: YSCoreType { get }
+    var ys: CoreType { get }
     
-    static var ys: YSCoreType.Type { get }
+    static var ys: CoreType.Type { get }
 }
 
 /// YSKit核心组件协议默认实现
 extension YSCoreProtocol {
     
     public var ys: YSOriginalObject<Self> {
-        return YSOriginalObject(originalObject: self)
+        return YSOriginalObject(originalObj: self)
     }
     
     public static var ys: YSOriginalObject<Self>.Type {

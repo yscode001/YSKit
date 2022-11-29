@@ -41,7 +41,7 @@ public struct YSCategoryViewColor: YSCoreProtocol{
     }
 }
 
-public extension YSOriginalObject where OriginalObjectType == YSCategoryViewColor{
+public extension YSOriginalObject where OriginalType == YSCategoryViewColor{
  
     /// 创建默认颜色
     static func create() -> YSCategoryViewColor{

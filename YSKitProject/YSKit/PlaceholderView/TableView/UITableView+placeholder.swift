@@ -21,12 +21,12 @@ private extension UITableView{
 
 // MARK: - 决定placeholderView是否显示
 
-extension YSOriginalObjectProtocol where OriginalObjectType: UITableView{
+extension YSOriginalProtocol where OriginalType: UITableView{
     
     /// 如果无数据显示某种类型的placeholderView，有数据隐藏所有的placeholderView
     public func placeholder_show_ifHasNoData(type: YSPlaceholderType){
-        DispatchQueue.main.async { [weak originalObject] in
-            guard let originalView = originalObject else{ return }
+        DispatchQueue.main.async { [weak originalObj] in
+            guard let originalView = originalObj else{ return }
             if originalView.hasRow(){
                 placeholder_hide()
             } else{

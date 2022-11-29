@@ -7,7 +7,7 @@
 
 import UIKit
 
-public extension YSOriginalObjectProtocol where OriginalObjectType: UIScreen{
+public extension YSOriginalProtocol where OriginalType: UIScreen{
     
     static var main:UIScreen{ return UIScreen.main }
     
@@ -22,7 +22,7 @@ public extension YSOriginalObjectProtocol where OriginalObjectType: UIScreen{
     static var mainHeight:CGFloat{ return mainSize.height }
 }
 
-public extension YSOriginalObjectProtocol where OriginalObjectType: UIScreen{
+public extension YSOriginalProtocol where OriginalType: UIScreen{
     
     static var statusBarFrame:CGRect{
         if #available(iOS 13.0, *){

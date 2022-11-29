@@ -7,7 +7,7 @@
 
 import Foundation
 
-public extension YSOriginalObjectProtocol where OriginalObjectType == Date{
+public extension YSOriginalProtocol where OriginalType == Date{
     
     /// 当前日期和指定日期(参数的日期)是否为同一天
     func isSameDay(_ date: Date?, calendar: Calendar? = nil) -> Bool{
@@ -15,7 +15,7 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == Date{
             return false
         }
         let cal = Calendar.getCalendar(calendar)
-        return cal.isDate(originalObject, inSameDayAs: d)
+        return cal.isDate(originalObj, inSameDayAs: d)
     }
     
     /// 当前日期是否在指定日期(参数的日期)的前一天
@@ -25,7 +25,7 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == Date{
         }
         let cal = Calendar.getCalendar(calendar)
         let previousDay = d.ys.addDay(-1)
-        return cal.isDate(originalObject, inSameDayAs: previousDay)
+        return cal.isDate(originalObj, inSameDayAs: previousDay)
     }
     
     /// 当前日期是否在指定日期(参数的日期)的后一天
@@ -35,7 +35,7 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == Date{
         }
         let cal = Calendar.getCalendar(calendar)
         let nextDay = d.ys.addDay(1)
-        return cal.isDate(originalObject, inSameDayAs: nextDay)
+        return cal.isDate(originalObj, inSameDayAs: nextDay)
     }
     
     /// 当前日期和指定日期(参数的日期)是否在同一月
@@ -43,7 +43,7 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == Date{
         guard let d = date else{
             return false
         }
-        let thisC = originalObject.ys.components(calendar: calendar)
+        let thisC = originalObj.ys.components(calendar: calendar)
         let dC = d.ys.components(calendar: calendar)
         return thisC.year == dC.year && thisC.month == dC.month
     }
@@ -53,29 +53,29 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == Date{
         guard let d = date else{
             return false
         }
-        let thisC = originalObject.ys.components(calendar: calendar)
+        let thisC = originalObj.ys.components(calendar: calendar)
         let dC = d.ys.components(calendar: calendar)
         return thisC.year == dC.year
     }
 }
 
-public extension YSOriginalObjectProtocol where OriginalObjectType == Date{
+public extension YSOriginalProtocol where OriginalType == Date{
     
     /// 当前日期是否是今天
     func isToday(calendar: Calendar? = nil) -> Bool{
         let cal = Calendar.getCalendar(calendar)
-        return cal.isDateInToday(originalObject)
+        return cal.isDateInToday(originalObj)
     }
     
     /// 当前日期是否是明天
     func isTomorrow(calendar: Calendar? = nil) -> Bool{
         let cal = Calendar.getCalendar(calendar)
-        return cal.isDateInTomorrow(originalObject)
+        return cal.isDateInTomorrow(originalObj)
     }
     
     /// 当前日期是否是昨天
     func isYesterday(calendar: Calendar? = nil) -> Bool{
         let cal = Calendar.getCalendar(calendar)
-        return cal.isDateInYesterday(originalObject)
+        return cal.isDateInYesterday(originalObj)
     }
 }

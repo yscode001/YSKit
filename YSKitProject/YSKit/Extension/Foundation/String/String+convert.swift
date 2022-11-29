@@ -7,35 +7,35 @@
 
 import Foundation
 
-public extension YSOriginalObjectProtocol where OriginalObjectType == String{
+public extension YSOriginalProtocol where OriginalType == String{
     
-    var nsstring:NSString{ return originalObject as NSString }
+    var nsstring:NSString{ return originalObj as NSString }
     
-    var attributedString:NSAttributedString{ return NSAttributedString(string: originalObject) }
+    var attributedString:NSAttributedString{ return NSAttributedString(string: originalObj) }
     
-    var mutableAttributedString:NSMutableAttributedString{ return NSMutableAttributedString(string: originalObject) }
+    var mutableAttributedString:NSMutableAttributedString{ return NSMutableAttributedString(string: originalObj) }
     
     func attributedString(attributes: [NSAttributedString.Key: Any]?) -> NSAttributedString{
-        return NSAttributedString(string: originalObject, attributes: attributes)
+        return NSAttributedString(string: originalObj, attributes: attributes)
     }
     
     func mutableAttributedString(attributes: [NSAttributedString.Key: Any]?) -> NSMutableAttributedString{
-        return NSMutableAttributedString(string: originalObject, attributes: attributes)
+        return NSMutableAttributedString(string: originalObj, attributes: attributes)
     }
 }
 
-public extension YSOriginalObjectProtocol where OriginalObjectType == String{
+public extension YSOriginalProtocol where OriginalType == String{
     
     var bool:Bool{
-        let boolStr = originalObject.lowercased()
+        let boolStr = originalObj.lowercased()
         return boolStr == "true" || boolStr == "t" || boolStr == "yes" || boolStr == "y"
     }
     
-    var int:Int{return Int(originalObject) ?? 0}
+    var int:Int{return Int(originalObj) ?? 0}
     
-    var float:Float{return Float(originalObject) ?? 0}
+    var float:Float{return Float(originalObj) ?? 0}
     
     var cgFloat:CGFloat{return CGFloat(float)}
     
-    var double:Double{return Double(originalObject) ?? 0}
+    var double:Double{return Double(originalObj) ?? 0}
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public extension YSOriginalObjectProtocol where OriginalObjectType == String{
+public extension YSOriginalProtocol where OriginalType == String{
     
     /// base64编码
     @discardableResult func base64Encode(using:String.Encoding? = nil) -> String{
@@ -15,7 +15,7 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == String{
             return ""
         }
         let encoding = using == nil ? .utf8 : using!
-        guard let data = originalObject.data(using: encoding) else{
+        guard let data = originalObj.data(using: encoding) else{
             return ""
         }
         return data.base64EncodedString(options: Data.Base64EncodingOptions.lineLength64Characters)
@@ -26,7 +26,7 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == String{
         if isEmptyOrWhiteSpace{
             return ""
         }
-        guard let data = Data(base64Encoded: originalObject, options: Data.Base64DecodingOptions.ignoreUnknownCharacters) else{
+        guard let data = Data(base64Encoded: originalObj, options: Data.Base64DecodingOptions.ignoreUnknownCharacters) else{
             return ""
         }
         let encoding = using == nil ? .utf8 : using!

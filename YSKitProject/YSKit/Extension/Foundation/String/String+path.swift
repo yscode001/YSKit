@@ -7,7 +7,7 @@
 
 import Foundation
 
-public extension YSOriginalObjectProtocol where OriginalObjectType == String{
+public extension YSOriginalProtocol where OriginalType == String{
     
     /// 沙盒路径home
     static var sandbox_home:NSString{return NSHomeDirectory() as NSString}

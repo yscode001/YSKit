@@ -7,36 +7,36 @@
 
 import UIKit
 
-public extension YSOriginalObjectProtocol where OriginalObjectType: UIView{
+public extension YSOriginalProtocol where OriginalType: UIView{
     
     // MARK: - 位置
     
-    var origin:CGPoint{ return originalObject.frame.origin }
-    func origin_set(_ origin: CGPoint){ originalObject.frame.origin = origin }
+    var origin:CGPoint{ return originalObj.frame.origin }
+    func origin_set(_ origin: CGPoint){ originalObj.frame.origin = origin }
     
-    var x:CGFloat{ return originalObject.frame.origin.x }
-    func x_set(_ x: CGFloat){ originalObject.frame.origin.x = x }
+    var x:CGFloat{ return originalObj.frame.origin.x }
+    func x_set(_ x: CGFloat){ originalObj.frame.origin.x = x }
     
-    var y:CGFloat{ return originalObject.frame.origin.y }
-    func y_set(_ y: CGFloat){ originalObject.frame.origin.y = y }
+    var y:CGFloat{ return originalObj.frame.origin.y }
+    func y_set(_ y: CGFloat){ originalObj.frame.origin.y = y }
     
-    var centerX:CGFloat{ return originalObject.center.x }
-    func centerX_set(_ x: CGFloat){ originalObject.center.x = x }
+    var centerX:CGFloat{ return originalObj.center.x }
+    func centerX_set(_ x: CGFloat){ originalObj.center.x = x }
     
-    var centerY:CGFloat{ return originalObject.center.y }
-    func centerY_set(_ y: CGFloat){ originalObject.center.y = y }
+    var centerY:CGFloat{ return originalObj.center.y }
+    func centerY_set(_ y: CGFloat){ originalObj.center.y = y }
     
-    var center:CGPoint{ return originalObject.center }
-    func center_set(_ center: CGPoint){ originalObject.center = center }
+    var center:CGPoint{ return originalObj.center }
+    func center_set(_ center: CGPoint){ originalObj.center = center }
     
     // MARK: - 大小
     
-    var size:CGSize{ return originalObject.frame.size }
-    func size_set(_ size: CGSize){ originalObject.frame.size = size }
+    var size:CGSize{ return originalObj.frame.size }
+    func size_set(_ size: CGSize){ originalObj.frame.size = size }
     
-    var width:CGFloat{ return originalObject.frame.width }
-    func width_set(_ width: CGFloat){ originalObject.frame.size.width = width }
+    var width:CGFloat{ return originalObj.frame.width }
+    func width_set(_ width: CGFloat){ originalObj.frame.size.width = width }
     
-    var height:CGFloat{ return originalObject.frame.height }
-    func height_set(_ height: CGFloat){ originalObject.frame.size.height = height }
+    var height:CGFloat{ return originalObj.frame.height }
+    func height_set(_ height: CGFloat){ originalObj.frame.size.height = height }
 }

@@ -11,94 +11,94 @@ import UIKit
 
 // 如果不设置，iOS11reload的时候可能会上下跳动
 
-public extension YSOriginalObjectProtocol where OriginalObjectType: UITableView{
+public extension YSOriginalProtocol where OriginalType: UITableView{
     
-    @discardableResult func set_cell_autoHeight(_ estimatedHeight: CGFloat) -> OriginalObjectType{
-        originalObject.estimatedRowHeight = estimatedHeight
-        originalObject.rowHeight = UITableView.automaticDimension
-        return originalObject
+    @discardableResult func set_cell_autoHeight(_ estimatedHeight: CGFloat) -> OriginalType{
+        originalObj.estimatedRowHeight = estimatedHeight
+        originalObj.rowHeight = UITableView.automaticDimension
+        return originalObj
     }
     
-    @discardableResult func set_header_footer_estimatedHeight(header: CGFloat, footer: CGFloat) -> OriginalObjectType{
-        originalObject.estimatedSectionHeaderHeight = header
-        originalObject.estimatedSectionFooterHeight = footer
-        return originalObject
+    @discardableResult func set_header_footer_estimatedHeight(header: CGFloat, footer: CGFloat) -> OriginalType{
+        originalObj.estimatedSectionHeaderHeight = header
+        originalObj.estimatedSectionFooterHeight = footer
+        return originalObj
     }
 }
 
 // MARK: - 设置系统分隔线样式
-public extension YSOriginalObjectProtocol where OriginalObjectType: UITableView{
+public extension YSOriginalProtocol where OriginalType: UITableView{
     
-    @discardableResult func setSeparator(_ style: UITableViewCell.SeparatorStyle, color: UIColor?) -> OriginalObjectType{
-        originalObject.separatorStyle = style
-        originalObject.separatorColor = color
-        return originalObject
+    @discardableResult func setSeparator(_ style: UITableViewCell.SeparatorStyle, color: UIColor?) -> OriginalType{
+        originalObj.separatorStyle = style
+        originalObj.separatorColor = color
+        return originalObj
     }
     
-    @discardableResult func setSeparator(_ style: UITableViewCell.SeparatorStyle, inset: UIEdgeInsets, color: UIColor?) -> OriginalObjectType{
-        originalObject.separatorStyle = style
-        originalObject.separatorInset = inset
-        originalObject.separatorColor = color
-        return originalObject
+    @discardableResult func setSeparator(_ style: UITableViewCell.SeparatorStyle, inset: UIEdgeInsets, color: UIColor?) -> OriginalType{
+        originalObj.separatorStyle = style
+        originalObj.separatorInset = inset
+        originalObj.separatorColor = color
+        return originalObj
     }
 }
 
 // MARK: - 设置代理、注册cell
-public extension YSOriginalObjectProtocol where OriginalObjectType: UITableView{
+public extension YSOriginalProtocol where OriginalType: UITableView{
     
-    @discardableResult func dataSource_delegate(_ dataSource: UITableViewDataSource?, _ delegate: UITableViewDelegate?) -> OriginalObjectType{
-        originalObject.dataSource = dataSource
-        originalObject.delegate = delegate
-        return originalObject
+    @discardableResult func dataSource_delegate(_ dataSource: UITableViewDataSource?, _ delegate: UITableViewDelegate?) -> OriginalType{
+        originalObj.dataSource = dataSource
+        originalObj.delegate = delegate
+        return originalObj
     }
     
-    @discardableResult func register(_ cells: [String: AnyClass]) -> OriginalObjectType{
+    @discardableResult func register(_ cells: [String: AnyClass]) -> OriginalType{
         for item in cells{
-            originalObject.register(item.value, forCellReuseIdentifier: item.key)
+            originalObj.register(item.value, forCellReuseIdentifier: item.key)
         }
-        return originalObject
+        return originalObj
     }
 }
 
 // MARK: - 头尾部视图
-public extension YSOriginalObjectProtocol where OriginalObjectType: UITableView{
+public extension YSOriginalProtocol where OriginalType: UITableView{
     
-    @discardableResult func tableHeaderView(_ headerV: UIView) -> OriginalObjectType{
-        if originalObject.tableHeaderView != headerV{
-            originalObject.tableHeaderView = headerV
+    @discardableResult func tableHeaderView(_ headerV: UIView) -> OriginalType{
+        if originalObj.tableHeaderView != headerV{
+            originalObj.tableHeaderView = headerV
         }
-        return originalObject
+        return originalObj
     }
     
-    @discardableResult func tableFooterView(_ footerV: UIView) -> OriginalObjectType{
-        if originalObject.tableFooterView != footerV{
-            originalObject.tableFooterView = footerV
+    @discardableResult func tableFooterView(_ footerV: UIView) -> OriginalType{
+        if originalObj.tableFooterView != footerV{
+            originalObj.tableFooterView = footerV
         }
-        return originalObject
+        return originalObj
     }
     
-    @discardableResult func tableHeaderView_clear() -> OriginalObjectType{
-        if originalObject.tableHeaderView != nil{
-            originalObject.tableHeaderView = nil
+    @discardableResult func tableHeaderView_clear() -> OriginalType{
+        if originalObj.tableHeaderView != nil{
+            originalObj.tableHeaderView = nil
         }
-        return originalObject
+        return originalObj
     }
     
-    @discardableResult func tableFooterView_clear() -> OriginalObjectType{
-        if originalObject.tableFooterView != nil{
-            originalObject.tableFooterView = nil
+    @discardableResult func tableFooterView_clear() -> OriginalType{
+        if originalObj.tableFooterView != nil{
+            originalObj.tableFooterView = nil
         }
-        return originalObject
+        return originalObj
     }
 }
 
 // MARK: - 滑动到顶部、底部
-public extension YSOriginalObjectProtocol where OriginalObjectType: UITableView{
+public extension YSOriginalProtocol where OriginalType: UITableView{
     
     /// 滑动到顶部
     func scrollToTop(at: UITableView.ScrollPosition, animated: Bool){
-        DispatchQueue.main.async { [weak originalObject] in
-            guard let originalObj = originalObject else{ return }
+        DispatchQueue.main.async { [weak originalObj] in
+            guard let originalObj = originalObj else{ return }
             if originalObj.numberOfSections <= 0{
                 return
             }
@@ -111,30 +111,30 @@ public extension YSOriginalObjectProtocol where OriginalObjectType: UITableView{
     
     /// 滑动过底部
     func scrollToBottom(at: UITableView.ScrollPosition, animated: Bool){
-        DispatchQueue.main.async { [weak originalObject] in
-            guard let originalObj = originalObject else{ return }
-            if originalObj.numberOfSections <= 0{
+        DispatchQueue.main.async { [weak originalObj] in
+            guard let tbv = originalObj else{ return }
+            if tbv.numberOfSections <= 0{
                 return
             }
-            let maxSection = originalObj.numberOfSections - 1
-            let maxRow = originalObj.numberOfRows(inSection: maxSection) - 1
-            originalObj.scrollToRow(at: IndexPath(row: maxRow, section: maxSection), at: at, animated: animated)
+            let maxSection = tbv.numberOfSections - 1
+            let maxRow = tbv.numberOfRows(inSection: maxSection) - 1
+            tbv.scrollToRow(at: IndexPath(row: maxRow, section: maxSection), at: at, animated: animated)
         }
     }
 }
 
 // MARK: - 重加载和删除的加固处理
-public extension YSOriginalObjectProtocol where OriginalObjectType: UITableView{
+public extension YSOriginalProtocol where OriginalType: UITableView{
     
     /// 判断是多secion还是单section
     var isMultiSections:Bool{
-        return originalObject.numberOfSections > 1
+        return originalObj.numberOfSections > 1
     }
     
     /// 删除，已加各种判断，外界直接使用
     func deleteRow(at: IndexPath, with: UITableView.RowAnimation){
-        DispatchQueue.main.async { [weak originalObject] in
-            guard let tbv = originalObject else{ return }
+        DispatchQueue.main.async { [weak originalObj] in
+            guard let tbv = originalObj else{ return }
             if at.section < 0 || at.row < 0 || tbv.numberOfSections <= 0{
                 return
             }
@@ -165,8 +165,8 @@ public extension YSOriginalObjectProtocol where OriginalObjectType: UITableView{
     
     /// 重新加载，已加各种判断，外界直接使用
     func reloadRow(at: IndexPath, with: UITableView.RowAnimation){
-        DispatchQueue.main.async { [weak originalObject] in
-            guard let tbv = originalObject else{ return }
+        DispatchQueue.main.async { [weak originalObj] in
+            guard let tbv = originalObj else{ return }
             if at.section < 0 || at.row < 0 || tbv.numberOfSections <= 0{
                 return
             }

@@ -8,14 +8,14 @@
 import Foundation
 
 // MARK: - 日期计算
-public extension YSOriginalObjectProtocol where OriginalObjectType == Date{
+public extension YSOriginalProtocol where OriginalType == Date{
     
     /// 添加秒
     func addSecond(_ second: Int, calendar: Calendar? = nil) -> Date{
         let cal = Calendar.getCalendar(calendar)
         var coms = DateComponents()
         coms.second = second
-        return cal.date(byAdding: coms, to: originalObject)!
+        return cal.date(byAdding: coms, to: originalObj)!
     }
     
     /// 添加分钟
@@ -23,7 +23,7 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == Date{
         let cal = Calendar.getCalendar(calendar)
         var coms = DateComponents()
         coms.minute = minute
-        return cal.date(byAdding: coms, to: originalObject)!
+        return cal.date(byAdding: coms, to: originalObj)!
     }
     
     /// 添加小时
@@ -31,7 +31,7 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == Date{
         let cal = Calendar.getCalendar(calendar)
         var coms = DateComponents()
         coms.hour = hour
-        return cal.date(byAdding: coms, to: originalObject)!
+        return cal.date(byAdding: coms, to: originalObj)!
     }
     
     /// 添加天数
@@ -39,7 +39,7 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == Date{
         let cal = Calendar.getCalendar(calendar)
         var coms = DateComponents()
         coms.day = day
-        return cal.date(byAdding: coms, to: originalObject)!
+        return cal.date(byAdding: coms, to: originalObj)!
     }
     
     /// 添加月份
@@ -47,7 +47,7 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == Date{
         let cal = Calendar.getCalendar(calendar)
         var coms = DateComponents()
         coms.month = month
-        return cal.date(byAdding: coms, to: originalObject)!
+        return cal.date(byAdding: coms, to: originalObj)!
     }
     
     /// 添加年数
@@ -55,7 +55,7 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == Date{
         let cal = Calendar.getCalendar(calendar)
         var coms = DateComponents()
         coms.year = year
-        return cal.date(byAdding: coms, to: originalObject)!
+        return cal.date(byAdding: coms, to: originalObj)!
     }
     
     /// 计算日期
@@ -68,12 +68,12 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == Date{
         coms.hour = hour
         coms.minute = minute
         coms.second = second
-        return cal.date(byAdding: coms, to: originalObject)!
+        return cal.date(byAdding: coms, to: originalObj)!
     }
     
     /// 重置时分秒
     func reset(hour: Int, minute: Int, second: Int, calendar: Calendar? = nil) -> Date{
         let cal = Calendar.getCalendar(calendar)
-        return cal.date(bySettingHour: hour % 24, minute: minute % 60, second: second % 60, of: originalObject)!
+        return cal.date(bySettingHour: hour % 24, minute: minute % 60, second: second % 60, of: originalObj)!
     }
 }

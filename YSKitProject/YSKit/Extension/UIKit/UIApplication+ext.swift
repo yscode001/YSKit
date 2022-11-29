@@ -7,7 +7,7 @@
 
 import UIKit
 
-public extension YSOriginalObjectProtocol where OriginalObjectType: UIApplication{
+public extension YSOriginalProtocol where OriginalType: UIApplication{
     
     static var lastWindow: UIWindow?{
         return UIApplication.shared.windows.last

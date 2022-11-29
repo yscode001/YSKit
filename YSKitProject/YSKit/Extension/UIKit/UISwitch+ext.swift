@@ -7,18 +7,18 @@
 
 import UIKit
 
-public extension YSOriginalObjectProtocol where OriginalObjectType: UISwitch{
+public extension YSOriginalProtocol where OriginalType: UISwitch{
     
-    @discardableResult func setColor(onTintColor: UIColor, tintColor: UIColor, thumbTintColor: UIColor) -> OriginalObjectType{
-        originalObject.onTintColor = onTintColor
-        originalObject.tintColor = tintColor
-        originalObject.thumbTintColor = thumbTintColor
-        return originalObject
+    @discardableResult func setColor(onTintColor: UIColor, tintColor: UIColor, thumbTintColor: UIColor) -> OriginalType{
+        originalObj.onTintColor = onTintColor
+        originalObj.tintColor = tintColor
+        originalObj.thumbTintColor = thumbTintColor
+        return originalObj
     }
     
-    @discardableResult func setImage(onImage: UIImage?, offImage: UIImage?) -> OriginalObjectType{
-        originalObject.onImage = onImage
-        originalObject.offImage = offImage
-        return originalObject
+    @discardableResult func setImage(onImage: UIImage?, offImage: UIImage?) -> OriginalType{
+        originalObj.onImage = onImage
+        originalObj.offImage = offImage
+        return originalObj
     }
 }

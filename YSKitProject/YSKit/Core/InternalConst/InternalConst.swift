@@ -7,5 +7,5 @@
 
 internal struct InternalConst {
     
-    static let navHeight:CGFloat = 44
+    static let navHeight: CGFloat = 44
 }

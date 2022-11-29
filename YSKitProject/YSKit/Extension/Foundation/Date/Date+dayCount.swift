@@ -7,12 +7,12 @@
 
 import Foundation
 
-public extension YSOriginalObjectProtocol where OriginalObjectType == Date{
+public extension YSOriginalProtocol where OriginalType == Date{
     
     /// 当前日期所在月份的天数
     func dayCount_thisMonth(calendar: Calendar? = nil) -> Int{
         let cal = Calendar.getCalendar(calendar)
-        let range = cal.range(of: .day, in: .month, for: originalObject)!
+        let range = cal.range(of: .day, in: .month, for: originalObj)!
         return range.count
     }
     

@@ -23,7 +23,7 @@
 
 import Foundation
 
-extension YSOriginalObjectProtocol where OriginalObjectType: Codable{
+extension YSOriginalProtocol where OriginalType: Codable{
     
     // MARK: - 序列化
     
@@ -31,24 +31,24 @@ extension YSOriginalObjectProtocol where OriginalObjectType: Codable{
     public func serialize() -> Data?{
         let encoder = JSONEncoder()
         encoder.dateEncodingStrategy = .iso8601
-        return try? JSONEncoder().encode(originalObject)
+        return try? JSONEncoder().encode(originalObj)
     }
     
     // MARK: - 反序列化 -> 对象
     
     /// 反序列化(data -> object)
-    public static func deserialize(data: Data) -> OriginalObjectType?{
+    public static func deserialize(data: Data) -> OriginalType?{
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         decoder.nonConformingFloatDecodingStrategy = .convertFromString(
             positiveInfinity: "+Infinity",
             negativeInfinity: "-Infinity",
             nan: "NaN")
-        return try? decoder.decode(OriginalObjectType.self, from: data)
+        return try? decoder.decode(OriginalType.self, from: data)
     }
     
     /// 反序列化(jsonString -> object)
-    public static func deserialize(jsonString: String, encoding: String.Encoding) -> OriginalObjectType?{
+    public static func deserialize(jsonString: String, encoding: String.Encoding) -> OriginalType?{
         guard let data = jsonString.data(using: encoding) else{
             return nil
         }
@@ -58,11 +58,11 @@ extension YSOriginalObjectProtocol where OriginalObjectType: Codable{
             positiveInfinity: "+Infinity",
             negativeInfinity: "-Infinity",
             nan: "NaN")
-        return try? decoder.decode(OriginalObjectType.self, from: data)
+        return try? decoder.decode(OriginalType.self, from: data)
     }
     
     /// 反序列化(jsonString -> object)
-    public static func deserialize(jsonString: String) -> OriginalObjectType?{
+    public static func deserialize(jsonString: String) -> OriginalType?{
         guard let data = jsonString.data(using: .utf8) else{
             return nil
         }
@@ -72,11 +72,11 @@ extension YSOriginalObjectProtocol where OriginalObjectType: Codable{
             positiveInfinity: "+Infinity",
             negativeInfinity: "-Infinity",
             nan: "NaN")
-        return try? decoder.decode(OriginalObjectType.self, from: data)
+        return try? decoder.decode(OriginalType.self, from: data)
     }
     
     /// 反序列化(dict -> object)
-    public static func deserialize(dict: [String: Any]) -> OriginalObjectType?{
+    public static func deserialize(dict: [String: Any]) -> OriginalType?{
         guard let data = try? JSONSerialization.data(withJSONObject: dict, options: []) else{
             return nil
         }
@@ -86,24 +86,24 @@ extension YSOriginalObjectProtocol where OriginalObjectType: Codable{
             positiveInfinity: "+Infinity",
             negativeInfinity: "-Infinity",
             nan: "NaN")
-        return try? decoder.decode(OriginalObjectType.self, from: data)
+        return try? decoder.decode(OriginalType.self, from: data)
     }
     
     // MARK: - 反序列化 -> [对象]
     
     /// 反序列化(data -> [object])
-    public static func deserializeList(data: Data) -> [OriginalObjectType]?{
+    public static func deserializeList(data: Data) -> [OriginalType]?{
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         decoder.nonConformingFloatDecodingStrategy = .convertFromString(
             positiveInfinity: "+Infinity",
             negativeInfinity: "-Infinity",
             nan: "NaN")
-        return try? decoder.decode([OriginalObjectType].self, from: data)
+        return try? decoder.decode([OriginalType].self, from: data)
     }
     
     /// 反序列化(jsonString -> [object])
-    public static func deserializeList(jsonString: String, encoding: String.Encoding) -> [OriginalObjectType]?{
+    public static func deserializeList(jsonString: String, encoding: String.Encoding) -> [OriginalType]?{
         guard let data = jsonString.data(using: encoding) else{
             return nil
         }
@@ -113,11 +113,11 @@ extension YSOriginalObjectProtocol where OriginalObjectType: Codable{
             positiveInfinity: "+Infinity",
             negativeInfinity: "-Infinity",
             nan: "NaN")
-        return try? decoder.decode([OriginalObjectType].self, from: data)
+        return try? decoder.decode([OriginalType].self, from: data)
     }
     
     /// 反序列化(jsonString -> [object])
-    public static func deserializeList(jsonString: String) -> [OriginalObjectType]?{
+    public static func deserializeList(jsonString: String) -> [OriginalType]?{
         guard let data = jsonString.data(using: .utf8) else{
             return nil
         }
@@ -127,11 +127,11 @@ extension YSOriginalObjectProtocol where OriginalObjectType: Codable{
             positiveInfinity: "+Infinity",
             negativeInfinity: "-Infinity",
             nan: "NaN")
-        return try? decoder.decode([OriginalObjectType].self, from: data)
+        return try? decoder.decode([OriginalType].self, from: data)
     }
     
     /// 反序列化(dictionaryList -> [object])
-    public static func deserializeList(dictList: [[String: Any]]) -> [OriginalObjectType]?{
+    public static func deserializeList(dictList: [[String: Any]]) -> [OriginalType]?{
         guard let data = try? JSONSerialization.data(withJSONObject: dictList, options: []) else{
             return nil
         }
@@ -141,6 +141,6 @@ extension YSOriginalObjectProtocol where OriginalObjectType: Codable{
             positiveInfinity: "+Infinity",
             negativeInfinity: "-Infinity",
             nan: "NaN")
-        return try? decoder.decode([OriginalObjectType].self, from: data)
+        return try? decoder.decode([OriginalType].self, from: data)
     }
 }

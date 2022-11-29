@@ -8,7 +8,7 @@
 import UIKit
 import UserNotifications
 
-public extension YSOriginalObjectProtocol where OriginalObjectType: UNUserNotificationCenter{
+public extension YSOriginalProtocol where OriginalType: UNUserNotificationCenter{
     
     /// 取消已预定的本地推送
     ///

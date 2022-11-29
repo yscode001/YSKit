@@ -7,7 +7,7 @@
 
 import Foundation
 
-public extension YSOriginalObjectProtocol where OriginalObjectType == YSRadiusInformation{
+public extension YSOriginalProtocol where OriginalType == YSRadiusInformation{
     
     /// 创建圆角信息
     static func create(radius: CGFloat, radiusInnerColor: UIColor, radiusBorderWidth: CGFloat, radiusBorderColor: UIColor, radiusOuterColor: UIColor) -> YSRadiusInformation {
@@ -16,21 +16,21 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == YSRadiusIn
     
     /// 清除指定区域，view背景色需是clear，否则清除之后会显色黑色
     func drawInfoView_clearRect(rect: CGRect){
-        originalObject.drawInfoView_clearRect(rect: rect)
+        originalObj.drawInfoView_clearRect(rect: rect)
     }
     
     /// 绘制圆角区域内的颜色
     func drawIntoView_radiusInnerRect(rect: CGRect){
-        originalObject.drawIntoView_radiusInnerRect(rect: rect)
+        originalObj.drawIntoView_radiusInnerRect(rect: rect)
     }
     
     /// 绘制圆角区域外面边框的颜色
     func drawIntoView_borderArea(rect: CGRect){
-        originalObject.drawIntoView_borderArea(rect: rect)
+        originalObj.drawIntoView_borderArea(rect: rect)
     }
     
     /// 绘制圆角区域外面边框的外面的4个角的颜色
     func drawIntoView_radiusOuterRect(rect: CGRect){
-        originalObject.drawIntoView_radiusOuterRect(rect: rect)
+        originalObj.drawIntoView_radiusOuterRect(rect: rect)
     }
 }

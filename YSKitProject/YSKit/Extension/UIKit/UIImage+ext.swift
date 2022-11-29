@@ -7,33 +7,33 @@
 
 import UIKit
 
-public extension YSOriginalObjectProtocol where OriginalObjectType: UIImage{
+public extension YSOriginalProtocol where OriginalType: UIImage{
     
     var width:CGFloat{
-        return originalObject.size.width
+        return originalObj.size.width
     }
     
     var height:CGFloat{
-        return originalObject.size.height
+        return originalObj.size.height
     }
 }
 
-public extension YSOriginalObjectProtocol where OriginalObjectType: UIImage{
+public extension YSOriginalProtocol where OriginalType: UIImage{
     
     /// 颜色填充
     func tint(_ color: UIColor) -> UIImage?{
-        UIGraphicsBeginImageContextWithOptions(originalObject.size, false, UIScreen.main.scale)
+        UIGraphicsBeginImageContextWithOptions(originalObj.size, false, UIScreen.main.scale)
         
         guard let context = UIGraphicsGetCurrentContext() else{
             UIGraphicsEndImageContext()
             return nil
         }
-        guard let cgImg = originalObject.cgImage else{
+        guard let cgImg = originalObj.cgImage else{
             UIGraphicsEndImageContext()
             return nil
         }
         
-        context.translateBy(x: 0, y: originalObject.size.height)
+        context.translateBy(x: 0, y: originalObj.size.height)
         context.scaleBy(x: 1.0, y: -1.0)
         
         let rect = CGRect(x: 0, y: 0, width: width, height: height)
@@ -51,10 +51,10 @@ public extension YSOriginalObjectProtocol where OriginalObjectType: UIImage{
     }
 }
 
-public extension YSOriginalObjectProtocol where OriginalObjectType: UIImage{
+public extension YSOriginalProtocol where OriginalType: UIImage{
     
     var size_jpeg_kb: Int{
-        guard let data = originalObject.jpegData(compressionQuality: 1) else{
+        guard let data = originalObj.jpegData(compressionQuality: 1) else{
             return 0
         }
         let data_ns = NSData(data: data)
@@ -62,7 +62,7 @@ public extension YSOriginalObjectProtocol where OriginalObjectType: UIImage{
     }
     
     var size_png_kb: Int{
-        guard let data = originalObject.pngData() else{
+        guard let data = originalObj.pngData() else{
             return 0
         }
         let data_ns = NSData(data: data)
@@ -70,25 +70,25 @@ public extension YSOriginalObjectProtocol where OriginalObjectType: UIImage{
     }
 }
 
-public extension YSOriginalObjectProtocol where OriginalObjectType: UIImage{
+public extension YSOriginalProtocol where OriginalType: UIImage{
     
     /// 等比例缩放
     func scale(width: CGFloat) -> UIImage{
         if width <= 0{
-            return originalObject
+            return originalObj
         }
         
-        let scaleHeight = width / originalObject.size.width * originalObject.size.height
+        let scaleHeight = width / originalObj.size.width * originalObj.size.height
         let scaleSize = CGSize(width: width, height: scaleHeight)
         
         UIGraphicsBeginImageContextWithOptions(scaleSize, false, 0)
-        originalObject.draw(in: CGRect(origin: CGPoint.zero, size: scaleSize))
+        originalObj.draw(in: CGRect(origin: CGPoint.zero, size: scaleSize))
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         if let iimg = image{
             return iimg
         }
-        return originalObject
+        return originalObj
     }
     
     /// 质量压缩，虽然有误差范围，但实际很难确定图片是否能压缩到误差范围内，无法实现精确压缩

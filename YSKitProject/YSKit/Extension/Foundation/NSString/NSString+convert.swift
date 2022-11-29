@@ -7,9 +7,9 @@
 
 import Foundation
 
-public extension YSOriginalObjectProtocol where OriginalObjectType == NSString{
+public extension YSOriginalProtocol where OriginalType == NSString{
     
-    var string:String{ return originalObject as String }
+    var string:String{ return originalObj as String }
     
     var attributedString:NSAttributedString{ return NSAttributedString(string: string) }
     

@@ -7,15 +7,15 @@
 
 import Foundation
 
-public extension YSOriginalObjectProtocol where OriginalObjectType: UIView{
+public extension YSOriginalProtocol where OriginalType: UIView{
     
     private var redPointView:YSRedPointV{
-        let redPointV = originalObject.subviews.first { (subv) -> Bool in
+        let redPointV = originalObj.subviews.first { (subv) -> Bool in
             return subv.isKind(of: YSRedPointV.self)
         }
         guard let redPView = redPointV as? YSRedPointV else {
             let newRedPV = YSRedPointV()
-            originalObject.addSubview(newRedPV)
+            originalObj.addSubview(newRedPV)
             return newRedPV
         }
         return redPView
@@ -25,13 +25,13 @@ public extension YSOriginalObjectProtocol where OriginalObjectType: UIView{
     func redPoint(show: Bool){
         if show{
             redPointView.isHidden = false
-            if originalObject.subviews.contains(redPointView){
-                originalObject.bringSubviewToFront(redPointView)
+            if originalObj.subviews.contains(redPointView){
+                originalObj.bringSubviewToFront(redPointView)
             }
         } else{
             redPointView.isHidden = true
-            if originalObject.subviews.contains(redPointView){
-                originalObject.sendSubviewToBack(redPointView)
+            if originalObj.subviews.contains(redPointView){
+                originalObj.sendSubviewToBack(redPointView)
             }
         }
         redPointView.updateRedPointViewFrame()

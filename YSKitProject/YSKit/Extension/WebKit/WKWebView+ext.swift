@@ -7,21 +7,21 @@
 
 import WebKit
 
-public extension YSOriginalObjectProtocol where OriginalObjectType: WKWebView{
+public extension YSOriginalProtocol where OriginalType: WKWebView{
     
     /// 加载网页
-    @discardableResult func load(_ urlString: String?, cachePolicy: URLRequest.CachePolicy? = .returnCacheDataElseLoad, timeoutInterval: TimeInterval? = 10) -> OriginalObjectType{
+    @discardableResult func load(_ urlString: String?, cachePolicy: URLRequest.CachePolicy? = .returnCacheDataElseLoad, timeoutInterval: TimeInterval? = 10) -> OriginalType{
         guard let str = urlString, let url = URL(string: str) else{
-            return originalObject
+            return originalObj
         }
-        originalObject.load(URLRequest(url: url, cachePolicy: cachePolicy!, timeoutInterval: timeoutInterval!))
-        return originalObject
+        originalObj.load(URLRequest(url: url, cachePolicy: cachePolicy!, timeoutInterval: timeoutInterval!))
+        return originalObj
     }
     
     /// 设置滚动条是否显示
-    @discardableResult func setIndicator(_ horizontal: Bool, _ vertical: Bool) -> OriginalObjectType{
-        originalObject.scrollView.showsVerticalScrollIndicator = horizontal
-        originalObject.scrollView.showsHorizontalScrollIndicator = vertical
-        return originalObject
+    @discardableResult func setIndicator(_ horizontal: Bool, _ vertical: Bool) -> OriginalType{
+        originalObj.scrollView.showsVerticalScrollIndicator = horizontal
+        originalObj.scrollView.showsHorizontalScrollIndicator = vertical
+        return originalObj
     }
 }

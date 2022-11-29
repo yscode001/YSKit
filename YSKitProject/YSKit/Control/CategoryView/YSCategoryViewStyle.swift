@@ -99,7 +99,7 @@ public struct YSCategoryViewStyle: YSCoreProtocol{
     }
 }
 
-public extension YSOriginalObject where OriginalObjectType == YSCategoryViewStyle{
+public extension YSOriginalObject where OriginalType == YSCategoryViewStyle{
     
     /// 创建默认样式
     static func create() -> YSCategoryViewStyle{

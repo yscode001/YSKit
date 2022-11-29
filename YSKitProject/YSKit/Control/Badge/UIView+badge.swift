@@ -7,15 +7,15 @@
 
 import Foundation
 
-public extension YSOriginalObjectProtocol where OriginalObjectType: UIView{
+public extension YSOriginalProtocol where OriginalType: UIView{
     
     private var badgeView:YSBadgeView{
-        let badgev = originalObject.subviews.first { (subv) -> Bool in
+        let badgev = originalObj.subviews.first { (subv) -> Bool in
             return subv.isKind(of: YSBadgeView.self)
         }
         guard let badgeView = badgev as? YSBadgeView else {
             let newBadgeV = YSBadgeView()
-            originalObject.addSubview(newBadgeV)
+            originalObj.addSubview(newBadgeV)
             return newBadgeV
         }
         return badgeView
@@ -25,14 +25,14 @@ public extension YSOriginalObjectProtocol where OriginalObjectType: UIView{
     func badge(value: String){
         if value.count <= 0{
             badgeView.isHidden = true
-            if originalObject.subviews.contains(badgeView){
-                originalObject.sendSubviewToBack(badgeView)
+            if originalObj.subviews.contains(badgeView){
+                originalObj.sendSubviewToBack(badgeView)
             }
         } else{
             badgeView.isHidden = false
             badgeView.badgeValue = value
-            if originalObject.subviews.contains(badgeView){
-                originalObject.bringSubviewToFront(badgeView)
+            if originalObj.subviews.contains(badgeView){
+                originalObj.bringSubviewToFront(badgeView)
             }
         }
     }

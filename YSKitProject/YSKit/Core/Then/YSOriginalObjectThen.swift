@@ -13,7 +13,7 @@ import CoreGraphics
 import UIKit.UIGeometry
 #endif
 
-extension YSOriginalObjectProtocol where OriginalObjectType: Any {
+extension YSOriginalProtocol where OriginalType: Any {
     
     /// Makes it available to set properties with closures just after initializing and copying the value types.
     ///
@@ -22,8 +22,8 @@ extension YSOriginalObjectProtocol where OriginalObjectType: Any {
     ///       $0.size.width = 100
     ///     }
     @inlinable
-    public func with(_ block: (inout OriginalObjectType) throws -> Void) rethrows -> OriginalObjectType {
-        var copy = originalObject
+    public func with(_ block: (inout OriginalType) throws -> Void) rethrows -> OriginalType {
+        var copy = originalObj
         try block(&copy)
         return copy
     }
@@ -36,12 +36,12 @@ extension YSOriginalObjectProtocol where OriginalObjectType: Any {
     ///       $0.synchronize()
     ///     }
     @inlinable
-    public func `do`(_ block: (OriginalObjectType) throws -> Void) rethrows {
-        try block(originalObject)
+    public func `do`(_ block: (OriginalType) throws -> Void) rethrows {
+        try block(originalObj)
     }
 }
 
-extension YSOriginalObjectProtocol where OriginalObjectType: AnyObject {
+extension YSOriginalProtocol where OriginalType: AnyObject {
     
     /// Makes it available to set properties with closures just after initializing.
     ///
@@ -51,8 +51,8 @@ extension YSOriginalObjectProtocol where OriginalObjectType: AnyObject {
     ///       $0.text = "Hello, World!"
     ///     }
     @inlinable
-    public func then(_ block: (OriginalObjectType) throws -> Void) rethrows -> OriginalObjectType {
-        try block(originalObject)
-        return originalObject
+    public func then(_ block: (OriginalType) throws -> Void) rethrows -> OriginalType {
+        try block(originalObj)
+        return originalObj
     }
 }

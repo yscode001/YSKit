@@ -42,7 +42,7 @@ public class YSNavBar: UIView{
 }
 
 // MARK: - 创建导航条，外界VC只需要添加至View上而无需布局，因为frame在初始化时已指定
-public extension YSOriginalObjectProtocol where OriginalObjectType == YSNavBar{
+public extension YSOriginalProtocol where OriginalType == YSNavBar{
     
     /// 创建导航条，外界VC只需要添加至View上而无需布局，因为frame在初始化时已指定
     static func create(statusBarHeight: CGFloat = UIScreen.ys.statusBarFrame.height) -> YSNavBar{
@@ -51,25 +51,25 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == YSNavBar{
 }
 
 // MARK: - 对外提供API，导航栏样式设置相关
-public extension YSOriginalObjectProtocol where OriginalObjectType == YSNavBar{
+public extension YSOriginalProtocol where OriginalType == YSNavBar{
     
     /// 设置背景视图
     func setupNavBGView(setup: @escaping((UIView) -> ())){
-        setup(originalObject.nav_bgV)
+        setup(originalObj.nav_bgV)
     }
     
     /// 设置UINavigationBar
     func setupNavBar(setup: @escaping(UINavigationBar) -> ()){
-        setup(originalObject.nav_bar)
+        setup(originalObj.nav_bar)
     }
     
     /// 设置UINavigationItem
     func setupNavItem(setup: @escaping(UINavigationItem) -> ()){
-        setup(originalObject.nav_item)
+        setup(originalObj.nav_item)
     }
     
     /// 设置底部的分割线
     func setupNavBottomLine(setup: @escaping((UIView) -> ())){
-        setup(originalObject.nav_bottomLine)
+        setup(originalObj.nav_bottomLine)
     }
 }

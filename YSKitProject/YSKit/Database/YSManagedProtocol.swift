@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-public protocol YSManagedProtocol: class, NSFetchRequestResult {
+public protocol YSManagedProtocol: AnyObject, NSFetchRequestResult {
     
     /// 实体描述
     static var entity: NSEntityDescription { get }

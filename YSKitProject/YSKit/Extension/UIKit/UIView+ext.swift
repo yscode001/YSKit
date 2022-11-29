@@ -18,48 +18,48 @@ public extension YSOriginalProtocol where OriginalType: UIView{
     }
     
     /// 批量添加子视图
-    func addSubviews(_ subviewList: [UIView]){
-        for subV in subviewList{
+    func addSubviews(_ subviewArray: [UIView]){
+        for subV in subviewArray{
             originalObj.addSubview(subV)
         }
     }
     
     /// 移除全部子视图
     func removeAllSubviews(){
-        for subView in originalObj.subviews.reversed(){
-            subView.removeFromSuperview()
+        for subV in originalObj.subviews.reversed(){
+            subV.removeFromSuperview()
         }
     }
     
     /// 移除部分子视图
     func removeSomeSubviews(tags: Int...){
         let subvs = originalObj.subviews.filter{ tags.contains($0.tag) }
-        for subView in subvs.reversed(){
-            subView.removeFromSuperview()
+        for subV in subvs.reversed(){
+            subV.removeFromSuperview()
         }
     }
     
     /// 移除部分子视图
-    func removeSomeSubviews(tagList: [Int]){
-        let subvs = originalObj.subviews.filter{ tagList.contains($0.tag) }
-        for subView in subvs.reversed(){
-            subView.removeFromSuperview()
+    func removeSomeSubviews(tagArray: [Int]){
+        let subvs = originalObj.subviews.filter{ tagArray.contains($0.tag) }
+        for subV in subvs.reversed(){
+            subV.removeFromSuperview()
         }
     }
     
     /// 移除部分子视图
     func removeSomeSubviews(subviews: UIView...){
         let subvs = originalObj.subviews.filter{ subviews.contains($0) }
-        for subView in subvs.reversed(){
-            subView.removeFromSuperview()
+        for subV in subvs.reversed(){
+            subV.removeFromSuperview()
         }
     }
     
     /// 移除部分子视图
-    func removeSomeSubviews(subviewList: [UIView]){
-        let subvs = originalObj.subviews.filter{ subviewList.contains($0) }
-        for subView in subvs.reversed(){
-            subView.removeFromSuperview()
+    func removeSomeSubviews(subviewArray: [UIView]){
+        let subvs = originalObj.subviews.filter{ subviewArray.contains($0) }
+        for subV in subvs.reversed(){
+            subV.removeFromSuperview()
         }
     }
 }
@@ -105,14 +105,14 @@ public extension YSOriginalProtocol where OriginalType: UIView{
 extension UIView{
     
     /// 是否可以执行，常用于UIButton的防重点
-    public final var canExecute: Bool {
+    public final var canClick: Bool {
         set {
-            objc_setAssociatedObject(self, AssociateKeys.canExecute, newValue, .OBJC_ASSOCIATION_ASSIGN)
+            objc_setAssociatedObject(self, AssociateKeys.canClick, newValue, .OBJC_ASSOCIATION_ASSIGN)
         } get {
-            if let canExe = objc_getAssociatedObject(self, AssociateKeys.canExecute) as? Bool{
+            if let canExe = objc_getAssociatedObject(self, AssociateKeys.canClick) as? Bool{
                 return canExe
             } else{
-                self.canExecute = true
+                self.canClick = true
                 return true
             }
         }

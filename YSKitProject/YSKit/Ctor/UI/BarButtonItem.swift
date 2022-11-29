@@ -1,17 +1,17 @@
 //
-//  UIBarButtonItem+create.swift
+//  BarButtonItem.swift
 //  YSKit
 //
-//  Created by 姚帅 on 2020/12/30.
+//  Created by 姚帅 on 2022/11/29.
 //
 
 import UIKit
 
 // MARK: - 根据customView创建UIBarButtonItem
-public extension YSOriginalObjectProtocol where OriginalObjectType == UIBarButtonItem{
+public extension Ctor{
     
-    static func create(customV: UIView) -> OriginalObjectType{
-        return UIBarButtonItem().ys.then{ $0.customView = customV }
+    static func barButtonItem(customView: UIView) -> UIBarButtonItem{
+        return UIBarButtonItem().ys.then{ $0.customView = customView }
     }
 }
 
@@ -50,11 +50,11 @@ public struct UIBarButtonItemContent: YSCoreProtocol{
     
     private(set) var title_disable = ""
     
-    private(set) var titleColor:UIColor = .clear
+    private(set) var titleColor: UIColor = .clear
     
-    private(set) var titleColor_disable:UIColor = .clear
+    private(set) var titleColor_disable: UIColor = .clear
     
-    private(set) var font:UIFont = UIFont.systemFont(ofSize: 13)
+    private(set) var font: UIFont = UIFont.systemFont(ofSize: 13)
     
     internal init() {}
     
@@ -78,27 +78,27 @@ public struct UIBarButtonItemContent: YSCoreProtocol{
     }
 }
 
-public extension YSOriginalObjectProtocol where OriginalObjectType == UIBarButtonItemContent{
+public extension Ctor{
     
     /// 正常状态
-    static func create(imageName: String, title: String, titleColor: UIColor, font: UIFont = UIFont.systemFont(ofSize: 13)) -> OriginalObjectType{
+    static func barButtonItemContent(imageName: String, title: String, titleColor: UIColor, font: UIFont = UIFont.systemFont(ofSize: 13)) -> UIBarButtonItemContent{
         return UIBarButtonItemContent(imageName: imageName, title: title, titleColor: titleColor, font: font)
     }
     
     /// 正常状态+禁用状态
-    static func create(imageName: String, title: String, titleColor: UIColor, imageName_disable: String,  title_disable: String,  titleColor_disable: UIColor) -> OriginalObjectType{
+    static func barButtonItemContent(imageName: String, title: String, titleColor: UIColor, imageName_disable: String,  title_disable: String,  titleColor_disable: UIColor) -> UIBarButtonItemContent{
         return UIBarButtonItemContent(imageName: imageName, title: title, titleColor: titleColor, font: UIFont.systemFont(ofSize: 13), imageName_disable: imageName_disable, title_disable: title_disable, titleColor_disable: titleColor_disable)
     }
     
     /// 正常状态+禁用状态
-    static func create(imageName: String, title: String, titleColor: UIColor, imageName_disable: String,  title_disable: String,  titleColor_disable: UIColor, font: UIFont) -> OriginalObjectType{
+    static func barButtonItemContent(imageName: String, title: String, titleColor: UIColor, imageName_disable: String,  title_disable: String,  titleColor_disable: UIColor, font: UIFont) -> UIBarButtonItemContent{
         return UIBarButtonItemContent(imageName: imageName, title: title, titleColor: titleColor, font: font, imageName_disable: imageName_disable, title_disable: title_disable, titleColor_disable: titleColor_disable)
     }
 }
 
-public extension YSOriginalObjectProtocol where OriginalObjectType == UIBarButtonItem{
+public extension Ctor{
     
-    static func create(alignment: UIControl.ContentHorizontalAlignment, style: UIBarButtonItemStyle, content: UIBarButtonItemContent, target: Any, action: Selector) -> OriginalObjectType{
+    static func barButtonItem(alignment: UIControl.ContentHorizontalAlignment, style: UIBarButtonItemStyle, content: UIBarButtonItemContent, target: Any, action: Selector) -> UIBarButtonItem{
         let btn = UIButton().ys.then{
             $0.contentHorizontalAlignment = alignment
             $0.addTarget(target, action: action, for: .touchUpInside)
@@ -144,6 +144,6 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == UIBarButto
                 $0.setTitleColor(content.titleColor_disable, for: .disabled)
             }
         }
-        return UIBarButtonItem.ys.create(customV: btn)
+        return Ctor.barButtonItem(customView: btn)
     }
 }

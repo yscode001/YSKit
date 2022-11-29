@@ -1,16 +1,16 @@
 //
-//  UIImage+create.swift
+//  Image.swift
 //  YSKit
 //
-//  Created by 姚帅 on 2020/12/30.
+//  Created by 姚帅 on 2022/11/29.
 //
 
 import UIKit
 
-public extension YSOriginalObjectProtocol where OriginalObjectType == UIImage{
+public extension Ctor{
     
     /// 从Assets中加载图片
-    static func create(_ named: String?) -> OriginalObjectType?{
+    static func img(_ named: String?) -> UIImage?{
         guard let name = named else {
             return nil
         }
@@ -18,7 +18,7 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == UIImage{
     }
     
     /// 创建纯色图片
-    static func create(color: UIColor, size: CGSize) -> OriginalObjectType?{
+    static func img(color: UIColor, size: CGSize) -> UIImage?{
         if size.width <= 0 || size.height <= 0{
             return nil
         }
@@ -36,7 +36,7 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == UIImage{
     }
     
     /// 创建一个圆角矩形的图片(矩形内是指定颜色，四个角是透明色)
-    static func create(color: UIColor, size: CGSize, cornerRadius: CGFloat) -> OriginalObjectType?{
+    static func img(color: UIColor, size: CGSize, cornerRadius: CGFloat) -> UIImage?{
         if size.width <= 0 || size.height <= 0{
             return nil
         }
@@ -60,19 +60,17 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == UIImage{
     }
     
     /// 从bundle(默认Bundle.main)中加载图片，适用于大图片，且使用率低
-    static func create(fileName: String, bundle: Bundle? = Bundle.main) -> OriginalObjectType?{
+    static func img(fileName: String, bundle: Bundle? = Bundle.main) -> UIImage?{
         guard let path = bundle?.path(forResource: fileName, ofType: nil) else{
             return nil
         }
         return UIImage(contentsOfFile: path)
     }
 }
-
-// MARK: - 生成二维码、条形码
-public extension YSOriginalObjectProtocol where OriginalObjectType == UIImage{
+public extension Ctor{
     
     /// 生成二维码
-    static func createQRCode(code: String, width: CGFloat, height: CGFloat) -> OriginalObjectType?{
+    static func imgQRCode(code: String, width: CGFloat, height: CGFloat) -> UIImage?{
         if width <= 0 || height <= 0{
             return nil
         }
@@ -100,7 +98,7 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == UIImage{
     }
     
     /// 生成条形码
-    static func createBarCode(code: String, width: CGFloat, height: CGFloat) -> OriginalObjectType?{
+    static func imgBarCode(code: String, width: CGFloat, height: CGFloat) -> UIImage?{
         if width <= 0 || height <= 0{
             return nil
         }

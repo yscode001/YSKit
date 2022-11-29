@@ -27,12 +27,12 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == String{
     }
     
     func local(language: String) -> String{
-        let bundle = Bundle.ys.create(language: language)
+        let bundle = Ctor.bundle(language: language)
         return NSLocalizedString(originalObject, tableName: nil, bundle: bundle, value: "", comment: "")
     }
     
     func local(language: String, tableName: String) -> String{
-        let bundle = Bundle.ys.create(language: language)
+        let bundle = Ctor.bundle(language: language)
         return NSLocalizedString(originalObject, tableName: tableName, bundle: bundle, value: "", comment: "")
     }
 }
@@ -61,13 +61,13 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == String{
     }
     
     func local(language: String, arguments: [CVarArg]) -> String{
-        let bundle = Bundle.ys.create(language: language)
+        let bundle = Ctor.bundle(language: language)
         let format = NSLocalizedString(originalObject, tableName: nil, bundle: bundle, value: "", comment: "")
         return arguments.isEmpty ? format : String(format: format, arguments: arguments)
     }
     
     func local(language: String, tableName: String, arguments: [CVarArg]) -> String{
-        let bundle = Bundle.ys.create(language: language)
+        let bundle = Ctor.bundle(language: language)
         let format = NSLocalizedString(originalObject, tableName: tableName, bundle: bundle, value: "", comment: "")
         return arguments.isEmpty ? format : String(format: format, arguments: arguments)
     }

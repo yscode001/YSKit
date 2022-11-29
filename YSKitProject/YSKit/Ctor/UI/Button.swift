@@ -1,41 +1,41 @@
 //
-//  UIButton+create.swift
+//  Button.swift
 //  YSKit
 //
-//  Created by 姚帅 on 2020/12/30.
+//  Created by 姚帅 on 2022/11/29.
 //
 
 import UIKit
 
 // MARK: - 根据title创建UIButton
-public extension YSOriginalObjectProtocol where OriginalObjectType == UIButton{
+public extension Ctor{
     
-    static func create(titlec: UIColor) -> OriginalObjectType{
+    static func btn(titleColor: UIColor) -> UIButton{
         return UIButton().ys.then{
-            $0.setTitleColor(titlec, for: .normal)
+            $0.setTitleColor(titleColor, for: .normal)
             $0.adjustsImageWhenHighlighted = false
         }
     }
     
-    static func create(titlec: UIColor, title: String) -> OriginalObjectType{
+    static func btn(titleColor: UIColor, title: String) -> UIButton{
         return UIButton().ys.then{
-            $0.setTitleColor(titlec, for: .normal)
+            $0.setTitleColor(titleColor, for: .normal)
             $0.setTitle(title, for: .normal)
             $0.adjustsImageWhenHighlighted = false
         }
     }
     
-    static func create(titlec: UIColor, target: Any, action: Selector) -> OriginalObjectType{
+    static func btn(titleColor: UIColor, target: Any, action: Selector) -> UIButton{
         return UIButton().ys.then{
-            $0.setTitleColor(titlec, for: .normal)
+            $0.setTitleColor(titleColor, for: .normal)
             $0.adjustsImageWhenHighlighted = false
             $0.addTarget(target, action: action, for: .touchUpInside)
         }
     }
     
-    static func create(titlec: UIColor, title: String, target: Any, action: Selector) -> OriginalObjectType{
+    static func btn(titleColor: UIColor, title: String, target: Any, action: Selector) -> UIButton{
         return UIButton().ys.then{
-            $0.setTitleColor(titlec, for: .normal)
+            $0.setTitleColor(titleColor, for: .normal)
             $0.setTitle(title, for: .normal)
             $0.adjustsImageWhenHighlighted = false
             $0.addTarget(target, action: action, for: .touchUpInside)
@@ -44,16 +44,16 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == UIButton{
 }
 
 // MARK: - 根据image创建UIButton
-public extension YSOriginalObjectProtocol where OriginalObjectType == UIButton{
+public extension Ctor{
     
-    static func create(img: UIImage?) -> OriginalObjectType{
+    static func btn(img: UIImage?) -> UIButton{
         return UIButton().ys.then{
             $0.setImage(img, for: .normal)
             $0.adjustsImageWhenHighlighted = false
         }
     }
     
-    static func create(img: UIImage?, target: Any, action: Selector) -> OriginalObjectType{
+    static func btn(img: UIImage?, target: Any, action: Selector) -> UIButton{
         return UIButton().ys.then{
             $0.setImage(img, for: .normal)
             $0.adjustsImageWhenHighlighted = false
@@ -62,18 +62,18 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == UIButton{
     }
 }
 
-public extension YSOriginalObjectProtocol where OriginalObjectType == UIButton{
+public extension Ctor{
     
-    static func create(imgName: String) -> OriginalObjectType{
+    static func btn(imgName: String?) -> UIButton{
         return UIButton().ys.then{
-            $0.setImage(UIImage(named: imgName), for: .normal)
+            $0.setImage(Ctor.img(imgName), for: .normal)
             $0.adjustsImageWhenHighlighted = false
         }
     }
     
-    static func create(imgName: String, target: Any, action: Selector) -> OriginalObjectType{
+    static func btn(imgName: String?, target: Any, action: Selector) -> UIButton{
         return UIButton().ys.then{
-            $0.setImage(UIImage(named: imgName), for: .normal)
+            $0.setImage(Ctor.img(imgName), for: .normal)
             $0.adjustsImageWhenHighlighted = false
             $0.addTarget(target, action: action, for: .touchUpInside)
         }

@@ -1,13 +1,13 @@
 //
-//  YSEmptyColvCell.swift
+//  EmptyColvCell.swift
 //  YSKit
 //
-//  Created by 姚帅 on 2020/12/30.
+//  Created by 姚帅 on 2022/11/29.
 //
 
 import UIKit
 
-final class YSEmptyColvCell: UICollectionViewCell {
+final class EmptyColvCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

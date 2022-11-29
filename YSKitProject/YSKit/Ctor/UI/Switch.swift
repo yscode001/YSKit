@@ -1,35 +1,35 @@
 //
-//  UISwitch+create.swift
+//  Switch.swift
 //  YSKit
 //
-//  Created by 姚帅 on 2020/12/30.
+//  Created by 姚帅 on 2022/11/29.
 //
 
 import UIKit
 
-public extension YSOriginalObjectProtocol where OriginalObjectType == UISwitch{
+public extension Ctor{
     
-    static func create(target: Any, action: Selector) -> OriginalObjectType{
+    static func `switch`(target: Any, action: Selector) -> UISwitch{
         return UISwitch().ys.then{
             $0.addTarget(target, action: action, for: .valueChanged)
         }
     }
     
-    static func create(target: Any, action: Selector, isOn: Bool) -> OriginalObjectType{
+    static func `switch`(target: Any, action: Selector, isOn: Bool) -> UISwitch{
         return UISwitch().ys.then{
             $0.isOn = isOn
             $0.addTarget(target, action: action, for: .valueChanged)
         }
     }
     
-    static func create(target: Any, action: Selector, onTintC: UIColor) -> OriginalObjectType{
+    static func `switch`(target: Any, action: Selector, onTintC: UIColor) -> UISwitch{
         return UISwitch().ys.then{
             $0.onTintColor = onTintC
             $0.addTarget(target, action: action, for: .valueChanged)
         }
     }
     
-    static func create(target: Any, action: Selector, isOn: Bool, onTintC: UIColor) -> OriginalObjectType{
+    static func `switch`(target: Any, action: Selector, isOn: Bool, onTintC: UIColor) -> UISwitch{
         return UISwitch().ys.then{
             $0.isOn = isOn
             $0.onTintColor = onTintC

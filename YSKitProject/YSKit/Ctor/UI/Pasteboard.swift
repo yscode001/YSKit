@@ -1,8 +1,8 @@
 //
-//  UIPasteboard+create.swift
+//  Pasteboard.swift
 //  YSKit
 //
-//  Created by 姚帅 on 2020/12/30.
+//  Created by 姚帅 on 2022/11/29.
 //
 
 /*
@@ -30,21 +30,21 @@ public enum YSUIPasteboardType{
     case app
 }
 
-public extension YSOriginalObjectProtocol where OriginalObjectType == UIPasteboard{
+public extension Ctor{
     
-    static func create(_ type: YSUIPasteboardType) -> OriginalObjectType?{
+    static func pasteboard(_ type: YSUIPasteboardType) -> UIPasteboard?{
         switch type {
         case .system:
             return UIPasteboard.general
         case .acount:
-            return UIPasteboard(name: UIPasteboard.Name("sf_pasteboard"), create: true)
+            return UIPasteboard(name: UIPasteboard.Name("ys_paste_board"), create: true)
         case .app:
             return UIPasteboard.withUniqueName()
         }
     }
     
-    static func create(_ type: YSUIPasteboardType, string: String) -> OriginalObjectType?{
-        return UIPasteboard.ys.create(type)?.ys.then{
+    static func pasteboard(_ type: YSUIPasteboardType, string: String) -> UIPasteboard?{
+        return Ctor.pasteboard(type)?.ys.then{
             $0.string = string
         }
     }

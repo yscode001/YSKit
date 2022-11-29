@@ -1,13 +1,13 @@
 //
-//  UIProgressView+create.swift
+//  ProgressView.swift
 //  YSKit
 //
-//  Created by 姚帅 on 2020/12/30.
+//  Created by 姚帅 on 2022/11/29.
 //
 
 import UIKit
 
-public extension YSOriginalObjectProtocol where OriginalObjectType == UIProgressView{
+public extension Ctor{
     
     /// 创建进度条
     ///
@@ -15,7 +15,7 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == UIProgress
     ///   - progressTintColor: 已过进度部分的颜色
     ///   - trackTintColor: 未过进度部分的颜色
     /// - Returns: 返回进度条
-    static func create(progressTintColor: UIColor, trackTintColor: UIColor) -> OriginalObjectType{
+    static func progressView(progressTintColor: UIColor, trackTintColor: UIColor) -> UIProgressView{
         return UIProgressView().ys.then{
             $0.progressTintColor = progressTintColor
             $0.trackTintColor = trackTintColor
@@ -29,7 +29,7 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == UIProgress
     ///   - trackTintColor: 未过进度部分的颜色
     ///   - style: 风格
     /// - Returns: 返回进度条
-    static func create(progressTintColor: UIColor, trackTintColor: UIColor, style: UIProgressView.Style) -> OriginalObjectType{
+    static func progressView(progressTintColor: UIColor, trackTintColor: UIColor, style: UIProgressView.Style) -> UIProgressView{
         return UIProgressView(progressViewStyle: style).ys.then{
             $0.progressTintColor = progressTintColor
             $0.trackTintColor = trackTintColor

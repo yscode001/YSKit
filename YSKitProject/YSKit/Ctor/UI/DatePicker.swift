@@ -1,15 +1,15 @@
 //
-//  UIDatePicker+create.swift
+//  DatePicker.swift
 //  YSKit
 //
-//  Created by 姚帅 on 2020/12/30.
+//  Created by 姚帅 on 2022/11/29.
 //
 
 import UIKit
 
-public extension YSOriginalObjectProtocol where OriginalObjectType == UIDatePicker{
+public extension Ctor{
     
-    static func create(mode: UIDatePicker.Mode, date: Date?, min: Date?, max: Date?) -> OriginalObjectType{
+    static func datePicker(mode: UIDatePicker.Mode, date: Date?, min: Date?, max: Date?) -> UIDatePicker{
         return UIDatePicker().ys.then{
             $0.datePickerMode = mode
             $0.minimumDate = min

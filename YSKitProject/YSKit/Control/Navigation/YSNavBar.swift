@@ -11,7 +11,7 @@ import UIKit
 public class YSNavBar: UIView{
     
     // MARK: - 自定义导航子视图
-    fileprivate lazy var nav_bgV:UIView = UIView.ys.create(bgc: .clear)
+    fileprivate lazy var nav_bgV:UIView = Ctor.view(bgColor: .clear)
     
     fileprivate lazy var nav_bar: UINavigationBar = UINavigationBar().ys.then {
         $0.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)]
@@ -23,7 +23,7 @@ public class YSNavBar: UIView{
     
     fileprivate lazy var nav_item:UINavigationItem = UINavigationItem()
     
-    fileprivate lazy var nav_bottomLine:UIView = UIView.ys.create(bgc: UIColor.ys.create(hex: 0xcccccc))
+    fileprivate lazy var nav_bottomLine:UIView = Ctor.view(bgColor: Ctor.color(hex: 0xcccccc))
     
     convenience init(statusBarHeight: CGFloat = UIScreen.ys.statusBarFrame.height) {
         let rectt = CGRect(x: 0, y: 0, width: UIScreen.ys.mainWidth, height: statusBarHeight + InternalConst.navHeight)

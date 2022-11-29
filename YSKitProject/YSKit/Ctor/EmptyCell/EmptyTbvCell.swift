@@ -1,17 +1,17 @@
 //
-//  YSEmptyTbvCell.swift
+//  EmptyTbvCell.swift
 //  YSKit
 //
-//  Created by 姚帅 on 2020/12/30.
+//  Created by 姚帅 on 2022/11/29.
 //
 
 import UIKit
 
-internal let YSEmptyCellID = "YSEmptyCellID"
+internal let EmptyCellID = "EmptyCellID"
 
-final class YSEmptyTbvCell: UITableViewCell {
+final class EmptyTbvCell: UITableViewCell {
     
-    private lazy var emptyView:UIView = UIView()
+    private lazy var emptyView: UIView = UIView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

@@ -15,9 +15,8 @@ Pod::Spec.new do |s|
     ss.source_files         = ["Core/**/*.swift"]
   end
   
-  s.subspec "CreateObject" do |ss|
-    ss.dependency           'YSKit/Core'
-    ss.source_files         = ["CreateObject/**/*.swift"]
+  s.subspec "Ctor" do |ss|
+    ss.source_files         = ["Ctor/**/*.swift"]
   end
   
   s.subspec "Extension" do |ss|

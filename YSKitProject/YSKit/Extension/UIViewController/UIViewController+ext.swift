@@ -28,8 +28,8 @@ public extension YSOriginalProtocol where OriginalType: UIViewController{
         }
     }
     
-    /// popToVC
-    func popToVC(_ viewController: UIViewController, animated: Bool){
+    /// popTo
+    func popTo(_ viewController: UIViewController, animated: Bool){
         if originalObj.isKind(of: UINavigationController.self){
             (originalObj as? UINavigationController)?.popToViewController(viewController, animated: animated)
         } else{
@@ -37,8 +37,8 @@ public extension YSOriginalProtocol where OriginalType: UIViewController{
         }
     }
     
-    /// popToRootVC
-    func popToRootVC(animated: Bool){
+    /// popToRoot
+    func popToRoot(animated: Bool){
         if originalObj.isKind(of: UINavigationController.self){
             (originalObj as? UINavigationController)?.popToRootViewController(animated: animated)
         } else{

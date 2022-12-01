@@ -20,7 +20,7 @@ public extension YSOriginalProtocol where OriginalType == CGSize{
 public extension YSOriginalProtocol where OriginalType == Int{
     
     /// 在范围内，直接返回，否则返回边界值
-    func rangeVal(_ min: Int, _ max: Int) -> Int{
+    func clamp(_ min: Int, _ max: Int) -> Int{
         if min <= originalObj && originalObj <= max{
             return originalObj
         } else if originalObj < min{
@@ -34,7 +34,7 @@ public extension YSOriginalProtocol where OriginalType == Int{
 public extension YSOriginalProtocol where OriginalType == Float{
     
     /// 在范围内，直接返回，否则返回边界值
-    func rangeVal(_ min: Float, _ max: Float) -> Float{
+    func clamp(_ min: Float, _ max: Float) -> Float{
         if min <= originalObj && originalObj <= max{
             return originalObj
         } else if originalObj < min{
@@ -48,7 +48,7 @@ public extension YSOriginalProtocol where OriginalType == Float{
 public extension YSOriginalProtocol where OriginalType == CGFloat{
     
     /// 在范围内，直接返回，否则返回边界值
-    func rangeVal(_ min: CGFloat, _ max: CGFloat) -> CGFloat{
+    func clamp(_ min: CGFloat, _ max: CGFloat) -> CGFloat{
         if min <= originalObj && originalObj <= max{
             return originalObj
         } else if originalObj < min{
@@ -62,7 +62,7 @@ public extension YSOriginalProtocol where OriginalType == CGFloat{
 public extension YSOriginalProtocol where OriginalType == Double{
     
     /// 在范围内，直接返回，否则返回边界值
-    func rangeVal(_ min: Double, _ max: Double) -> Double{
+    func clamp(_ min: Double, _ max: Double) -> Double{
         if min <= originalObj && originalObj <= max{
             return originalObj
         } else if originalObj < min{

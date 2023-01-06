@@ -19,6 +19,7 @@
 		3178AF0929680601008F759B /* CurUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3178AF0829680601008F759B /* CurUser.swift */; };
 		3178AF0D29680630008F759B /* VC_login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3178AF0C29680630008F759B /* VC_login.swift */; };
 		3186CE7125F7625A00A92E7C /* CodableDefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3186CE7025F7625A00A92E7C /* CodableDefaultValue.swift */; };
+		31BFBA3F2968352100135499 /* UITextView+font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BFBA3E2968352100135499 /* UITextView+font.swift */; };
 		31D189C02967BBAC0032F4E9 /* TabC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189BF2967BBAC0032F4E9 /* TabC.swift */; };
 		31D189C22967BCF90032F4E9 /* NavC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189C12967BCF90032F4E9 /* NavC.swift */; };
 		31D189C42967BDB50032F4E9 /* NavC_modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189C32967BDB50032F4E9 /* NavC_modal.swift */; };
@@ -54,6 +55,7 @@
 		3178AF0829680601008F759B /* CurUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurUser.swift; sourceTree = "<group>"; };
 		3178AF0C29680630008F759B /* VC_login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_login.swift; sourceTree = "<group>"; };
 		3186CE7025F7625A00A92E7C /* CodableDefaultValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableDefaultValue.swift; sourceTree = "<group>"; };
+		31BFBA3E2968352100135499 /* UITextView+font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+font.swift"; sourceTree = "<group>"; };
 		31D189BF2967BBAC0032F4E9 /* TabC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabC.swift; sourceTree = "<group>"; };
 		31D189C12967BCF90032F4E9 /* NavC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavC.swift; sourceTree = "<group>"; };
 		31D189C32967BDB50032F4E9 /* NavC_modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavC_modal.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				3142B10C2967F0CF0021E233 /* UITextField+font.swift */,
 				3142B10E2967F12C0021E233 /* UILabel+font.swift */,
 				3142B1102967F14F0021E233 /* UIButton+font.swift */,
+				31BFBA3E2968352100135499 /* UITextView+font.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				31D189CC2967C0B50032F4E9 /* VC_base.swift in Sources */,
 				3178AF0D29680630008F759B /* VC_login.swift in Sources */,
 				31D189C92967C0030032F4E9 /* Color_common.swift in Sources */,
+				31BFBA3F2968352100135499 /* UITextView+font.swift in Sources */,
 				31D189D22967C2C80032F4E9 /* Cfg_env.swift in Sources */,
 				31D189C02967BBAC0032F4E9 /* TabC.swift in Sources */,
 				31D189DC2967C6310032F4E9 /* VC_profile.swift in Sources */,

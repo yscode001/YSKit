@@ -6,5 +6,4 @@
 //
 
 class VC_login: VC_base{
-    
 }

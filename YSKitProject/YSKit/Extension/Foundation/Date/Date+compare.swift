@@ -9,6 +9,17 @@ import Foundation
 
 public extension YSOriginalProtocol where OriginalType == Date{
     
+    /// 钳制
+    func clamp(_ min: Date, _ max:Date) -> Date{
+        if originalObj < min{
+            return min
+        }
+        if originalObj > max{
+            return max
+        }
+        return originalObj
+    }
+    
     /// 当前日期和指定日期(参数的日期)是否为同一天
     func isSameDay(_ date: Date?, calendar: Calendar? = nil) -> Bool{
         guard let d = date else{

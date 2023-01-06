@@ -15,5 +15,6 @@ target 'YSKitProject' do
   pod 'Alamofire', '5.6.4'
   pod 'SnapKit', '5.6.0'
   pod 'SDWebImage', '5.14.3'
+  pod 'MJRefresh', '3.7.5'
   
 end

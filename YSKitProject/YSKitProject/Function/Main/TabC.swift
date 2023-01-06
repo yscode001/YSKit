@@ -50,7 +50,7 @@ class TabC: UITabBarController{
         // 设置tabbar背景色为白色
         let v = Ctor.view(bgColor: Color.tabbar_bg)
         v.frame = tabBar.bounds
-        v.frame.size.height = tabBar.bounds.height + SafeArea.area(type: .bottom)
+        v.frame.size.height = tabBar.bounds.height + UIScreen.ys.safeArea.bottom
         tabBar.insertSubview(v, at: 0)
         
         // 手动添加阴影细线

@@ -24,6 +24,14 @@ public extension YSOriginalProtocol where OriginalType: UIScreen{
 
 public extension YSOriginalProtocol where OriginalType: UIScreen{
     
+    static var safeArea:UIEdgeInsets {
+        if #available(iOS 11.0, *) {
+            return UIApplication.shared.windows.last?.safeAreaInsets ?? .zero
+        } else {
+            return .zero
+        }
+    }
+    
     static var statusBarFrame:CGRect{
         if #available(iOS 13.0, *){
             return UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame ?? .zero

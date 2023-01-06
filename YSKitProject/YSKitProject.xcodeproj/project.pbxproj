@@ -30,6 +30,10 @@
 		31D189DA2967C6280032F4E9 /* VC_square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189D92967C6280032F4E9 /* VC_square.swift */; };
 		31D189DC2967C6310032F4E9 /* VC_profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189DB2967C6310032F4E9 /* VC_profile.swift */; };
 		31D189DE2967C6390032F4E9 /* VC_home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189DD2967C6390032F4E9 /* VC_home.swift */; };
+		31D35FD929682E1800050D69 /* WerewolfAudioMale.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 31D35FD529682E1700050D69 /* WerewolfAudioMale.bundle */; };
+		31D35FDA29682E1800050D69 /* WerewolfAudioCantonese.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 31D35FD629682E1700050D69 /* WerewolfAudioCantonese.bundle */; };
+		31D35FDB29682E1800050D69 /* WerewolfAudioClassic.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 31D35FD729682E1700050D69 /* WerewolfAudioClassic.bundle */; };
+		31D35FDC29682E1800050D69 /* WerewolfAudioFemale.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 31D35FD829682E1800050D69 /* WerewolfAudioFemale.bundle */; };
 		D9AE2854C6066443E925EBFC /* Pods_YSKitProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0208AACAE7E8FFA2BF6FB57 /* Pods_YSKitProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +65,10 @@
 		31D189D92967C6280032F4E9 /* VC_square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_square.swift; sourceTree = "<group>"; };
 		31D189DB2967C6310032F4E9 /* VC_profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_profile.swift; sourceTree = "<group>"; };
 		31D189DD2967C6390032F4E9 /* VC_home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_home.swift; sourceTree = "<group>"; };
+		31D35FD529682E1700050D69 /* WerewolfAudioMale.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WerewolfAudioMale.bundle; sourceTree = "<group>"; };
+		31D35FD629682E1700050D69 /* WerewolfAudioCantonese.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WerewolfAudioCantonese.bundle; sourceTree = "<group>"; };
+		31D35FD729682E1700050D69 /* WerewolfAudioClassic.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WerewolfAudioClassic.bundle; sourceTree = "<group>"; };
+		31D35FD829682E1800050D69 /* WerewolfAudioFemale.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WerewolfAudioFemale.bundle; sourceTree = "<group>"; };
 		368CADDE3E956462A8DE5357 /* Pods-YSKitProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YSKitProject.debug.xcconfig"; path = "Target Support Files/Pods-YSKitProject/Pods-YSKitProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E0208AACAE7E8FFA2BF6FB57 /* Pods_YSKitProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YSKitProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -133,6 +141,7 @@
 		3105BB2225BBC66100A2E401 /* Function */ = {
 			isa = PBXGroup;
 			children = (
+				31D35FD329682DE700050D69 /* Werewolf */,
 				3178AF0A2968061E008F759B /* Login */,
 				31409BC82967CEA100F37939 /* Msg */,
 				31D189D52967C5E60032F4E9 /* Square */,
@@ -303,6 +312,25 @@
 			path = VC;
 			sourceTree = "<group>";
 		};
+		31D35FD329682DE700050D69 /* Werewolf */ = {
+			isa = PBXGroup;
+			children = (
+				31D35FD429682DF100050D69 /* AudioRes */,
+			);
+			path = Werewolf;
+			sourceTree = "<group>";
+		};
+		31D35FD429682DF100050D69 /* AudioRes */ = {
+			isa = PBXGroup;
+			children = (
+				31D35FD629682E1700050D69 /* WerewolfAudioCantonese.bundle */,
+				31D35FD729682E1700050D69 /* WerewolfAudioClassic.bundle */,
+				31D35FD829682E1800050D69 /* WerewolfAudioFemale.bundle */,
+				31D35FD529682E1700050D69 /* WerewolfAudioMale.bundle */,
+			);
+			path = AudioRes;
+			sourceTree = "<group>";
+		};
 		501756EE1592A0D2AD945F59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,6 +410,10 @@
 			files = (
 				3105BB1625BBC61C00A2E401 /* LaunchScreen.storyboard in Resources */,
 				3105BB1325BBC61C00A2E401 /* Assets.xcassets in Resources */,
+				31D35FDA29682E1800050D69 /* WerewolfAudioCantonese.bundle in Resources */,
+				31D35FDC29682E1800050D69 /* WerewolfAudioFemale.bundle in Resources */,
+				31D35FD929682E1800050D69 /* WerewolfAudioMale.bundle in Resources */,
+				31D35FDB29682E1800050D69 /* WerewolfAudioClassic.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

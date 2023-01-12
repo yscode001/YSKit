@@ -10,6 +10,7 @@
 		3105BB0A25BBC61C00A2E401 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105BB0925BBC61C00A2E401 /* AppDelegate.swift */; };
 		3105BB1325BBC61C00A2E401 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3105BB1225BBC61C00A2E401 /* Assets.xcassets */; };
 		3105BB1625BBC61C00A2E401 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3105BB1425BBC61C00A2E401 /* LaunchScreen.storyboard */; };
+		3124C2F4296FAB46009D768A /* HttpDesc.md in Resources */ = {isa = PBXBuildFile; fileRef = 3124C2F3296FAB45009D768A /* HttpDesc.md */; };
 		31409BCB2967CEB000F37939 /* VC_msg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31409BCA2967CEB000F37939 /* VC_msg.swift */; };
 		3142B1072967EB5E0021E233 /* VC_base_nav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3142B1062967EB5E0021E233 /* VC_base_nav.swift */; };
 		3169E6AE296F9F9300348CFA /* UITextField+font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3169E69E296F9F9300348CFA /* UITextField+font.swift */; };
@@ -52,6 +53,7 @@
 		3105BB1525BBC61C00A2E401 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3105BB1725BBC61C00A2E401 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3105BB2325BBC67700A2E401 /* YSKitProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YSKitProject-Bridging-Header.h"; sourceTree = "<group>"; };
+		3124C2F3296FAB45009D768A /* HttpDesc.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = HttpDesc.md; sourceTree = "<group>"; };
 		31409BCA2967CEB000F37939 /* VC_msg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_msg.swift; sourceTree = "<group>"; };
 		3142B1062967EB5E0021E233 /* VC_base_nav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_base_nav.swift; sourceTree = "<group>"; };
 		3169E69E296F9F9300348CFA /* UITextField+font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+font.swift"; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 		318ADFD5296FA812000B7957 /* Http */ = {
 			isa = PBXGroup;
 			children = (
+				3124C2F3296FAB45009D768A /* HttpDesc.md */,
 				318ADFD6296FA812000B7957 /* NetworkManager.swift */,
 				318ADFD7296FA812000B7957 /* NetworkHelper */,
 			);
@@ -455,6 +458,7 @@
 			files = (
 				3105BB1625BBC61C00A2E401 /* LaunchScreen.storyboard in Resources */,
 				3105BB1325BBC61C00A2E401 /* Assets.xcassets in Resources */,
+				3124C2F4296FAB46009D768A /* HttpDesc.md in Resources */,
 				31D35FDA29682E1800050D69 /* WerewolfAudioCantonese.bundle in Resources */,
 				31D35FDC29682E1800050D69 /* WerewolfAudioFemale.bundle in Resources */,
 				31D35FD929682E1800050D69 /* WerewolfAudioMale.bundle in Resources */,

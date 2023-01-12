@@ -63,7 +63,7 @@ public extension YSOriginalProtocol where OriginalType: UIImageView{
         case .aspectFill:
             return "SDImageScaleModeAspectFill"
         default:
-            return "SDImageScaleModeAspectFill"
+            return "SDImageScaleModeAspectFit"
         }
     }
     
@@ -76,7 +76,7 @@ public extension YSOriginalProtocol where OriginalType: UIImageView{
         case .scaleAspectFill:
             return .aspectFill
         default:
-            return .aspectFill
+            return .aspectFit
         }
     }
 }

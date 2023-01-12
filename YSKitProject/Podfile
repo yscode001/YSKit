@@ -6,6 +6,7 @@ target 'YSKitProject' do
   
   # 自己的库
   pod 'YSKit', :path => 'YSKit'
+  pod 'YSVendor', :path => 'YSVendor'
   
   # Rx
   pod 'RxSwift', '6.5.0'

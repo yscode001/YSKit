@@ -12,14 +12,14 @@
 		3105BB1625BBC61C00A2E401 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3105BB1425BBC61C00A2E401 /* LaunchScreen.storyboard */; };
 		31409BCB2967CEB000F37939 /* VC_msg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31409BCA2967CEB000F37939 /* VC_msg.swift */; };
 		3142B1072967EB5E0021E233 /* VC_base_nav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3142B1062967EB5E0021E233 /* VC_base_nav.swift */; };
-		3142B10A2967ED2F0021E233 /* UIFont+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3142B1092967ED2F0021E233 /* UIFont+ext.swift */; };
-		3142B10D2967F0CF0021E233 /* UITextField+font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3142B10C2967F0CF0021E233 /* UITextField+font.swift */; };
-		3142B10F2967F12C0021E233 /* UILabel+font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3142B10E2967F12C0021E233 /* UILabel+font.swift */; };
-		3142B1112967F14F0021E233 /* UIButton+font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3142B1102967F14F0021E233 /* UIButton+font.swift */; };
-		3178AF0929680601008F759B /* CurUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3178AF0829680601008F759B /* CurUser.swift */; };
+		3169E6AE296F9F9300348CFA /* UITextField+font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3169E69E296F9F9300348CFA /* UITextField+font.swift */; };
+		3169E6AF296F9F9300348CFA /* UIFont+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3169E69F296F9F9300348CFA /* UIFont+ext.swift */; };
+		3169E6B0296F9F9300348CFA /* UITextView+font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3169E6A0296F9F9300348CFA /* UITextView+font.swift */; };
+		3169E6B1296F9F9300348CFA /* UILabel+font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3169E6A1296F9F9300348CFA /* UILabel+font.swift */; };
+		3169E6B2296F9F9300348CFA /* UIButton+font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3169E6A2296F9F9300348CFA /* UIButton+font.swift */; };
+		3169E6B9296F9F9300348CFA /* CurUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3169E6AD296F9F9300348CFA /* CurUser.swift */; };
 		3178AF0D29680630008F759B /* VC_login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3178AF0C29680630008F759B /* VC_login.swift */; };
 		3186CE7125F7625A00A92E7C /* CodableDefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3186CE7025F7625A00A92E7C /* CodableDefaultValue.swift */; };
-		31BFBA3F2968352100135499 /* UITextView+font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BFBA3E2968352100135499 /* UITextView+font.swift */; };
 		31D189C02967BBAC0032F4E9 /* TabC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189BF2967BBAC0032F4E9 /* TabC.swift */; };
 		31D189C22967BCF90032F4E9 /* NavC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189C12967BCF90032F4E9 /* NavC.swift */; };
 		31D189C42967BDB50032F4E9 /* NavC_modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189C32967BDB50032F4E9 /* NavC_modal.swift */; };
@@ -48,14 +48,14 @@
 		3105BB2325BBC67700A2E401 /* YSKitProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YSKitProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		31409BCA2967CEB000F37939 /* VC_msg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_msg.swift; sourceTree = "<group>"; };
 		3142B1062967EB5E0021E233 /* VC_base_nav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_base_nav.swift; sourceTree = "<group>"; };
-		3142B1092967ED2F0021E233 /* UIFont+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+ext.swift"; sourceTree = "<group>"; };
-		3142B10C2967F0CF0021E233 /* UITextField+font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+font.swift"; sourceTree = "<group>"; };
-		3142B10E2967F12C0021E233 /* UILabel+font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+font.swift"; sourceTree = "<group>"; };
-		3142B1102967F14F0021E233 /* UIButton+font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+font.swift"; sourceTree = "<group>"; };
-		3178AF0829680601008F759B /* CurUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurUser.swift; sourceTree = "<group>"; };
+		3169E69E296F9F9300348CFA /* UITextField+font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+font.swift"; sourceTree = "<group>"; };
+		3169E69F296F9F9300348CFA /* UIFont+ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+ext.swift"; sourceTree = "<group>"; };
+		3169E6A0296F9F9300348CFA /* UITextView+font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+font.swift"; sourceTree = "<group>"; };
+		3169E6A1296F9F9300348CFA /* UILabel+font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+font.swift"; sourceTree = "<group>"; };
+		3169E6A2296F9F9300348CFA /* UIButton+font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+font.swift"; sourceTree = "<group>"; };
+		3169E6AD296F9F9300348CFA /* CurUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurUser.swift; sourceTree = "<group>"; };
 		3178AF0C29680630008F759B /* VC_login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_login.swift; sourceTree = "<group>"; };
 		3186CE7025F7625A00A92E7C /* CodableDefaultValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableDefaultValue.swift; sourceTree = "<group>"; };
-		31BFBA3E2968352100135499 /* UITextView+font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+font.swift"; sourceTree = "<group>"; };
 		31D189BF2967BBAC0032F4E9 /* TabC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabC.swift; sourceTree = "<group>"; };
 		31D189C12967BCF90032F4E9 /* NavC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavC.swift; sourceTree = "<group>"; };
 		31D189C32967BDB50032F4E9 /* NavC_modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavC_modal.swift; sourceTree = "<group>"; };
@@ -108,15 +108,14 @@
 		3105BB0825BBC61C00A2E401 /* YSKitProject */ = {
 			isa = PBXGroup;
 			children = (
-				3178AF07296805F3008F759B /* CurUser */,
 				3105BB2125BBC65700A2E401 /* AppDelegate */,
 				3186CE7425F7628C00A92E7C /* CodableDefaultValue */,
 				31D189C52967BE7C0032F4E9 /* Color */,
 				31D189D02967C2BA0032F4E9 /* Config */,
-				3142B1082967ED100021E233 /* Extension */,
 				3105BB2225BBC66100A2E401 /* Function */,
 				3105BB2025BBC64900A2E401 /* SupportFiles */,
 				31D189CD2967C0F70032F4E9 /* Tool */,
+				3169E69C296F9F9300348CFA /* YSAssist */,
 			);
 			path = YSKitProject;
 			sourceTree = "<group>";
@@ -171,30 +170,31 @@
 			path = VC;
 			sourceTree = "<group>";
 		};
-		3142B1082967ED100021E233 /* Extension */ = {
+		3169E69C296F9F9300348CFA /* YSAssist */ = {
 			isa = PBXGroup;
 			children = (
-				3142B10B2967F08E0021E233 /* UIKit */,
+				3169E69D296F9F9300348CFA /* Extension */,
+				3169E6AC296F9F9300348CFA /* CurUser */,
+			);
+			path = YSAssist;
+			sourceTree = "<group>";
+		};
+		3169E69D296F9F9300348CFA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3169E6A2296F9F9300348CFA /* UIButton+font.swift */,
+				3169E69F296F9F9300348CFA /* UIFont+ext.swift */,
+				3169E6A1296F9F9300348CFA /* UILabel+font.swift */,
+				3169E69E296F9F9300348CFA /* UITextField+font.swift */,
+				3169E6A0296F9F9300348CFA /* UITextView+font.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		3142B10B2967F08E0021E233 /* UIKit */ = {
+		3169E6AC296F9F9300348CFA /* CurUser */ = {
 			isa = PBXGroup;
 			children = (
-				3142B1092967ED2F0021E233 /* UIFont+ext.swift */,
-				3142B10C2967F0CF0021E233 /* UITextField+font.swift */,
-				3142B10E2967F12C0021E233 /* UILabel+font.swift */,
-				3142B1102967F14F0021E233 /* UIButton+font.swift */,
-				31BFBA3E2968352100135499 /* UITextView+font.swift */,
-			);
-			path = UIKit;
-			sourceTree = "<group>";
-		};
-		3178AF07296805F3008F759B /* CurUser */ = {
-			isa = PBXGroup;
-			children = (
-				3178AF0829680601008F759B /* CurUser.swift */,
+				3169E6AD296F9F9300348CFA /* CurUser.swift */,
 			);
 			path = CurUser;
 			sourceTree = "<group>";
@@ -469,28 +469,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3142B10A2967ED2F0021E233 /* UIFont+ext.swift in Sources */,
 				3105BB0A25BBC61C00A2E401 /* AppDelegate.swift in Sources */,
 				31D189C22967BCF90032F4E9 /* NavC.swift in Sources */,
 				3186CE7125F7625A00A92E7C /* CodableDefaultValue.swift in Sources */,
+				3169E6AF296F9F9300348CFA /* UIFont+ext.swift in Sources */,
 				3142B1072967EB5E0021E233 /* VC_base_nav.swift in Sources */,
-				3142B10F2967F12C0021E233 /* UILabel+font.swift in Sources */,
 				31D189CF2967C29D0032F4E9 /* Printer.swift in Sources */,
+				3169E6AE296F9F9300348CFA /* UITextField+font.swift in Sources */,
 				31D189CC2967C0B50032F4E9 /* VC_base.swift in Sources */,
 				3178AF0D29680630008F759B /* VC_login.swift in Sources */,
 				31D189C92967C0030032F4E9 /* Color_common.swift in Sources */,
-				31BFBA3F2968352100135499 /* UITextView+font.swift in Sources */,
 				31D189D22967C2C80032F4E9 /* Cfg_env.swift in Sources */,
 				31D189C02967BBAC0032F4E9 /* TabC.swift in Sources */,
+				3169E6B1296F9F9300348CFA /* UILabel+font.swift in Sources */,
 				31D189DC2967C6310032F4E9 /* VC_profile.swift in Sources */,
 				31D189DE2967C6390032F4E9 /* VC_home.swift in Sources */,
-				3178AF0929680601008F759B /* CurUser.swift in Sources */,
+				3169E6B2296F9F9300348CFA /* UIButton+font.swift in Sources */,
 				31D189C42967BDB50032F4E9 /* NavC_modal.swift in Sources */,
-				3142B1112967F14F0021E233 /* UIButton+font.swift in Sources */,
 				31D189DA2967C6280032F4E9 /* VC_square.swift in Sources */,
 				31409BCB2967CEB000F37939 /* VC_msg.swift in Sources */,
+				3169E6B9296F9F9300348CFA /* CurUser.swift in Sources */,
+				3169E6B0296F9F9300348CFA /* UITextView+font.swift in Sources */,
 				31D189C72967BEA00032F4E9 /* Color.swift in Sources */,
-				3142B10D2967F0CF0021E233 /* UITextField+font.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,7 +20,7 @@ class VC_base_nav: VC_base{
     
     /// 设置bar
     private lazy var nav_bar: UINavigationBar = UINavigationBar().ys.then {
-        $0.titleTextAttributes = [NSAttributedString.Key.font: UIFont.font(17)]
+        $0.titleTextAttributes = [NSAttributedString.Key.font: Ctor.font(17)]
         $0.isTranslucent = false
         $0.barTintColor = UIColor.clear
         $0.items = [self.nav_item]

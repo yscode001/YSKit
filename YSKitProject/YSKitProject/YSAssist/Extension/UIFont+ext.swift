@@ -1,11 +1,12 @@
 //
 //  UIFont+ext.swift
-//  YSKitProject
+//  YSAssist
 //
-//  Created by 姚帅 on 2023/1/6.
+//  Created by yaoshuai on 2021/1/1.
 //
 
-extension UIFont{
+extension Ctor{
+    
     static func font(_ ofSize: CGFloat, bold: Bool = false) -> UIFont{
         if bold{
             return UIFont.systemFont(ofSize: ofSize, weight: UIFont.Weight.bold)

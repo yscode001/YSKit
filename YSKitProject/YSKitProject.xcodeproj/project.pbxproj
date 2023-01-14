@@ -685,7 +685,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AS43JR7V78;
+				DEVELOPMENT_TEAM = CL7DS2QP8C;
 				INFOPLIST_FILE = YSKitProject/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = YSKit;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
@@ -716,7 +716,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AS43JR7V78;
+				DEVELOPMENT_TEAM = CL7DS2QP8C;
 				INFOPLIST_FILE = YSKitProject/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = YSKit;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";

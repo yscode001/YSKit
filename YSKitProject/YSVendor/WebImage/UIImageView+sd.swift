@@ -32,13 +32,11 @@ public extension YSOriginalProtocol where OriginalType: UIImageView{
     }
     
     func setImage(_ url: String?, phName: String?){
-        let phImage = UIImage(named: phName ?? "")
-        setImage(url, ph: phImage)
+        setImage(url, ph: UIImage(named: phName ?? ""))
     }
     
     func setImage(_ url: String?, phName: String?, complete: @escaping((UIImage?) -> ())){
-        let phImage = UIImage(named: phName ?? "")
-        setImage(url, ph: phImage, complete: complete)
+        setImage(url, ph: UIImage(named: phName ?? ""), complete: complete)
     }
 }
 
@@ -46,15 +44,16 @@ public extension YSOriginalProtocol where OriginalType: UIImageView{
 public extension YSOriginalProtocol where OriginalType: UIImageView{
     
     /// 圆角副本存储标识
-    func radiusCopySaveKey(url: String?, radius: CGFloat = 0) -> String{
+    private func radiusCopySaveKey(url: String?, radius: CGFloat, hasBorder: Bool) -> String{
+        let has = hasBorder ? "hasBorder" : "hasNoBorder"
         let w = Int(originalObj.bounds.width)
         let h = Int(originalObj.bounds.height)
         let r = Int(radius)
         let u = url ?? ""
-        return "\(transformContentModel_rawString)_\(w)_\(h)_\(r)_\(u)"
+        return "\(transformContentModel_rawString)_\(has)_\(w)_\(h)_\(r)_\(u)"
     }
     
-    var transformContentModel_rawString: String{
+    private var transformContentModel_rawString: String{
         switch transformContentModel {
         case .fill:
             return "SDImageScaleModeFill"
@@ -67,7 +66,7 @@ public extension YSOriginalProtocol where OriginalType: UIImageView{
         }
     }
     
-    var transformContentModel: SDImageScaleMode{
+    private var transformContentModel: SDImageScaleMode{
         switch originalObj.contentMode {
         case .scaleToFill:
             return .fill
@@ -95,7 +94,7 @@ public extension YSOriginalProtocol where OriginalType: UIImageView{
             originalObj.image = ph?.sd_resizedImage(with: size, scaleMode: transformContentModel)?.sd_roundedCornerImage(withRadius: radius, corners: .allCorners, borderWidth: 0, borderColor: nil)
             return
         }
-        if let img = SDImageCache.shared.imageFromCache(forKey: radiusCopySaveKey(url: url, radius: radius)){
+        if let img = SDImageCache.shared.imageFromCache(forKey: radiusCopySaveKey(url: url, radius: radius, hasBorder: false)){
             originalObj.image = img
             return
         }
@@ -104,7 +103,7 @@ public extension YSOriginalProtocol where OriginalType: UIImageView{
             if let originalImg = originalImage{
                 let transormImg = originalImg.sd_resizedImage(with: size, scaleMode: self.transformContentModel)?.sd_roundedCornerImage(withRadius: radius, corners: .allCorners, borderWidth: 0, borderColor: nil)
                 originalObject.image = transormImg
-                SDImageCache.shared.store(transormImg, forKey: self.radiusCopySaveKey(url: url, radius: radius), completion: nil)
+                SDImageCache.shared.store(transormImg, forKey: self.radiusCopySaveKey(url: url, radius: radius, hasBorder: false), completion: nil)
             } else{
                 originalObject.image = ph?.sd_resizedImage(with: size, scaleMode: self.transformContentModel)?.sd_roundedCornerImage(withRadius: radius, corners: .allCorners, borderWidth: 0, borderColor: nil)
             }
@@ -118,8 +117,7 @@ public extension YSOriginalProtocol where OriginalType: UIImageView{
     ///   - size: 图片控件的尺寸
     ///   - radius: 圆角值
     func setImage(_ url: String?, phName: String?, size: CGSize, radius: CGFloat){
-        let phImage = UIImage(named: phName ?? "")
-        setImage(url, ph: phImage, size: size, radius: radius)
+        setImage(url, ph: UIImage(named: phName ?? ""), size: size, radius: radius)
     }
 }
 
@@ -139,7 +137,7 @@ public extension YSOriginalProtocol where OriginalType: UIImageView{
             originalObj.image = ph?.sd_resizedImage(with: size, scaleMode: transformContentModel)?.sd_roundedCornerImage(withRadius: radius, corners: .allCorners, borderWidth: borderWidth, borderColor: borderColor)
             return
         }
-        if let img = SDImageCache.shared.imageFromCache(forKey: radiusCopySaveKey(url: url, radius: radius)){
+        if let img = SDImageCache.shared.imageFromCache(forKey: radiusCopySaveKey(url: url, radius: radius,hasBorder: true)){
             originalObj.image = img
             return
         }
@@ -148,7 +146,7 @@ public extension YSOriginalProtocol where OriginalType: UIImageView{
             if let originalImg = originalImage{
                 let transormImg = originalImg.sd_resizedImage(with: size, scaleMode: self.transformContentModel)?.sd_roundedCornerImage(withRadius: radius, corners: .allCorners, borderWidth: borderWidth, borderColor: borderColor)
                 originalObject.image = transormImg
-                SDImageCache.shared.store(transormImg, forKey: self.radiusCopySaveKey(url: url, radius: radius), completion: nil)
+                SDImageCache.shared.store(transormImg, forKey: self.radiusCopySaveKey(url: url, radius: radius,hasBorder: true), completion: nil)
             } else{
                 originalObject.image = ph?.sd_resizedImage(with: size, scaleMode: self.transformContentModel)?.sd_roundedCornerImage(withRadius: radius, corners: .allCorners, borderWidth: borderWidth, borderColor: borderColor)
             }
@@ -164,8 +162,7 @@ public extension YSOriginalProtocol where OriginalType: UIImageView{
     ///   - borderWidth: 边框宽度
     ///   - borderColor: 边框颜色
     func setImage(_ url: String?, phName: String?, size: CGSize, radius: CGFloat, borderWidth: CGFloat, borderColor: UIColor){
-        let phImage = UIImage(named: phName ?? "")
-        setImage(url, ph: phImage, size: size, radius: radius, borderWidth: borderWidth, borderColor: borderColor)
+        setImage(url, ph: UIImage(named: phName ?? ""), size: size, radius: radius, borderWidth: borderWidth, borderColor: borderColor)
     }
 }
 

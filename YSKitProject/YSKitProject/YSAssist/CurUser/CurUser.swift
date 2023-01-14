@@ -1,13 +1,17 @@
 //
-//  CurrentUser.swift
+//  CurUser.swift
 //  YSAssist
 //
 //  Created by yaoshuai on 2021/1/1.
 //
 
-/// 当前用户信息
-class CurUser: NSObject, NSCoding, Codable{
+import YSKit
+import Foundation
+import UIKit
 
+/// 当前用户信息
+class CurUser: NSObject, NSSecureCoding, Codable{
+    
     // MARK: - 属性
     
     /// 唯一标识ID
@@ -37,16 +41,20 @@ class CurUser: NSObject, NSCoding, Codable{
         super.init()
     }
     static let shared:CurUser = {
-        if let user = NSKeyedUnarchiver.unarchiveObject(withFile: CurUser.localFullPath) as? CurUser{
+        if let url = CurUser.localFullPath,
+           let data = try? Data(contentsOf: url),
+           let user = try? NSKeyedUnarchiver.unarchivedObject(ofClass: CurUser.self, from: data){
             return user
         } else{
             let user = CurUser()
-            user.save()
+            user.save(sendInfoChangedEvent: true)
             return user
         }
     }()
     
     // MARK: - 归档编解码
+    static var supportsSecureCoding: Bool{return true}
+    
     func encode(with aCoder: NSCoder) {
         aCoder.encode(id, forKey: "id")
         aCoder.encode(uid, forKey: "uid")
@@ -85,12 +93,12 @@ class CurUser: NSObject, NSCoding, Codable{
 extension CurUser{
     
     /// 本地归档的完整路径
-    private static var localFullPath:String{
-        let directory = String.ys.sandbox_document.appendingPathComponent("CurrentUser")
+    private static var localFullPath: URL?{
+        let directory = String.ys.sandbox_document.appendingPathComponent("CurUser")
         if !FileManager.default.fileExists(atPath: directory){
             try? FileManager.default.createDirectory(atPath: directory, withIntermediateDirectories: true, attributes: nil)
         }
-        return directory.ys.nsstring.appendingPathComponent("CurrentUserInfo.archiver")
+        return URL(string: directory.ys.nsstring.appendingPathComponent("CurUserInfo.archiver"))
     }
 }
 
@@ -105,46 +113,21 @@ extension CurUser{
 extension CurUser{
     
     /// 持久化，会发送infoChanged
-    func save(){
-        if NSKeyedArchiver.archiveRootObject(self, toFile: CurUser.localFullPath) {
-            CurUser.infoChanged.accept(())
-            print("当前用户信息保存成功")
+    func save(sendInfoChangedEvent: Bool){
+        if let data = try? NSKeyedArchiver.archivedData(withRootObject: self, requiringSecureCoding: true),
+           let url = CurUser.localFullPath{
+//            do{
+                try! data.write(to: url)
+//            }
+//            catch{
+//                Printer.print(error)
+//            }
+            if sendInfoChangedEvent{
+                CurUser.infoChanged.accept(())
+            }
+            Printer.print("当前用户信息保存成功")
         }else{
-            print("当前用户信息保存失败")
-        }
-    }
-    
-    /// 从网络更新数据，会发送infoChanged
-    func update(){
-        save()
-    }
-    
-    /// 登录，会发送infoChanged
-    func login(complete: @escaping(() -> ())){
-        id = "sdfjkksdflkfjlkdfsjkldfkrtsfyrsd"
-        uid = "35001100"
-        token = "vcjkdlkewnsdfklksdfkksdlfjkuigfg"
-        avatar = "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201312%2F05%2F20131205172025_iwRF4.thumb.700_0.jpeg&refer=http%3A%2F%2Fb-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1613983919&t=166382ee95f063ab9e2dcf631d800530"
-        name = "哪吒"
-        age = 20
-        gender = 1
-        save()
-        complete()
-    }
-    
-    /// 退出，不会发送infoChanged
-    func logout(){
-        id = ""
-        uid = ""
-        token = ""
-        avatar = ""
-        name = ""
-        age = 18
-        gender = 0
-        if NSKeyedArchiver.archiveRootObject(self, toFile: CurUser.localFullPath) {
-            print("退出--当前用户信息重置后保存--成功")
-        }else{
-            print("退出--当前用户信息重置后保存--失败")
+            Printer.print("当前用户信息保存失败")
         }
     }
 }

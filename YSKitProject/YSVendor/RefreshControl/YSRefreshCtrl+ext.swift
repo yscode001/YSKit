@@ -10,15 +10,15 @@ import YSKit
 
 // MARK: - 创建刷新控件对象
 
-public extension YSOriginalProtocol where OriginalType == YSRefreshCtrl{
+public extension Ctor{
     
     /// 创建只有下拉刷新
-    static func create(pulldown: @escaping(() -> ())) -> YSRefreshCtrl{
+    static func refreshCtrl(pulldown: @escaping(() -> ())) -> YSRefreshCtrl{
         return YSRefreshCtrl(pulldownClosure: pulldown)
     }
     
     /// 创建下拉刷新和上拉加载
-    static func create(pulldown: @escaping(() -> ()), pullup: @escaping(() -> ())) -> YSRefreshCtrl{
+    static func refreshCtrl(pulldown: @escaping(() -> ()), pullup: @escaping(() -> ())) -> YSRefreshCtrl{
         return YSRefreshCtrl(pulldownClosure: pulldown, pullupClosure: pullup)
     }
 }

@@ -66,13 +66,13 @@ class CurUser: NSObject, NSSecureCoding, Codable{
     }
     
     required init?(coder aDecoder: NSCoder) {
-        id = (aDecoder.decodeObject(forKey: "id") as? String) ?? ""
-        uid = (aDecoder.decodeObject(forKey: "uid") as? String) ?? ""
-        token = (aDecoder.decodeObject(forKey: "token") as? String) ?? ""
-        avatar = (aDecoder.decodeObject(forKey: "avatar") as? String) ?? ""
-        name = (aDecoder.decodeObject(forKey: "name") as? String) ?? ""
-        age = (aDecoder.decodeInteger(forKey: "age"))
-        gender = (aDecoder.decodeInteger(forKey: "gender"))
+        id = aDecoder.ys.decodeString(forKey: "id")
+        uid = aDecoder.ys.decodeString(forKey: "uid")
+        token = aDecoder.ys.decodeString(forKey: "token")
+        avatar = aDecoder.ys.decodeString(forKey: "avatar")
+        name = aDecoder.ys.decodeString(forKey: "name")
+        age = aDecoder.ys.decodeInteger(forKey: "age")
+        gender = aDecoder.ys.decodeInteger(forKey: "gender")
     }
     
     // MARK: - 反序列化解码

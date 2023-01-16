@@ -10,7 +10,7 @@ class Printer{
     
     class func print(_ item: Any){
         if Cfg_env.isDebug{
-            print(item)
+            Swift.print(item)
         }
     }
 }

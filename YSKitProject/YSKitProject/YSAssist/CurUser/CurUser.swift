@@ -53,7 +53,7 @@ class CurUser: NSObject, NSSecureCoding, Codable{
     }()
     
     // MARK: - 归档编解码
-    static var supportsSecureCoding: Bool{return true}
+    static var supportsSecureCoding: Bool = true
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(id, forKey: "id")
@@ -98,7 +98,7 @@ extension CurUser{
         if !FileManager.default.fileExists(atPath: directory){
             try? FileManager.default.createDirectory(atPath: directory, withIntermediateDirectories: true, attributes: nil)
         }
-        return URL(string: directory.ys.nsstring.appendingPathComponent("CurUserInfo.archiver"))
+        return URL(fileURLWithPath: directory.ys.nsstring.appendingPathComponent("CurUserInfo.archiver"))
     }
 }
 
@@ -116,12 +116,7 @@ extension CurUser{
     func save(sendInfoChangedEvent: Bool){
         if let data = try? NSKeyedArchiver.archivedData(withRootObject: self, requiringSecureCoding: true),
            let url = CurUser.localFullPath{
-//            do{
-                try! data.write(to: url)
-//            }
-//            catch{
-//                Printer.print(error)
-//            }
+            try! data.write(to: url)
             if sendInfoChangedEvent{
                 CurUser.infoChanged.accept(())
             }

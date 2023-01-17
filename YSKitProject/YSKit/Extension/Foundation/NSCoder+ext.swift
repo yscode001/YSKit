@@ -7,22 +7,6 @@
 
 public extension YSOriginalProtocol where OriginalType: NSCoder{
     
-    func decodeString(forKey key: String, `default` value: String = "") -> String{
-        if originalObj.containsValue(forKey: key){
-            return (originalObj.decodeObject(forKey: key) as? String) ?? value
-        } else{
-            return value
-        }
-    }
-    
-    func decodeBool(forKey key: String, `default` value: Bool = false) -> Bool{
-        if originalObj.containsValue(forKey: key){
-            return originalObj.decodeBool(forKey: key)
-        } else{
-            return value
-        }
-    }
-    
     func decodeCInt(forKey key: String, `default` value: CInt = 0) -> CInt{
         if originalObj.containsValue(forKey: key){
             return originalObj.decodeCInt(forKey: key)
@@ -47,6 +31,14 @@ public extension YSOriginalProtocol where OriginalType: NSCoder{
         }
     }
     
+    func decodeInteger(forKey key: String, `default` value: Int = 0) -> Int{
+        if originalObj.containsValue(forKey: key){
+            return originalObj.decodeInteger(forKey: key)
+        } else{
+            return value
+        }
+    }
+    
     func decodeFloat(forKey key: String, `default` value: Float = 0) -> Float{
         if originalObj.containsValue(forKey: key){
             return originalObj.decodeFloat(forKey: key)
@@ -63,11 +55,43 @@ public extension YSOriginalProtocol where OriginalType: NSCoder{
         }
     }
     
-    func decodeInteger(forKey key: String, `default` value: Int = 0) -> Int{
+    func decodeBool(forKey key: String, `default` value: Bool = false) -> Bool{
         if originalObj.containsValue(forKey: key){
-            return originalObj.decodeInteger(forKey: key)
+            return originalObj.decodeBool(forKey: key)
         } else{
             return value
+        }
+    }
+    
+    func decodeString(forKey key: String, `default` value: String = "") -> String{
+        if originalObj.containsValue(forKey: key){
+            return (originalObj.decodeObject(of: NSString.self, forKey: key) as? String) ?? value
+        } else{
+            return value
+        }
+    }
+    
+    func decodeStringOptional(forKey key: String) -> String?{
+        if originalObj.containsValue(forKey: key){
+            return originalObj.decodeObject(of: NSString.self, forKey: key) as? String
+        } else{
+            return nil
+        }
+    }
+    
+    func decodeNSString(forKey key: String, `default` value: NSString = "") -> NSString{
+        if originalObj.containsValue(forKey: key){
+            return originalObj.decodeObject(of: NSString.self, forKey: key) ?? value
+        } else{
+            return value
+        }
+    }
+    
+    func decodeNSStringOptional(forKey key: String) -> NSString?{
+        if originalObj.containsValue(forKey: key){
+            return originalObj.decodeObject(of: NSString.self, forKey: key)
+        } else{
+            return nil
         }
     }
 }

@@ -16,11 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.rootViewController = TabC()
         
-        Printer.print(CurUser.shared.name)
-        CurUser.shared.name = "xiaoming"
-        CurUser.shared.save(sendInfoChangedEvent: true)
-        Printer.print(CurUser.shared.name)
-        
         return true
     }
 }

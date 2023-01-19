@@ -12,216 +12,216 @@
 import Foundation
 
 // MARK: - 解析单个属性，有默认值：false、""、0
-extension KeyedDecodingContainer{
+public extension KeyedDecodingContainer{
     
-    public func ys_decode(_ type: Bool.Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: Bool? = false) -> Bool{
+    func ys_decodeBool(forKey key: KeyedDecodingContainer.Key, default value: Bool = false) -> Bool{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode(Bool.self, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
     
-    public func ys_decode(_ type: String.Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: String? = "") -> String{
+    func ys_decodeString(forKey key: KeyedDecodingContainer.Key, default value: String = "") -> String{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode(String.self, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
     
-    public func ys_decode(_ type: Double.Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: Double? = 0) -> Double{
+    func ys_decodeDouble(forKey key: KeyedDecodingContainer.Key, default value: Double = 0) -> Double{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode(Double.self, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
     
-    public func ys_decode(_ type: Float.Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: Float? = 0) -> Float{
+    func ys_decodeFloat(forKey key: KeyedDecodingContainer.Key, default value: Float = 0) -> Float{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode(Float.self, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
     
-    public func ys_decode(_ type: Int.Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: Int? = 0) -> Int{
+    func ys_decodeInt(forKey key: KeyedDecodingContainer.Key, default value: Int = 0) -> Int{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode(Int.self, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
     
-    public func ys_decode(_ type: Int8.Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: Int8? = 0) -> Int8{
+    func ys_decodeInt8(forKey key: KeyedDecodingContainer.Key, default value: Int8 = 0) -> Int8{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode(Int8.self, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
     
-    public func ys_decode(_ type: Int16.Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: Int16? = 0) -> Int16{
+    func ys_decodeInt16(forKey key: KeyedDecodingContainer.Key, default value: Int16 = 0) -> Int16{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode(Int16.self, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
     
-    public func ys_decode(_ type: Int32.Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: Int32? = 0) -> Int32{
+    func ys_decodeInt32(forKey key: KeyedDecodingContainer.Key, default value: Int32 = 0) -> Int32{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode(Int32.self, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
     
-    public func ys_decode(_ type: Int64.Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: Int64? = 0) -> Int64{
+    func ys_decodeInt64(forKey key: KeyedDecodingContainer.Key, default value: Int64 = 0) -> Int64{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode(Int64.self, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
     
-    public func ys_decode(_ type: UInt.Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: UInt? = 0) -> UInt{
+    func ys_decodeUInt(forKey key: KeyedDecodingContainer.Key, default value: UInt = 0) -> UInt{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode(UInt.self, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
     
-    public func ys_decode(_ type: UInt8.Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: UInt8? = 0) -> UInt8{
+    func ys_decodeUInt8(forKey key: KeyedDecodingContainer.Key, default value: UInt8 = 0) -> UInt8{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode(UInt8.self, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
     
-    public func ys_decode(_ type: UInt16.Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: UInt16? = 0) -> UInt16{
+    func ys_decodeUInt16(forKey key: KeyedDecodingContainer.Key, default value: UInt16 = 0) -> UInt16{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode(UInt16.self, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
     
-    public func ys_decode(_ type: UInt32.Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: UInt32? = 0) -> UInt32{
+    func ys_decodeUInt32(forKey key: KeyedDecodingContainer.Key, default value: UInt32 = 0) -> UInt32{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode(UInt32.self, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
     
-    public func ys_decode(_ type: UInt64.Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: UInt64? = 0) -> UInt64{
+    func ys_decodeUInt64(forKey key: KeyedDecodingContainer.Key, default value: UInt64 = 0) -> UInt64{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode(UInt64.self, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
     
-    public func ys_decode<T>(_ type: T.Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: T) -> T where T : Decodable{
+    func ys_decodeObject<T>(_ type: T.Type, forKey key: KeyedDecodingContainer.Key, default value: T) -> T where T : Decodable{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal
+            return (try? decode(type, forKey: key)) ?? value
         }
-        return defaultVal
+        return value
     }
 }
 
 // MARK: - 解析单个属性，值为可选
-extension KeyedDecodingContainer{
+public extension KeyedDecodingContainer{
     
-    public func ys_decode_option(_ type: Bool.Type, forKey key: KeyedDecodingContainer.Key) -> Bool?{
+    func ys_decodeBoolOptional(forKey key: KeyedDecodingContainer.Key) -> Bool?{
         if contains(key){
-            return try? decode(type, forKey: key)
+            return try? decode(Bool.self, forKey: key)
         }
         return nil
     }
     
-    public func ys_decode_option(_ type: String.Type, forKey key: KeyedDecodingContainer.Key) -> String?{
+    func ys_decodeStringOptional(forKey key: KeyedDecodingContainer.Key) -> String?{
         if contains(key){
-            return try? decode(type, forKey: key)
+            return try? decode(String.self, forKey: key)
         }
         return nil
     }
     
-    public func ys_decode_option(_ type: Double.Type, forKey key: KeyedDecodingContainer.Key) -> Double?{
+    func ys_decodeDoubleOptional(forKey key: KeyedDecodingContainer.Key) -> Double?{
         if contains(key){
-            return try? decode(type, forKey: key)
+            return try? decode(Double.self, forKey: key)
         }
         return nil
     }
     
-    public func ys_decode_option(_ type: Float.Type, forKey key: KeyedDecodingContainer.Key) -> Float?{
+    func ys_decodeFloatOptional(forKey key: KeyedDecodingContainer.Key) -> Float?{
         if contains(key){
-            return try? decode(type, forKey: key)
+            return try? decode(Float.self, forKey: key)
         }
         return nil
     }
     
-    public func ys_decode_option(_ type: Int.Type, forKey key: KeyedDecodingContainer.Key) -> Int?{
+    func ys_decodeIntOptional(forKey key: KeyedDecodingContainer.Key) -> Int?{
         if contains(key){
-            return try? decode(type, forKey: key)
+            return try? decode(Int.self, forKey: key)
         }
         return nil
     }
     
-    public func ys_decode_option(_ type: Int8.Type, forKey key: KeyedDecodingContainer.Key) -> Int8?{
+    func ys_decodeInt8Optional(forKey key: KeyedDecodingContainer.Key) -> Int8?{
         if contains(key){
-            return try? decode(type, forKey: key)
+            return try? decode(Int8.self, forKey: key)
         }
         return nil
     }
     
-    public func ys_decode_option(_ type: Int16.Type, forKey key: KeyedDecodingContainer.Key) -> Int16?{
+    func ys_decodeInt16Optional(forKey key: KeyedDecodingContainer.Key) -> Int16?{
         if contains(key){
-            return try? decode(type, forKey: key)
+            return try? decode(Int16.self, forKey: key)
         }
         return nil
     }
     
-    public func ys_decode_option(_ type: Int32.Type, forKey key: KeyedDecodingContainer.Key) -> Int32?{
+    func ys_decodeInt32Optional(forKey key: KeyedDecodingContainer.Key) -> Int32?{
         if contains(key){
-            return try? decode(type, forKey: key)
+            return try? decode(Int32.self, forKey: key)
         }
         return nil
     }
     
-    public func ys_decode_option(_ type: Int64.Type, forKey key: KeyedDecodingContainer.Key) -> Int64?{
+    func ys_decodeInt64Optional(forKey key: KeyedDecodingContainer.Key) -> Int64?{
         if contains(key){
-            return try? decode(type, forKey: key)
+            return try? decode(Int64.self, forKey: key)
         }
         return nil
     }
     
-    public func ys_decode_option(_ type: UInt.Type, forKey key: KeyedDecodingContainer.Key) -> UInt?{
+    func ys_decodeUIntOptional(forKey key: KeyedDecodingContainer.Key) -> UInt?{
         if contains(key){
-            return try? decode(type, forKey: key)
+            return try? decode(UInt.self, forKey: key)
         }
         return nil
     }
     
-    public func ys_decode_option(_ type: UInt8.Type, forKey key: KeyedDecodingContainer.Key) -> UInt8?{
+    func ys_decodeUInt8Optional(forKey key: KeyedDecodingContainer.Key) -> UInt8?{
         if contains(key){
-            return try? decode(type, forKey: key)
+            return try? decode(UInt8.self, forKey: key)
         }
         return nil
     }
     
-    public func ys_decode_option(_ type: UInt16.Type, forKey key: KeyedDecodingContainer.Key) -> UInt16?{
+    func ys_decodeUInt16Optional(forKey key: KeyedDecodingContainer.Key) -> UInt16?{
         if contains(key){
-            return try? decode(type, forKey: key)
+            return try? decode(UInt16.self, forKey: key)
         }
         return nil
     }
     
-    public func ys_decode_option(_ type: UInt32.Type, forKey key: KeyedDecodingContainer.Key) -> UInt32?{
+    func ys_decodeUInt32Optional(forKey key: KeyedDecodingContainer.Key) -> UInt32?{
         if contains(key){
-            return try? decode(type, forKey: key)
+            return try? decode(UInt32.self, forKey: key)
         }
         return nil
     }
     
-    public func ys_decode_option(_ type: UInt64.Type, forKey key: KeyedDecodingContainer.Key) -> UInt64?{
+    func ys_decodeUInt64Optional(forKey key: KeyedDecodingContainer.Key) -> UInt64?{
         if contains(key){
-            return try? decode(type, forKey: key)
+            return try? decode(UInt64.self, forKey: key)
         }
         return nil
     }
     
-    public func ys_decode_option<T>(_ type: T.Type, forKey key: KeyedDecodingContainer.Key) -> T? where T : Decodable{
+    func ys_decodeObjectOptional<T>(_ type: T.Type, forKey key: KeyedDecodingContainer.Key) -> T? where T : Decodable{
         if contains(key){
             return try? decode(type, forKey: key)
         }
@@ -230,216 +230,216 @@ extension KeyedDecodingContainer{
 }
 
 // MARK: - 解析数组属性，默认为空数组
-extension KeyedDecodingContainer{
+public extension KeyedDecodingContainer{
     
-    public func ys_decode(_ type: [Bool].Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: [Bool]? = [Bool]()) -> [Bool]{
+    func ys_decodeBools(forKey key: KeyedDecodingContainer.Key, default value: [Bool] = [Bool]()) -> [Bool]{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode([Bool].self, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
     
-    public func ys_decode(_ type: [String].Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: [String]? = [String]()) -> [String]{
+    func ys_decodeStrings(forKey key: KeyedDecodingContainer.Key, default value: [String] = [String]()) -> [String]{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode([String].self, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
     
-    public func ys_decode(_ type: [Double].Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: [Double]? = [Double]()) -> [Double]{
+    func ys_decodeDoubles(forKey key: KeyedDecodingContainer.Key, default value: [Double] = [Double]()) -> [Double]{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode([Double].self, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
     
-    public func ys_decode(_ type: [Float].Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: [Float]? = [Float]()) -> [Float]{
+    func ys_decodeFloats(forKey key: KeyedDecodingContainer.Key, default value: [Float] = [Float]()) -> [Float]{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode([Float].self, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
     
-    public func ys_decode(_ type: [Int].Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: [Int]? = [Int]()) -> [Int]{
+    func ys_decodeInts(forKey key: KeyedDecodingContainer.Key, default value: [Int] = [Int]()) -> [Int]{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode([Int].self, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
     
-    public func ys_decode(_ type: [Int8].Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: [Int8]? = [Int8]()) -> [Int8]{
+    func ys_decodeInt8s(forKey key: KeyedDecodingContainer.Key, default value: [Int8] = [Int8]()) -> [Int8]{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode([Int8].self, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
     
-    public func ys_decode(_ type: [Int16].Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: [Int16]? = [Int16]()) -> [Int16]{
+    func ys_decodeInt16s(forKey key: KeyedDecodingContainer.Key, default value: [Int16] = [Int16]()) -> [Int16]{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode([Int16].self, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
     
-    public func ys_decode(_ type: [Int32].Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: [Int32]? = [Int32]()) -> [Int32]{
+    func ys_decodeInt32s(forKey key: KeyedDecodingContainer.Key, default value: [Int32] = [Int32]()) -> [Int32]{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode([Int32].self, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
     
-    public func ys_decode(_ type: [Int64].Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: [Int64]? = [Int64]()) -> [Int64]{
+    func ys_decodeInt64s(forKey key: KeyedDecodingContainer.Key, default value: [Int64] = [Int64]()) -> [Int64]{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode([Int64].self, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
     
-    public func ys_decode(_ type: [UInt].Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: [UInt]? = [UInt]()) -> [UInt]{
+    func ys_decodeUInts(forKey key: KeyedDecodingContainer.Key, default value: [UInt] = [UInt]()) -> [UInt]{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode([UInt].self, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
     
-    public func ys_decode(_ type: [UInt8].Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: [UInt8]? = [UInt8]()) -> [UInt8]{
+    func ys_decodeUInt8s(forKey key: KeyedDecodingContainer.Key, default value: [UInt8] = [UInt8]()) -> [UInt8]{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode([UInt8].self, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
     
-    public func ys_decode(_ type: [UInt16].Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: [UInt16]? = [UInt16]()) -> [UInt16]{
+    func ys_decodeUInt16s(forKey key: KeyedDecodingContainer.Key, default value: [UInt16] = [UInt16]()) -> [UInt16]{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode([UInt16].self, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
     
-    public func ys_decode(_ type: [UInt32].Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: [UInt32]? = [UInt32]()) -> [UInt32]{
+    func ys_decodeUInt32s(forKey key: KeyedDecodingContainer.Key, default value: [UInt32] = [UInt32]()) -> [UInt32]{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode([UInt32].self, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
     
-    public func ys_decode(_ type: [UInt64].Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: [UInt64]? = [UInt64]()) -> [UInt64]{
+    func ys_decodeUInt64s(forKey key: KeyedDecodingContainer.Key, default value: [UInt64] = [UInt64]()) -> [UInt64]{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode([UInt64].self, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
     
-    public func ys_decode<T>(_ type: [T].Type, forKey key: KeyedDecodingContainer.Key, default defaultVal: [T]? = [T]()) -> [T] where T : Decodable{
+    func ys_decodeObjects<T>(_ type: [T].Type, forKey key: KeyedDecodingContainer.Key, default value: [T] = [T]()) -> [T] where T : Decodable{
         if contains(key){
-            return (try? decode(type, forKey: key)) ?? defaultVal!
+            return (try? decode(type, forKey: key)) ?? value
         }
-        return defaultVal!
+        return value
     }
 }
 
 // MARK: - 解析数组属性，值为可选
-extension KeyedDecodingContainer{
+public extension KeyedDecodingContainer{
     
-    public func ys_decode_option(_ type: [Bool].Type, forKey key: KeyedDecodingContainer.Key) -> [Bool]?{
+    func ys_decodeBoolsOptional(forKey key: KeyedDecodingContainer.Key) -> [Bool]?{
         if contains(key){
-            return try? decode(type, forKey: key)
+            return try? decode([Bool].self, forKey: key)
         }
         return nil
     }
     
-    public func ys_decode_option(_ type: [String].Type, forKey key: KeyedDecodingContainer.Key) -> [String]?{
+    func ys_decodeStringsOptional(forKey key: KeyedDecodingContainer.Key) -> [String]?{
         if contains(key){
-            return try? decode(type, forKey: key)
+            return try? decode([String].self, forKey: key)
         }
         return nil
     }
     
-    public func ys_decode_option(_ type: [Double].Type, forKey key: KeyedDecodingContainer.Key) -> [Double]?{
+    func ys_decodeDoublesOptional(forKey key: KeyedDecodingContainer.Key) -> [Double]?{
         if contains(key){
-            return try? decode(type, forKey: key)
+            return try? decode([Double].self, forKey: key)
         }
         return nil
     }
     
-    public func ys_decode_option(_ type: [Float].Type, forKey key: KeyedDecodingContainer.Key) -> [Float]?{
+    func ys_decodeFloatsOptional(forKey key: KeyedDecodingContainer.Key) -> [Float]?{
         if contains(key){
-            return try? decode(type, forKey: key)
+            return try? decode([Float].self, forKey: key)
         }
         return nil
     }
     
-    public func ys_decode_option(_ type: [Int].Type, forKey key: KeyedDecodingContainer.Key) -> [Int]?{
+    func ys_decodeIntsOptional(forKey key: KeyedDecodingContainer.Key) -> [Int]?{
         if contains(key){
-            return try? decode(type, forKey: key)
+            return try? decode([Int].self, forKey: key)
         }
         return nil
     }
     
-    public func ys_decode_option(_ type: [Int8].Type, forKey key: KeyedDecodingContainer.Key) -> [Int8]?{
+    func ys_decodeInt8sOptional(forKey key: KeyedDecodingContainer.Key) -> [Int8]?{
         if contains(key){
-            return try? decode(type, forKey: key)
+            return try? decode([Int8].self, forKey: key)
         }
         return nil
     }
     
-    public func ys_decode_option(_ type: [Int16].Type, forKey key: KeyedDecodingContainer.Key) -> [Int16]?{
+    func ys_decodeInt16sOptional(forKey key: KeyedDecodingContainer.Key) -> [Int16]?{
         if contains(key){
-            return try? decode(type, forKey: key)
+            return try? decode([Int16].self, forKey: key)
         }
         return nil
     }
     
-    public func ys_decode_option(_ type: [Int32].Type, forKey key: KeyedDecodingContainer.Key) -> [Int32]?{
+    func ys_decodeInt32sOptional(forKey key: KeyedDecodingContainer.Key) -> [Int32]?{
         if contains(key){
-            return try? decode(type, forKey: key)
+            return try? decode([Int32].self, forKey: key)
         }
         return nil
     }
     
-    public func ys_decode_option(_ type: [Int64].Type, forKey key: KeyedDecodingContainer.Key) -> [Int64]?{
+    func ys_decodeInt64sOptional(forKey key: KeyedDecodingContainer.Key) -> [Int64]?{
         if contains(key){
-            return try? decode(type, forKey: key)
+            return try? decode([Int64].self, forKey: key)
         }
         return nil
     }
     
-    public func ys_decode_option(_ type: [UInt].Type, forKey key: KeyedDecodingContainer.Key) -> [UInt]?{
+    func ys_decodeUIntsOptional(forKey key: KeyedDecodingContainer.Key) -> [UInt]?{
         if contains(key){
-            return try? decode(type, forKey: key)
+            return try? decode([UInt].self, forKey: key)
         }
         return nil
     }
     
-    public func ys_decode_option(_ type: [UInt8].Type, forKey key: KeyedDecodingContainer.Key) -> [UInt8]?{
+    func ys_decodeUInt8sOptional(forKey key: KeyedDecodingContainer.Key) -> [UInt8]?{
         if contains(key){
-            return try? decode(type, forKey: key)
+            return try? decode([UInt8].self, forKey: key)
         }
         return nil
     }
     
-    public func ys_decode_option(_ type: [UInt16].Type, forKey key: KeyedDecodingContainer.Key) -> [UInt16]?{
+    func ys_decodeUInt16sOptional(forKey key: KeyedDecodingContainer.Key) -> [UInt16]?{
         if contains(key){
-            return try? decode(type, forKey: key)
+            return try? decode([UInt16].self, forKey: key)
         }
         return nil
     }
     
-    public func ys_decode_option(_ type: [UInt32].Type, forKey key: KeyedDecodingContainer.Key) -> [UInt32]?{
+    func ys_decodeUInt32sOptional(forKey key: KeyedDecodingContainer.Key) -> [UInt32]?{
         if contains(key){
-            return try? decode(type, forKey: key)
+            return try? decode([UInt32].self, forKey: key)
         }
         return nil
     }
     
-    public func ys_decode_option(_ type: [UInt64].Type, forKey key: KeyedDecodingContainer.Key) -> [UInt64]?{
+    func ys_decodeUInt64sOptional(forKey key: KeyedDecodingContainer.Key) -> [UInt64]?{
         if contains(key){
-            return try? decode(type, forKey: key)
+            return try? decode([UInt64].self, forKey: key)
         }
         return nil
     }
     
-    public func ys_decode_option<T>(_ type: [T].Type, forKey key: KeyedDecodingContainer.Key) -> [T]? where T : Decodable{
+    func ys_decodeObjectsOptional<T>(_ type: [T].Type, forKey key: KeyedDecodingContainer.Key) -> [T]? where T : Decodable{
         if contains(key){
             return try? decode(type, forKey: key)
         }

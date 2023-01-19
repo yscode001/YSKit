@@ -80,13 +80,13 @@ class CurUser: NSObject, NSSecureCoding, Codable{
         guard let container = try? decoder.container(keyedBy: CodingKeys.self) else{
             return
         }
-        id = container.ys_decode(String.self, forKey: .id)
-        uid = container.ys_decode(String.self, forKey: .uid)
-        token = container.ys_decode(String.self, forKey: .token)
-        avatar = container.ys_decode(String.self, forKey: .avatar)
-        name = container.ys_decode(String.self, forKey: .name)
-        age = container.ys_decode(Int.self, forKey: .age)
-        gender = container.ys_decode(Int.self, forKey: .gender)
+        id = container.ys_decodeString(forKey: .id)
+        uid = container.ys_decodeString(forKey: .uid)
+        token = container.ys_decodeString(forKey: .token)
+        avatar = container.ys_decodeString(forKey: .avatar)
+        name = container.ys_decodeString(forKey: .name)
+        age = container.ys_decodeInt(forKey: .age)
+        gender = container.ys_decodeInt(forKey: .gender)
     }
 }
 

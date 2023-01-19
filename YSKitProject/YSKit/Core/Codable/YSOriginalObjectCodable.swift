@@ -27,7 +27,7 @@ extension YSOriginalProtocol where OriginalType: Codable{
     
     // MARK: - 序列化
     
-    // 序列化
+    /// 序列化
     public func serialize() -> Data?{
         let encoder = JSONEncoder()
         encoder.dateEncodingStrategy = .iso8601
@@ -48,22 +48,8 @@ extension YSOriginalProtocol where OriginalType: Codable{
     }
     
     /// 反序列化(jsonString -> object)
-    public static func deserialize(jsonString: String, encoding: String.Encoding) -> OriginalType?{
+    public static func deserialize(jsonString: String, encoding: String.Encoding = .utf8) -> OriginalType?{
         guard let data = jsonString.data(using: encoding) else{
-            return nil
-        }
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .iso8601
-        decoder.nonConformingFloatDecodingStrategy = .convertFromString(
-            positiveInfinity: "+Infinity",
-            negativeInfinity: "-Infinity",
-            nan: "NaN")
-        return try? decoder.decode(OriginalType.self, from: data)
-    }
-    
-    /// 反序列化(jsonString -> object)
-    public static func deserialize(jsonString: String) -> OriginalType?{
-        guard let data = jsonString.data(using: .utf8) else{
             return nil
         }
         let decoder = JSONDecoder()
@@ -92,7 +78,7 @@ extension YSOriginalProtocol where OriginalType: Codable{
     // MARK: - 反序列化 -> [对象]
     
     /// 反序列化(data -> [object])
-    public static func deserializeList(data: Data) -> [OriginalType]?{
+    public static func deserializeArray(data: Data) -> [OriginalType]?{
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         decoder.nonConformingFloatDecodingStrategy = .convertFromString(
@@ -103,7 +89,7 @@ extension YSOriginalProtocol where OriginalType: Codable{
     }
     
     /// 反序列化(jsonString -> [object])
-    public static func deserializeList(jsonString: String, encoding: String.Encoding) -> [OriginalType]?{
+    public static func deserializeArray(jsonString: String, encoding: String.Encoding = .utf8) -> [OriginalType]?{
         guard let data = jsonString.data(using: encoding) else{
             return nil
         }
@@ -116,22 +102,8 @@ extension YSOriginalProtocol where OriginalType: Codable{
         return try? decoder.decode([OriginalType].self, from: data)
     }
     
-    /// 反序列化(jsonString -> [object])
-    public static func deserializeList(jsonString: String) -> [OriginalType]?{
-        guard let data = jsonString.data(using: .utf8) else{
-            return nil
-        }
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .iso8601
-        decoder.nonConformingFloatDecodingStrategy = .convertFromString(
-            positiveInfinity: "+Infinity",
-            negativeInfinity: "-Infinity",
-            nan: "NaN")
-        return try? decoder.decode([OriginalType].self, from: data)
-    }
-    
     /// 反序列化(dictionaryList -> [object])
-    public static func deserializeList(dictList: [[String: Any]]) -> [OriginalType]?{
+    public static func deserializeArray(dictList: [[String: Any]]) -> [OriginalType]?{
         guard let data = try? JSONSerialization.data(withJSONObject: dictList, options: []) else{
             return nil
         }

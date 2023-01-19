@@ -9,7 +9,7 @@
 class Printer{
     
     class func print(_ item: Any){
-        if Cfg_env.isDebug{
+        if EnvCfg.isDevelop{
             Swift.print(item)
         }
     }

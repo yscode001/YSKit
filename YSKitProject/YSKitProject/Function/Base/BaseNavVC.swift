@@ -1,11 +1,11 @@
 //
-//  VC_base_nav.swift
+//  BaseNavVC.swift
 //  YSKitProject
 //
 //  Created by 姚帅 on 2023/1/6.
 //
 
-class VC_base_nav: VC_base{
+class BaseNavVC: BaseVC{
     
     // MARK: - 自定义导航设置
     lazy var nav_bgV:UIView = Ctor.view(bgColor: .clear)
@@ -57,7 +57,7 @@ class VC_base_nav: VC_base{
 }
 
 // MARK: - 导航栏设置相关
-extension VC_base_nav{
+extension BaseNavVC{
     
     /// 设置返回按钮icon
     /// - Parameter imgName: 返回按钮icon
@@ -95,7 +95,7 @@ extension VC_base_nav{
 }
 
 // MARK: - pop返回操作
-extension VC_base_nav{
+extension BaseNavVC{
     
     /// 返回按钮
     @objc func backItemClick(){

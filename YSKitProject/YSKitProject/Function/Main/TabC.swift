@@ -7,10 +7,10 @@
 
 class TabC: UITabBarController{
     
-    private lazy var vc_home: VC_home = VC_home()
-    private lazy var vc_square: VC_square = VC_square()
-    private lazy var vc_msg: VC_msg = VC_msg()
-    private lazy var vc_profile: VC_profile = VC_profile()
+    private lazy var homeVC: HomeVC = HomeVC()
+    private lazy var squareVC: SquareVC = SquareVC()
+    private lazy var msgVC: MsgVC = MsgVC()
+    private lazy var profileVC: ProfileVC = ProfileVC()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -23,10 +23,10 @@ class TabC: UITabBarController{
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStyle()
-        addChildVC(childVC: vc_home, imgName: "tabbar_home" ,tabName: "首页")
-        addChildVC(childVC: vc_square, imgName: "tabbar_square" ,tabName: "广场")
-        addChildVC(childVC: vc_msg, imgName: "tabbar_msg" ,tabName: "消息")
-        addChildVC(childVC: vc_profile, imgName: "tabbar_profile" ,tabName: "我的")
+        addChildVC(childVC: homeVC, imgName: "tabbar_home" ,tabName: "首页")
+        addChildVC(childVC: squareVC, imgName: "tabbar_square" ,tabName: "广场")
+        addChildVC(childVC: msgVC, imgName: "tabbar_msg" ,tabName: "消息")
+        addChildVC(childVC: profileVC, imgName: "tabbar_profile" ,tabName: "我的")
     }
     
     private func setupStyle(){

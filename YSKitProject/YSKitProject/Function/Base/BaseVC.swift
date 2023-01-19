@@ -1,11 +1,11 @@
 //
-//  VC_base.swift
+//  BaseVC.swift
 //  YSKitProject
 //
 //  Created by 姚帅 on 2023/1/6.
 //
 
-class VC_base: YSBaseVC{
+class BaseVC: YSBaseVC{
     
     lazy var diaposeBag: DisposeBag = DisposeBag()
     

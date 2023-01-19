@@ -1,9 +1,9 @@
 //
-//  VC_login.swift
+//  LoginVC.swift
 //  YSKitProject
 //
 //  Created by 姚帅 on 2023/1/6.
 //
 
-class VC_login: VC_base{
+class LoginVC: BaseVC{
 }

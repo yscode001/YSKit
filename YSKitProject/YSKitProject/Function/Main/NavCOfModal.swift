@@ -1,12 +1,12 @@
 //
-//  NavC_modal.swift
+//  NavCOfModal.swift
 //  YSKitProject
 //
 //  Created by 姚帅 on 2023/1/6.
 //
 
 /// 自定义导航控制器，隐藏系统导航条，有侧滑返回手势
-class NavC_modal: UINavigationController, UIGestureRecognizerDelegate{
+class NavCOfModal: UINavigationController, UIGestureRecognizerDelegate{
     
     override init(rootViewController: UIViewController) {
         super.init(rootViewController: rootViewController)

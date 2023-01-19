@@ -11,15 +11,15 @@
 		3105BB1325BBC61C00A2E401 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3105BB1225BBC61C00A2E401 /* Assets.xcassets */; };
 		3105BB1625BBC61C00A2E401 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3105BB1425BBC61C00A2E401 /* LaunchScreen.storyboard */; };
 		3124C2F4296FAB46009D768A /* HttpDesc.md in Resources */ = {isa = PBXBuildFile; fileRef = 3124C2F3296FAB45009D768A /* HttpDesc.md */; };
-		31409BCB2967CEB000F37939 /* VC_msg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31409BCA2967CEB000F37939 /* VC_msg.swift */; };
-		3142B1072967EB5E0021E233 /* VC_base_nav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3142B1062967EB5E0021E233 /* VC_base_nav.swift */; };
+		31409BCB2967CEB000F37939 /* MsgVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31409BCA2967CEB000F37939 /* MsgVC.swift */; };
+		3142B1072967EB5E0021E233 /* BaseNavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3142B1062967EB5E0021E233 /* BaseNavVC.swift */; };
 		3169E6AE296F9F9300348CFA /* UITextField+font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3169E69E296F9F9300348CFA /* UITextField+font.swift */; };
 		3169E6AF296F9F9300348CFA /* UIFont+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3169E69F296F9F9300348CFA /* UIFont+ext.swift */; };
 		3169E6B0296F9F9300348CFA /* UITextView+font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3169E6A0296F9F9300348CFA /* UITextView+font.swift */; };
 		3169E6B1296F9F9300348CFA /* UILabel+font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3169E6A1296F9F9300348CFA /* UILabel+font.swift */; };
 		3169E6B2296F9F9300348CFA /* UIButton+font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3169E6A2296F9F9300348CFA /* UIButton+font.swift */; };
 		3169E6B9296F9F9300348CFA /* CurUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3169E6AD296F9F9300348CFA /* CurUser.swift */; };
-		3178AF0D29680630008F759B /* VC_login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3178AF0C29680630008F759B /* VC_login.swift */; };
+		3178AF0D29680630008F759B /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3178AF0C29680630008F759B /* LoginVC.swift */; };
 		3186CE7125F7625A00A92E7C /* CodableDefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3186CE7025F7625A00A92E7C /* CodableDefaultValue.swift */; };
 		318ADFDD296FA812000B7957 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318ADFD6296FA812000B7957 /* NetworkManager.swift */; };
 		318ADFDE296FA812000B7957 /* NetworkResponseJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318ADFD8296FA812000B7957 /* NetworkResponseJson.swift */; };
@@ -29,15 +29,15 @@
 		318ADFE2296FA812000B7957 /* NetworkServerCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318ADFDC296FA812000B7957 /* NetworkServerCode.swift */; };
 		31D189C02967BBAC0032F4E9 /* TabC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189BF2967BBAC0032F4E9 /* TabC.swift */; };
 		31D189C22967BCF90032F4E9 /* NavC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189C12967BCF90032F4E9 /* NavC.swift */; };
-		31D189C42967BDB50032F4E9 /* NavC_modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189C32967BDB50032F4E9 /* NavC_modal.swift */; };
+		31D189C42967BDB50032F4E9 /* NavCOfModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189C32967BDB50032F4E9 /* NavCOfModal.swift */; };
 		31D189C72967BEA00032F4E9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189C62967BEA00032F4E9 /* Color.swift */; };
 		31D189C92967C0030032F4E9 /* Color_common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189C82967C0030032F4E9 /* Color_common.swift */; };
-		31D189CC2967C0B50032F4E9 /* VC_base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189CB2967C0B50032F4E9 /* VC_base.swift */; };
+		31D189CC2967C0B50032F4E9 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189CB2967C0B50032F4E9 /* BaseVC.swift */; };
 		31D189CF2967C29D0032F4E9 /* Printer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189CE2967C29D0032F4E9 /* Printer.swift */; };
-		31D189D22967C2C80032F4E9 /* Cfg_env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189D12967C2C80032F4E9 /* Cfg_env.swift */; };
-		31D189DA2967C6280032F4E9 /* VC_square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189D92967C6280032F4E9 /* VC_square.swift */; };
-		31D189DC2967C6310032F4E9 /* VC_profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189DB2967C6310032F4E9 /* VC_profile.swift */; };
-		31D189DE2967C6390032F4E9 /* VC_home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189DD2967C6390032F4E9 /* VC_home.swift */; };
+		31D189D22967C2C80032F4E9 /* EnvCfg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189D12967C2C80032F4E9 /* EnvCfg.swift */; };
+		31D189DA2967C6280032F4E9 /* SquareVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189D92967C6280032F4E9 /* SquareVC.swift */; };
+		31D189DC2967C6310032F4E9 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189DB2967C6310032F4E9 /* ProfileVC.swift */; };
+		31D189DE2967C6390032F4E9 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189DD2967C6390032F4E9 /* HomeVC.swift */; };
 		31D35FD929682E1800050D69 /* WerewolfAudioMale.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 31D35FD529682E1700050D69 /* WerewolfAudioMale.bundle */; };
 		31D35FDA29682E1800050D69 /* WerewolfAudioCantonese.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 31D35FD629682E1700050D69 /* WerewolfAudioCantonese.bundle */; };
 		31D35FDB29682E1800050D69 /* WerewolfAudioClassic.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 31D35FD729682E1700050D69 /* WerewolfAudioClassic.bundle */; };
@@ -54,15 +54,15 @@
 		3105BB1725BBC61C00A2E401 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3105BB2325BBC67700A2E401 /* YSKitProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YSKitProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		3124C2F3296FAB45009D768A /* HttpDesc.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = HttpDesc.md; sourceTree = "<group>"; };
-		31409BCA2967CEB000F37939 /* VC_msg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_msg.swift; sourceTree = "<group>"; };
-		3142B1062967EB5E0021E233 /* VC_base_nav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_base_nav.swift; sourceTree = "<group>"; };
+		31409BCA2967CEB000F37939 /* MsgVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MsgVC.swift; sourceTree = "<group>"; };
+		3142B1062967EB5E0021E233 /* BaseNavVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavVC.swift; sourceTree = "<group>"; };
 		3169E69E296F9F9300348CFA /* UITextField+font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+font.swift"; sourceTree = "<group>"; };
 		3169E69F296F9F9300348CFA /* UIFont+ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+ext.swift"; sourceTree = "<group>"; };
 		3169E6A0296F9F9300348CFA /* UITextView+font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+font.swift"; sourceTree = "<group>"; };
 		3169E6A1296F9F9300348CFA /* UILabel+font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+font.swift"; sourceTree = "<group>"; };
 		3169E6A2296F9F9300348CFA /* UIButton+font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+font.swift"; sourceTree = "<group>"; };
 		3169E6AD296F9F9300348CFA /* CurUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurUser.swift; sourceTree = "<group>"; };
-		3178AF0C29680630008F759B /* VC_login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_login.swift; sourceTree = "<group>"; };
+		3178AF0C29680630008F759B /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		3186CE7025F7625A00A92E7C /* CodableDefaultValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableDefaultValue.swift; sourceTree = "<group>"; };
 		318ADFD6296FA812000B7957 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		318ADFD8296FA812000B7957 /* NetworkResponseJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseJson.swift; sourceTree = "<group>"; };
@@ -72,15 +72,15 @@
 		318ADFDC296FA812000B7957 /* NetworkServerCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServerCode.swift; sourceTree = "<group>"; };
 		31D189BF2967BBAC0032F4E9 /* TabC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabC.swift; sourceTree = "<group>"; };
 		31D189C12967BCF90032F4E9 /* NavC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavC.swift; sourceTree = "<group>"; };
-		31D189C32967BDB50032F4E9 /* NavC_modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavC_modal.swift; sourceTree = "<group>"; };
+		31D189C32967BDB50032F4E9 /* NavCOfModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavCOfModal.swift; sourceTree = "<group>"; };
 		31D189C62967BEA00032F4E9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		31D189C82967C0030032F4E9 /* Color_common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color_common.swift; sourceTree = "<group>"; };
-		31D189CB2967C0B50032F4E9 /* VC_base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_base.swift; sourceTree = "<group>"; };
+		31D189CB2967C0B50032F4E9 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		31D189CE2967C29D0032F4E9 /* Printer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Printer.swift; sourceTree = "<group>"; };
-		31D189D12967C2C80032F4E9 /* Cfg_env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cfg_env.swift; sourceTree = "<group>"; };
-		31D189D92967C6280032F4E9 /* VC_square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_square.swift; sourceTree = "<group>"; };
-		31D189DB2967C6310032F4E9 /* VC_profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_profile.swift; sourceTree = "<group>"; };
-		31D189DD2967C6390032F4E9 /* VC_home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_home.swift; sourceTree = "<group>"; };
+		31D189D12967C2C80032F4E9 /* EnvCfg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvCfg.swift; sourceTree = "<group>"; };
+		31D189D92967C6280032F4E9 /* SquareVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareVC.swift; sourceTree = "<group>"; };
+		31D189DB2967C6310032F4E9 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		31D189DD2967C6390032F4E9 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		31D35FD529682E1700050D69 /* WerewolfAudioMale.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WerewolfAudioMale.bundle; sourceTree = "<group>"; };
 		31D35FD629682E1700050D69 /* WerewolfAudioCantonese.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WerewolfAudioCantonese.bundle; sourceTree = "<group>"; };
 		31D35FD729682E1700050D69 /* WerewolfAudioClassic.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WerewolfAudioClassic.bundle; sourceTree = "<group>"; };
@@ -179,7 +179,7 @@
 		31409BC92967CEA600F37939 /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				31409BCA2967CEB000F37939 /* VC_msg.swift */,
+				31409BCA2967CEB000F37939 /* MsgVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -225,7 +225,7 @@
 		3178AF0B29680624008F759B /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				3178AF0C29680630008F759B /* VC_login.swift */,
+				3178AF0C29680630008F759B /* LoginVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -273,7 +273,7 @@
 			children = (
 				31D189BF2967BBAC0032F4E9 /* TabC.swift */,
 				31D189C12967BCF90032F4E9 /* NavC.swift */,
-				31D189C32967BDB50032F4E9 /* NavC_modal.swift */,
+				31D189C32967BDB50032F4E9 /* NavCOfModal.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -290,8 +290,8 @@
 		31D189CA2967C0A70032F4E9 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				31D189CB2967C0B50032F4E9 /* VC_base.swift */,
-				3142B1062967EB5E0021E233 /* VC_base_nav.swift */,
+				31D189CB2967C0B50032F4E9 /* BaseVC.swift */,
+				3142B1062967EB5E0021E233 /* BaseNavVC.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -307,7 +307,7 @@
 		31D189D02967C2BA0032F4E9 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				31D189D12967C2C80032F4E9 /* Cfg_env.swift */,
+				31D189D12967C2C80032F4E9 /* EnvCfg.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -339,7 +339,7 @@
 		31D189D62967C6120032F4E9 /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				31D189D92967C6280032F4E9 /* VC_square.swift */,
+				31D189D92967C6280032F4E9 /* SquareVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -347,7 +347,7 @@
 		31D189D72967C6180032F4E9 /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				31D189DB2967C6310032F4E9 /* VC_profile.swift */,
+				31D189DB2967C6310032F4E9 /* ProfileVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -355,7 +355,7 @@
 		31D189D82967C61B0032F4E9 /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				31D189DD2967C6390032F4E9 /* VC_home.swift */,
+				31D189DD2967C6390032F4E9 /* HomeVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -520,26 +520,26 @@
 				31D189C22967BCF90032F4E9 /* NavC.swift in Sources */,
 				3186CE7125F7625A00A92E7C /* CodableDefaultValue.swift in Sources */,
 				3169E6AF296F9F9300348CFA /* UIFont+ext.swift in Sources */,
-				3142B1072967EB5E0021E233 /* VC_base_nav.swift in Sources */,
+				3142B1072967EB5E0021E233 /* BaseNavVC.swift in Sources */,
 				31D189CF2967C29D0032F4E9 /* Printer.swift in Sources */,
 				3169E6AE296F9F9300348CFA /* UITextField+font.swift in Sources */,
-				31D189CC2967C0B50032F4E9 /* VC_base.swift in Sources */,
+				31D189CC2967C0B50032F4E9 /* BaseVC.swift in Sources */,
 				318ADFE0296FA812000B7957 /* NetworkBaseUrl.swift in Sources */,
-				3178AF0D29680630008F759B /* VC_login.swift in Sources */,
+				3178AF0D29680630008F759B /* LoginVC.swift in Sources */,
 				31D189C92967C0030032F4E9 /* Color_common.swift in Sources */,
-				31D189D22967C2C80032F4E9 /* Cfg_env.swift in Sources */,
+				31D189D22967C2C80032F4E9 /* EnvCfg.swift in Sources */,
 				31D189C02967BBAC0032F4E9 /* TabC.swift in Sources */,
 				3169E6B1296F9F9300348CFA /* UILabel+font.swift in Sources */,
-				31D189DC2967C6310032F4E9 /* VC_profile.swift in Sources */,
+				31D189DC2967C6310032F4E9 /* ProfileVC.swift in Sources */,
 				318ADFDE296FA812000B7957 /* NetworkResponseJson.swift in Sources */,
-				31D189DE2967C6390032F4E9 /* VC_home.swift in Sources */,
+				31D189DE2967C6390032F4E9 /* HomeVC.swift in Sources */,
 				318ADFDF296FA812000B7957 /* NetworkHelper.swift in Sources */,
 				318ADFE1296FA812000B7957 /* NetworkRequestObject.swift in Sources */,
 				3169E6B2296F9F9300348CFA /* UIButton+font.swift in Sources */,
-				31D189C42967BDB50032F4E9 /* NavC_modal.swift in Sources */,
+				31D189C42967BDB50032F4E9 /* NavCOfModal.swift in Sources */,
 				318ADFE2296FA812000B7957 /* NetworkServerCode.swift in Sources */,
-				31D189DA2967C6280032F4E9 /* VC_square.swift in Sources */,
-				31409BCB2967CEB000F37939 /* VC_msg.swift in Sources */,
+				31D189DA2967C6280032F4E9 /* SquareVC.swift in Sources */,
+				31409BCB2967CEB000F37939 /* MsgVC.swift in Sources */,
 				3169E6B9296F9F9300348CFA /* CurUser.swift in Sources */,
 				3169E6B0296F9F9300348CFA /* UITextView+font.swift in Sources */,
 				31D189C72967BEA00032F4E9 /* Color.swift in Sources */,

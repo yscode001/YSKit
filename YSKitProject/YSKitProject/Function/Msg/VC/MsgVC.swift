@@ -1,10 +1,10 @@
 //
-//  VC_square.swift
+//  MsgVC.swift
 //  YSKitProject
 //
 //  Created by 姚帅 on 2023/1/6.
 //
 
-class VC_square: VC_base{
+class MsgVC: BaseVC{
     
 }

@@ -1,10 +1,10 @@
 //
-//  VC_profile.swift
+//  HomeVC.swift
 //  YSKitProject
 //
 //  Created by 姚帅 on 2023/1/6.
 //
 
-class VC_profile: VC_base{
+class HomeVC: BaseVC{
     
 }

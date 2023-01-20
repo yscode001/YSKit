@@ -15,6 +15,6 @@ class BaseVC: YSBaseVC{
     }
     
     deinit{
-        Printer.print("释放控制器：\(pageName)")
+        PrintTool.print("释放控制器：\(pageName)")
     }
 }

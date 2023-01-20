@@ -2,6 +2,7 @@
 @import UIKit;
 
 @import YSKit;
+@import YSVendor;
 
 @import RxSwift;
 @import RxCocoa;

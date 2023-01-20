@@ -27,17 +27,14 @@
 		318ADFE0296FA812000B7957 /* NetworkBaseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318ADFDA296FA812000B7957 /* NetworkBaseUrl.swift */; };
 		318ADFE1296FA812000B7957 /* NetworkRequestObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318ADFDB296FA812000B7957 /* NetworkRequestObject.swift */; };
 		318ADFE2296FA812000B7957 /* NetworkServerCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318ADFDC296FA812000B7957 /* NetworkServerCode.swift */; };
-		31A5919A2979164F00983FB5 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A591992979164F00983FB5 /* Keychain.swift */; };
-		31A5919D297918BA00983FB5 /* NotiName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A5919C297918BA00983FB5 /* NotiName.swift */; };
-		31A5919F2979195B00983FB5 /* Notificater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A5919E2979195B00983FB5 /* Notificater.swift */; };
-		31A591A1297919CF00983FB5 /* Contacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A591A0297919CF00983FB5 /* Contacter.swift */; };
+		31A5919A2979164F00983FB5 /* KeyChainAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A591992979164F00983FB5 /* KeyChainAccount.swift */; };
+		31A5919D297918BA00983FB5 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A5919C297918BA00983FB5 /* NotificationName.swift */; };
 		31D189C02967BBAC0032F4E9 /* TabC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189BF2967BBAC0032F4E9 /* TabC.swift */; };
 		31D189C22967BCF90032F4E9 /* NavC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189C12967BCF90032F4E9 /* NavC.swift */; };
 		31D189C42967BDB50032F4E9 /* NavCOfModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189C32967BDB50032F4E9 /* NavCOfModal.swift */; };
 		31D189C72967BEA00032F4E9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189C62967BEA00032F4E9 /* Color.swift */; };
 		31D189C92967C0030032F4E9 /* Color_common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189C82967C0030032F4E9 /* Color_common.swift */; };
 		31D189CC2967C0B50032F4E9 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189CB2967C0B50032F4E9 /* BaseVC.swift */; };
-		31D189CF2967C29D0032F4E9 /* Printer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189CE2967C29D0032F4E9 /* Printer.swift */; };
 		31D189D22967C2C80032F4E9 /* EnvCfg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189D12967C2C80032F4E9 /* EnvCfg.swift */; };
 		31D189DA2967C6280032F4E9 /* SquareVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189D92967C6280032F4E9 /* SquareVC.swift */; };
 		31D189DC2967C6310032F4E9 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189DB2967C6310032F4E9 /* ProfileVC.swift */; };
@@ -74,17 +71,14 @@
 		318ADFDA296FA812000B7957 /* NetworkBaseUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkBaseUrl.swift; sourceTree = "<group>"; };
 		318ADFDB296FA812000B7957 /* NetworkRequestObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestObject.swift; sourceTree = "<group>"; };
 		318ADFDC296FA812000B7957 /* NetworkServerCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServerCode.swift; sourceTree = "<group>"; };
-		31A591992979164F00983FB5 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
-		31A5919C297918BA00983FB5 /* NotiName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiName.swift; sourceTree = "<group>"; };
-		31A5919E2979195B00983FB5 /* Notificater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notificater.swift; sourceTree = "<group>"; };
-		31A591A0297919CF00983FB5 /* Contacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacter.swift; sourceTree = "<group>"; };
+		31A591992979164F00983FB5 /* KeyChainAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainAccount.swift; sourceTree = "<group>"; };
+		31A5919C297918BA00983FB5 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		31D189BF2967BBAC0032F4E9 /* TabC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabC.swift; sourceTree = "<group>"; };
 		31D189C12967BCF90032F4E9 /* NavC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavC.swift; sourceTree = "<group>"; };
 		31D189C32967BDB50032F4E9 /* NavCOfModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavCOfModal.swift; sourceTree = "<group>"; };
 		31D189C62967BEA00032F4E9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		31D189C82967C0030032F4E9 /* Color_common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color_common.swift; sourceTree = "<group>"; };
 		31D189CB2967C0B50032F4E9 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
-		31D189CE2967C29D0032F4E9 /* Printer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Printer.swift; sourceTree = "<group>"; };
 		31D189D12967C2C80032F4E9 /* EnvCfg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvCfg.swift; sourceTree = "<group>"; };
 		31D189D92967C6280032F4E9 /* SquareVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareVC.swift; sourceTree = "<group>"; };
 		31D189DB2967C6310032F4E9 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
@@ -134,9 +128,9 @@
 				3186CE7425F7628C00A92E7C /* CodableDefaultValue */,
 				31D189C52967BE7C0032F4E9 /* Color */,
 				31D189D02967C2BA0032F4E9 /* Config */,
+				31D189CD2967C0F70032F4E9 /* ConstExt */,
 				3105BB2225BBC66100A2E401 /* Function */,
 				3105BB2025BBC64900A2E401 /* SupportFiles */,
-				31D189CD2967C0F70032F4E9 /* Tool */,
 				3169E69C296F9F9300348CFA /* YSAssist */,
 			);
 			path = YSKitProject;
@@ -276,15 +270,6 @@
 			path = NetworkHelper;
 			sourceTree = "<group>";
 		};
-		31A5919B297918A700983FB5 /* Notification */ = {
-			isa = PBXGroup;
-			children = (
-				31A5919C297918BA00983FB5 /* NotiName.swift */,
-				31A5919E2979195B00983FB5 /* Notificater.swift */,
-			);
-			path = Notification;
-			sourceTree = "<group>";
-		};
 		31D189BE2967BB9A0032F4E9 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,15 +298,13 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		31D189CD2967C0F70032F4E9 /* Tool */ = {
+		31D189CD2967C0F70032F4E9 /* ConstExt */ = {
 			isa = PBXGroup;
 			children = (
-				31A5919B297918A700983FB5 /* Notification */,
-				31D189CE2967C29D0032F4E9 /* Printer.swift */,
-				31A591992979164F00983FB5 /* Keychain.swift */,
-				31A591A0297919CF00983FB5 /* Contacter.swift */,
+				31A591992979164F00983FB5 /* KeyChainAccount.swift */,
+				31A5919C297918BA00983FB5 /* NotificationName.swift */,
 			);
-			path = Tool;
+			path = ConstExt;
 			sourceTree = "<group>";
 		};
 		31D189D02967C2BA0032F4E9 /* Config */ = {
@@ -535,20 +518,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31A5919D297918BA00983FB5 /* NotiName.swift in Sources */,
+				31A5919D297918BA00983FB5 /* NotificationName.swift in Sources */,
 				318ADFDD296FA812000B7957 /* NetworkManager.swift in Sources */,
 				3105BB0A25BBC61C00A2E401 /* AppDelegate.swift in Sources */,
 				31D189C22967BCF90032F4E9 /* NavC.swift in Sources */,
 				3186CE7125F7625A00A92E7C /* CodableDefaultValue.swift in Sources */,
 				3169E6AF296F9F9300348CFA /* UIFont+ext.swift in Sources */,
 				3142B1072967EB5E0021E233 /* BaseNavVC.swift in Sources */,
-				31D189CF2967C29D0032F4E9 /* Printer.swift in Sources */,
-				31A5919A2979164F00983FB5 /* Keychain.swift in Sources */,
+				31A5919A2979164F00983FB5 /* KeyChainAccount.swift in Sources */,
 				3169E6AE296F9F9300348CFA /* UITextField+font.swift in Sources */,
 				31D189CC2967C0B50032F4E9 /* BaseVC.swift in Sources */,
 				318ADFE0296FA812000B7957 /* NetworkBaseUrl.swift in Sources */,
 				3178AF0D29680630008F759B /* LoginVC.swift in Sources */,
-				31A591A1297919CF00983FB5 /* Contacter.swift in Sources */,
 				31D189C92967C0030032F4E9 /* Color_common.swift in Sources */,
 				31D189D22967C2C80032F4E9 /* EnvCfg.swift in Sources */,
 				31D189C02967BBAC0032F4E9 /* TabC.swift in Sources */,
@@ -565,7 +546,6 @@
 				31409BCB2967CEB000F37939 /* MsgVC.swift in Sources */,
 				3169E6B9296F9F9300348CFA /* CurUser.swift in Sources */,
 				3169E6B0296F9F9300348CFA /* UITextView+font.swift in Sources */,
-				31A5919F2979195B00983FB5 /* Notificater.swift in Sources */,
 				31D189C72967BEA00032F4E9 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

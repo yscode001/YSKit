@@ -15,12 +15,14 @@ Pod::Spec.new do |s|
   # 基于以下三方库的封装
   s.dependency                'MJRefresh'
   s.dependency                'SDWebImage'
+  s.dependency		      'SAMKeychain'
   
   # 依赖库
   s.dependency                'YSKit'
   
   s.source_files              = [
   "WebImage/*.swift",
-  "RefreshControl/*.swift"
+  "RefreshControl/*.swift",
+  "KeyChain/*.swift"
   ]
 end

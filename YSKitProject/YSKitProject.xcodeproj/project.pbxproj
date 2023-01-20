@@ -43,6 +43,7 @@
 		31D35FDA29682E1800050D69 /* WerewolfAudioCantonese.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 31D35FD629682E1700050D69 /* WerewolfAudioCantonese.bundle */; };
 		31D35FDB29682E1800050D69 /* WerewolfAudioClassic.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 31D35FD729682E1700050D69 /* WerewolfAudioClassic.bundle */; };
 		31D35FDC29682E1800050D69 /* WerewolfAudioFemale.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 31D35FD829682E1800050D69 /* WerewolfAudioFemale.bundle */; };
+		31F85C48297A40F20080A259 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F85C47297A40F20080A259 /* UserDefaultsKey.swift */; };
 		D9AE2854C6066443E925EBFC /* Pods_YSKitProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0208AACAE7E8FFA2BF6FB57 /* Pods_YSKitProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,7 @@
 		31D35FD629682E1700050D69 /* WerewolfAudioCantonese.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WerewolfAudioCantonese.bundle; sourceTree = "<group>"; };
 		31D35FD729682E1700050D69 /* WerewolfAudioClassic.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WerewolfAudioClassic.bundle; sourceTree = "<group>"; };
 		31D35FD829682E1800050D69 /* WerewolfAudioFemale.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WerewolfAudioFemale.bundle; sourceTree = "<group>"; };
+		31F85C47297A40F20080A259 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		368CADDE3E956462A8DE5357 /* Pods-YSKitProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YSKitProject.debug.xcconfig"; path = "Target Support Files/Pods-YSKitProject/Pods-YSKitProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E0208AACAE7E8FFA2BF6FB57 /* Pods_YSKitProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YSKitProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -303,6 +305,7 @@
 			children = (
 				31A591992979164F00983FB5 /* KeyChainAccount.swift */,
 				31A5919C297918BA00983FB5 /* NotificationName.swift */,
+				31F85C47297A40F20080A259 /* UserDefaultsKey.swift */,
 			);
 			path = ConstExt;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				3169E6B2296F9F9300348CFA /* UIButton+font.swift in Sources */,
 				31D189C42967BDB50032F4E9 /* NavCOfModal.swift in Sources */,
 				318ADFE2296FA812000B7957 /* NetworkServerCode.swift in Sources */,
+				31F85C48297A40F20080A259 /* UserDefaultsKey.swift in Sources */,
 				31D189DA2967C6280032F4E9 /* SquareVC.swift in Sources */,
 				31409BCB2967CEB000F37939 /* MsgVC.swift in Sources */,
 				3169E6B9296F9F9300348CFA /* CurUser.swift in Sources */,

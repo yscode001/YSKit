@@ -14,10 +14,13 @@
 
 /// 运行环境
 enum EnvEnum {
-    /// 开发
+    
+    /// 开发调试
     case develop
+    
     /// 测试包
     case test
+    
     /// 线上包
     case online
 }
@@ -25,6 +28,7 @@ enum EnvEnum {
 class EnvCfg{
     
     private(set) static var env:EnvEnum = .develop
+    
     class var isDevelop:Bool {return env == .develop}
     class var isTest:Bool {return env == .test}
     class var isOnline:Bool {return env == .online}

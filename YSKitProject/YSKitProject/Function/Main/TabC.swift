@@ -81,6 +81,6 @@ class TabC: UITabBarController{
             childVC.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -5)
         }
         // 子控制器
-        addChild(NavC(rootViewController: childVC))
+        addChild(Ctor.navC(interactivePopGesture: true, rootVC: childVC))
     }
 }

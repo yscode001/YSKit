@@ -5,8 +5,8 @@ use_frameworks!
 target 'YSKitProject' do
   
   # 自己的库
-  pod 'YSKit', :path => 'YSKit'
-  pod 'YSVendor', :path => 'YSVendor'
+  pod 'YSKit', :path => 'YS/YSKit'
+  pod 'YSVendor', :path => 'YS/YSVendor'
   
   # Rx
   pod 'RxSwift', '6.5.0'

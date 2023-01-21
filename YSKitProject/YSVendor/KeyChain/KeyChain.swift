@@ -25,10 +25,6 @@ public class KeyChain{
     }
 }
 
-public extension KeyChain.Account{
-    static let DeviceID: KeyChain.Account = KeyChain.Account("DeviceID")
-}
-
 public extension KeyChain{
     
     class func getValue(account: KeyChain.Account) -> String?{

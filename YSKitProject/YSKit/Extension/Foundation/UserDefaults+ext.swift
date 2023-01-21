@@ -1,104 +1,101 @@
 //
-//  UserDefaultsTool.swift
+//  UserDefaults+ext.swift
 //  YSKit
 //
 //  Created by 姚帅 on 2023/1/20.
 //
 
-public class UserDefaultsTool{
+public extension UserDefaults{
     
     private static let Prefix: String = "YSUserDefaults"
     
-    public struct Key : Hashable, Equatable, RawRepresentable, @unchecked Sendable {
+    struct Key : Hashable, Equatable, RawRepresentable, @unchecked Sendable {
         
         public var rawValue: String
         
         public init(_ rawValue: String){
-            self.rawValue = "\(UserDefaultsTool.Prefix)_\(rawValue)"
+            self.rawValue = "\(UserDefaults.Prefix)_\(rawValue)"
         }
         
         public init(rawValue: String){
-            self.rawValue = "\(UserDefaultsTool.Prefix)_\(rawValue)"
+            self.rawValue = "\(UserDefaults.Prefix)_\(rawValue)"
         }
     }
 }
-public extension UserDefaultsTool.Key{
-    static let CurrentUserID: UserDefaultsTool.Key = UserDefaultsTool.Key("CurrentUserID")
-}
 
 // MARK: - 判断是否存在key值
-public extension UserDefaultsTool{
+public extension YSOriginalProtocol where OriginalType: UserDefaults{
     
-    static func exist(key: UserDefaultsTool.Key) -> Bool{
+    static func exist(key: UserDefaults.Key) -> Bool{
         return UserDefaults.standard.object(forKey: key.rawValue) != nil
     }
 }
 
 // MARK: - 设置值
-public extension UserDefaultsTool{
+public extension YSOriginalProtocol where OriginalType: UserDefaults{
     
-    static func set(_ value: Any, forKey: UserDefaultsTool.Key){
+    static func set(_ value: Any, forKey: UserDefaults.Key){
         UserDefaults.standard.set(value, forKey: forKey.rawValue)
     }
     
-    static func set(_ value: URL, forKey: UserDefaultsTool.Key){
+    static func set(_ value: URL, forKey: UserDefaults.Key){
         UserDefaults.standard.set(value, forKey: forKey.rawValue)
     }
     
-    static func set(_ value: String, forKey: UserDefaultsTool.Key){
+    static func set(_ value: String, forKey: UserDefaults.Key){
         UserDefaults.standard.set(value, forKey: forKey.rawValue)
     }
     
-    static func set(_ value: Int, forKey: UserDefaultsTool.Key){
+    static func set(_ value: Int, forKey: UserDefaults.Key){
         UserDefaults.standard.set(value, forKey: forKey.rawValue)
     }
     
-    static func set(_ value: Float, forKey: UserDefaultsTool.Key){
+    static func set(_ value: Float, forKey: UserDefaults.Key){
         UserDefaults.standard.set(value, forKey: forKey.rawValue)
     }
     
-    static func set(_ value: Double, forKey: UserDefaultsTool.Key){
+    static func set(_ value: Double, forKey: UserDefaults.Key){
         UserDefaults.standard.set(value, forKey: forKey.rawValue)
     }
     
-    static func set(_ value: Bool, forKey: UserDefaultsTool.Key){
+    static func set(_ value: Bool, forKey: UserDefaults.Key){
         UserDefaults.standard.set(value, forKey: forKey.rawValue)
     }
 }
 
 // MARK: - 移除值
-public extension UserDefaultsTool{
+public extension YSOriginalProtocol where OriginalType: UserDefaults{
     
-    static func removeObject(forkey: UserDefaultsTool.Key){
+    static func removeObject(forkey: UserDefaults.Key){
         UserDefaults.standard.removeObject(forKey: forkey.rawValue)
     }
 }
 
 // MARK: - Get必选
-public extension UserDefaultsTool{
+public extension YSOriginalProtocol where OriginalType: UserDefaults{
     
-   static func getBool(forKey: UserDefaultsTool.Key, default value: Bool = false) -> Bool{
+   static func getBool(forKey: UserDefaults.Key, default value: Bool = false) -> Bool{
         if exist(key: forKey){
             return UserDefaults.standard.bool(forKey: forKey.rawValue)
         }
         return value
     }
     
-    static func getInteger(forKey: UserDefaultsTool.Key, default value: Int = 0) -> Int{
+    static func getInteger(forKey: UserDefaults.Key, default value: Int = 0) -> Int{
         if exist(key: forKey){
             return UserDefaults.standard.integer(forKey: forKey.rawValue)
         }
         return value
     }
     
-    static func getFloat(forKey: UserDefaultsTool.Key, default value: Float = 0) -> Float{
+    static func getFloat(forKey: UserDefaults.Key, default value: Float = 0) -> Float{
         if exist(key: forKey){
             return UserDefaults.standard.float(forKey: forKey.rawValue)
         }
         return value
     }
     
-    static func getDouble(forKey: UserDefaultsTool.Key, default value: Double = 0) -> Double{
+    static func getDouble(forKey: UserDefaults.Key, default value: Double = 0) -> Double{
         if exist(key: forKey){
             return UserDefaults.standard.double(forKey: forKey.rawValue)
         }
@@ -107,69 +104,69 @@ public extension UserDefaultsTool{
 }
 
 // MARK: - Get可选
-public extension UserDefaultsTool{
+public extension YSOriginalProtocol where OriginalType: UserDefaults{
     
-    static func getData(forKey: UserDefaultsTool.Key) -> Data?{
+    static func getData(forKey: UserDefaults.Key) -> Data?{
         return UserDefaults.standard.data(forKey: forKey.rawValue)
     }
     
-    static func getData(forKey: UserDefaultsTool.Key, default value: Data) -> Data{
+    static func getData(forKey: UserDefaults.Key, default value: Data) -> Data{
         return UserDefaults.standard.data(forKey: forKey.rawValue) ?? value
     }
     
-    static func getAny(forKey: UserDefaultsTool.Key) -> Any?{
+    static func getAny(forKey: UserDefaults.Key) -> Any?{
         return UserDefaults.standard.value(forKey: forKey.rawValue)
     }
     
-    static func getAny(forKey: UserDefaultsTool.Key, default value: Any) -> Any{
+    static func getAny(forKey: UserDefaults.Key, default value: Any) -> Any{
         return UserDefaults.standard.value(forKey: forKey.rawValue) ?? value
     }
     
-    static func getArray(forKey: UserDefaultsTool.Key) -> [Any]?{
+    static func getArray(forKey: UserDefaults.Key) -> [Any]?{
         return UserDefaults.standard.array(forKey: forKey.rawValue)
     }
     
-    static func getArray(forKey: UserDefaultsTool.Key, default value: [Any] = []) -> [Any]{
+    static func getArray(forKey: UserDefaults.Key, default value: [Any] = []) -> [Any]{
         return UserDefaults.standard.array(forKey: forKey.rawValue) ?? value
     }
     
-    static func getDictionary(forKey: UserDefaultsTool.Key) -> [String: Any]?{
+    static func getDictionary(forKey: UserDefaults.Key) -> [String: Any]?{
         return UserDefaults.standard.dictionary(forKey: forKey.rawValue)
     }
     
-    static func getDictionary(forKey: UserDefaultsTool.Key, default value: [String: Any] = [:]) -> [String: Any] {
+    static func getDictionary(forKey: UserDefaults.Key, default value: [String: Any] = [:]) -> [String: Any] {
         return UserDefaults.standard.dictionary(forKey: forKey.rawValue) ?? value
     }
     
-    static func getObject(forKey: UserDefaultsTool.Key) -> Any?{
+    static func getObject(forKey: UserDefaults.Key) -> Any?{
         return UserDefaults.standard.object(forKey: forKey.rawValue)
     }
     
-    static func getObject(forKey: UserDefaultsTool.Key, default value: Any) -> Any{
+    static func getObject(forKey: UserDefaults.Key, default value: Any) -> Any{
         return UserDefaults.standard.object(forKey: forKey.rawValue) ?? value
     }
     
-    static func getStringArray(forKey: UserDefaultsTool.Key) -> [String]?{
+    static func getStringArray(forKey: UserDefaults.Key) -> [String]?{
         return UserDefaults.standard.stringArray(forKey: forKey.rawValue)
     }
     
-    static func getStringArray(forKey: UserDefaultsTool.Key, default value: [String] = []) -> [String]{
+    static func getStringArray(forKey: UserDefaults.Key, default value: [String] = []) -> [String]{
         return UserDefaults.standard.stringArray(forKey: forKey.rawValue) ?? value
     }
     
-    static func getUrl(forKey: UserDefaultsTool.Key) -> URL?{
+    static func getUrl(forKey: UserDefaults.Key) -> URL?{
         return UserDefaults.standard.url(forKey: forKey.rawValue)
     }
     
-    static func getUrl(forKey: UserDefaultsTool.Key, default value: URL) -> URL{
+    static func getUrl(forKey: UserDefaults.Key, default value: URL) -> URL{
         return UserDefaults.standard.url(forKey: forKey.rawValue) ?? value
     }
     
-    static func getString(forKey: UserDefaultsTool.Key) -> String?{
+    static func getString(forKey: UserDefaults.Key) -> String?{
         return UserDefaults.standard.string(forKey: forKey.rawValue)
     }
     
-    static func getString(forKey: UserDefaultsTool.Key, default value: String = "") -> String{
+    static func getString(forKey: UserDefaults.Key, default value: String = "") -> String{
         return UserDefaults.standard.string(forKey: forKey.rawValue) ?? value
     }
 }

@@ -31,6 +31,10 @@ public extension KeyChain{
         return SAMKeychain.password(forService: service, account: account.rawValue)
     }
     
+    class func getValue(account: KeyChain.Account, default value: String = "") -> String{
+        return SAMKeychain.password(forService: service, account: account.rawValue) ?? value
+    }
+    
     class func setValue(account: KeyChain.Account, value: String){
         SAMKeychain.setPassword(value, forService: service, account: account.rawValue)
     }

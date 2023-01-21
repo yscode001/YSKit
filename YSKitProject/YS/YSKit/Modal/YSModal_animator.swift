@@ -4,6 +4,7 @@ open class YSModal_animator: NSObject, UIViewControllerTransitioningDelegate {
     
     private let sw = UIScreen.main.bounds.width
     private weak var presentedVC:YSModal_presentedVC?
+    private weak var presentedNavC:YSModal_presentedNavC?
     
     // 展现or解除
     private var isPresent:Bool = false
@@ -12,8 +13,17 @@ open class YSModal_animator: NSObject, UIViewControllerTransitioningDelegate {
     private weak var transitionContext:UIViewControllerContextTransitioning?
     
     public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        presentedVC = presented as? YSModal_presentedVC
-        return YSModal_presentingVC(presentedViewController: presented, presenting: presenting)
+        if let vc = presented as? YSModal_presentedVC{
+            presentedVC = vc
+            presentedNavC = nil
+            return YSModal_presentingVC(presentedViewController: presented, presenting: presenting)
+        }
+        if let vc = presented as? YSModal_presentedNavC{
+            presentedVC = nil
+            presentedNavC = vc
+            return YSModal_presentingVC(presentedViewController: presented, presenting: presenting)
+        }
+        return nil
     }
     
     // 告诉控制器谁来提供展现转场动画
@@ -63,7 +73,13 @@ extension YSModal_animator:UIViewControllerAnimatedTransitioning,CAAnimationDele
     }
     
     private func presentedDirection() -> YSModal_direction{
-        return presentedVC?.setupModalDirectionAndLength().direction ?? .toTop
+        if let _ = presentedVC{
+            return presentedVC?.setupModalDirectionAndLength().direction ?? .toTop
+        }
+        if let _ = presentedNavC{
+            return presentedNavC?.setupModalDirectionAndLength().direction ?? .toTop
+        }
+        return .toTop
     }
     
     private func presentedLength() -> CGFloat{
@@ -71,7 +87,13 @@ extension YSModal_animator:UIViewControllerAnimatedTransitioning,CAAnimationDele
         let sh = UIScreen.main.bounds.height
         let direction = presentedDirection()
         if direction == .toTop || direction == .toBottom{ // 上下弹框
-            var length = presentedVC?.setupModalDirectionAndLength().length ?? sh * 0.5
+            var length = sh * 0.5
+            if let _ = presentedVC{
+                length = presentedVC?.setupModalDirectionAndLength().length ?? sh * 0.5
+            }
+            else if let _ = presentedNavC{
+                length = presentedNavC?.setupModalDirectionAndLength().length ?? sh * 0.5
+            }
             if length < 0{
                 length = 0
             } else if length > sh{
@@ -79,7 +101,13 @@ extension YSModal_animator:UIViewControllerAnimatedTransitioning,CAAnimationDele
             }
             return length
         } else{ // 左右弹框
-            var length = presentedVC?.setupModalDirectionAndLength().length ?? UIScreen.main.bounds.width * 0.5
+            var length = sw * 0.5
+            if let _ = presentedVC{
+                length = presentedVC?.setupModalDirectionAndLength().length ?? sw * 0.5
+            }
+            else if let _ = presentedNavC{
+                length = presentedNavC?.setupModalDirectionAndLength().length ?? sh * 0.5
+            }
             if length < 0{
                 length = 0
             } else if length > sw{

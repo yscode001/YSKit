@@ -8,26 +8,26 @@
 import Foundation
 
 /// 自定义导航控制器，隐藏系统导航条，有边缘侧滑返回手势(可选)
-public class YSNavC: UINavigationController, UIGestureRecognizerDelegate{
+open class YSNavC: UINavigationController, UIGestureRecognizerDelegate{
     
     /// 是否允许边缘侧滑手势
     fileprivate lazy var interactivePopGesture:Bool = true
     
     // 私有
-    fileprivate override init(rootViewController: UIViewController) {
+    override init(rootViewController: UIViewController) {
         super.init(rootViewController: rootViewController)
         modalPresentationStyle = .custom
         modalTransitionStyle = .crossDissolve
     }
     
     // 私有
-    fileprivate override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         modalPresentationStyle = .custom
         modalTransitionStyle = .crossDissolve
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         modalPresentationStyle = .custom
         modalTransitionStyle = .crossDissolve

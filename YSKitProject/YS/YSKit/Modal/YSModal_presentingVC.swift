@@ -23,6 +23,9 @@ public class YSModal_presentingVC: UIPresentationController {
         if case let vc as YSModal_presentedVC = presentedViewController {
             ys_maskView_alpha = vc.setupModalMaskView().alpha
         }
+        else if case let vc as YSModal_presentedNavC = presentedViewController {
+            ys_maskView_alpha = vc.setupModalMaskView().alpha
+        }
     }
     
     // 即将弹框的时候执行
@@ -36,6 +39,9 @@ public class YSModal_presentingVC: UIPresentationController {
         if !containerV.subviews.contains(ys_maskView_modalCustomHeight){
             containerV.addSubview(ys_maskView_modalCustomHeight)
             if case let vc as YSModal_presentedVC = presentedViewController {
+                ys_maskView_modalCustomHeight.backgroundColor = vc.setupModalMaskView().bgC
+            }
+            else if case let vc as YSModal_presentedNavC = presentedViewController {
                 ys_maskView_modalCustomHeight.backgroundColor = vc.setupModalMaskView().bgC
             }
         }

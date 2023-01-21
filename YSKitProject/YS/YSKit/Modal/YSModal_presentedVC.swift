@@ -1,6 +1,6 @@
 import UIKit
 
-open class YSModal_presentedVC: UIViewController {
+open class YSModal_presentedVC: YSBaseVC {
     
     // transitioningDelegate为弱引用，所以这里要声明变量强引用
     private var ys_modalAnimator:YSModal_animator?

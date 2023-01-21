@@ -48,4 +48,8 @@ Pod::Spec.new do |s|
     ss.source_files         = ["Tool/*.swift"]
   end
 
+  s.subspec "Modal" do |ss|
+    ss.source_files         = ["Modal/*.swift"]
+  end
+
 end

@@ -33,7 +33,7 @@ public class YSRedPointV: UIView {
     }
     
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
     /// 获取圆角区域内的rect

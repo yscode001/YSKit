@@ -32,7 +32,7 @@ public class YSBadgeView: UIView {
     /// 数字与边界的距离
     private var innerSpaceFromBorder:CGFloat = 3
     
-    // badget的ag值
+    // badget的tag值
     private let badgeTag = 98769876
     
     /// 默认X的布局偏移
@@ -47,7 +47,7 @@ public class YSBadgeView: UIView {
     }
     
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
     private func updateBadgeViewFrame(badgeVal: String){
@@ -55,7 +55,7 @@ public class YSBadgeView: UIView {
             return
         }
         
-        let numberSize = badgeVal.size(withAttributes: [NSAttributedString.Key.font:font,NSAttributedString.Key.foregroundColor:textColor])
+        let numberSize = badgeVal.size(withAttributes: [NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: textColor])
         var badgeHeight:CGFloat
         var badgeWidth:CGFloat
         if badgeValue.count > 1{ // 两位数及以上，椭圆
@@ -93,7 +93,7 @@ public class YSBadgeView: UIView {
         badgeColor.setFill()
         badgePath.fill()
         // 数字
-        let numberSize = badgeValue.size(withAttributes: [NSAttributedString.Key.font:font,NSAttributedString.Key.foregroundColor:textColor])
+        let numberSize = badgeValue.size(withAttributes: [NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: textColor])
         let numRect = CGRect(x: (rect.width - numberSize.width) * 0.5, y: (rect.height - numberSize.height) * 0.5, width: numberSize.width, height: numberSize.height)
         let paragrapStyle = NSMutableParagraphStyle()
         paragrapStyle.lineBreakMode = .byClipping

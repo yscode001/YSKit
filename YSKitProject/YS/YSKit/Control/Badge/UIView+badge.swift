@@ -23,17 +23,12 @@ public extension YSOriginalProtocol where OriginalType: UIView{
     
     /// 设置badge的值
     func badge(value: String){
-        if value.count <= 0{
-            badgeView.isHidden = true
-            if originalObj.subviews.contains(badgeView){
-                originalObj.sendSubviewToBack(badgeView)
-            }
-        } else{
-            badgeView.isHidden = false
-            badgeView.badgeValue = value
-            if originalObj.subviews.contains(badgeView){
-                originalObj.bringSubviewToFront(badgeView)
-            }
+        badgeView.badgeValue = value
+        badgeView.isHidden = value.count <= 0
+        if value.count <= 0 && originalObj.subviews.contains(badgeView){
+            originalObj.sendSubviewToBack(badgeView)
+        } else if value.count > 0 && originalObj.subviews.contains(badgeView){
+            originalObj.bringSubviewToFront(badgeView)
         }
     }
     

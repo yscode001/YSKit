@@ -23,16 +23,11 @@ public extension YSOriginalProtocol where OriginalType: UIView{
     
     /// 设置redPoint
     func redPoint(show: Bool){
-        if show{
-            redPointView.isHidden = false
-            if originalObj.subviews.contains(redPointView){
-                originalObj.bringSubviewToFront(redPointView)
-            }
-        } else{
-            redPointView.isHidden = true
-            if originalObj.subviews.contains(redPointView){
-                originalObj.sendSubviewToBack(redPointView)
-            }
+        redPointView.isHidden = !show
+        if show && originalObj.subviews.contains(redPointView){
+            originalObj.bringSubviewToFront(redPointView)
+        } else if !show && originalObj.subviews.contains(redPointView){
+            originalObj.sendSubviewToBack(redPointView)
         }
         redPointView.updateRedPointViewFrame()
     }

@@ -7,11 +7,14 @@
 
 import Foundation
 
-public extension YSOriginalProtocol where OriginalType == YSTextView{
+public extension Ctor{
     
-    static func create() -> YSTextView{
+    static func textViewCustom() -> YSTextView{
         return YSTextView()
     }
+}
+
+public extension YSOriginalProtocol where OriginalType == YSTextView{
     
     /// 设置placeHolder
     /// - Parameters:

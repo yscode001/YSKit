@@ -1,19 +1,19 @@
 //
-//  PrintTool.swift
+//  Printer.swift
 //  YSKit
 //
 //  Created by 姚帅 on 2023/1/20.
 //
 
 /// 打印工具
-public class PrintTool{
+public class Printer{
     
     private static var enable:Bool = true
     
     /// 是否启用打印日志的功能
     /// - Parameter enable: 是否启用
     public class func enable(enable: Bool){
-        PrintTool.enable = enable
+        Printer.enable = enable
     }
     
     /// 打印日志

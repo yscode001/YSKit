@@ -1,8 +1,8 @@
 //
 //  YSRefreshCtrl.swift
-//  YSAssist
+//  YSVendor
 //
-//  Created by yaoshuai on 2021/1/1.
+//  Created by yaoshuai on 2023/1/1.
 //
 
 import Foundation

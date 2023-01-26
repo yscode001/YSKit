@@ -2,7 +2,7 @@
 //  YSRefreshTitleInfo.swift
 //  YSVendor
 //
-//  Created by 姚帅 on 2021/1/23.
+//  Created by 姚帅 on 2023/1/23.
 //
 
 import Foundation

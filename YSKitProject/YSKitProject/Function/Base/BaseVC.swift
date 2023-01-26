@@ -9,12 +9,12 @@ class BaseVC: YSBaseVC{
     
     lazy var diaposeBag: DisposeBag = DisposeBag()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidLoad(firstTime: Bool) {
+        super.viewDidLoad(firstTime: firstTime)
         view.backgroundColor = Color.vc_rootview
     }
     
     deinit{
-        PrintTool.print("释放控制器：\(pageName)")
+        Printer.print("释放控制器：\(pageName)")
     }
 }

@@ -1,11 +1,11 @@
 //
-//  ContactTool.swift
+//  Contacter.swift
 //  YSKit
 //
 //  Created by 姚帅 on 2023/1/20.
 //
 
-public class ContactTool{
+public class Contacter{
     
     public class func phone(_ phone: String?) -> (Bool, String?){
         guard let p = phone, let url = URL(string: "tel:\(p)") else {

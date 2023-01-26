@@ -1,4 +1,4 @@
-public enum YSModal_direction {
+public enum YSModalType {
     
     /// 自下而上
     case toTop

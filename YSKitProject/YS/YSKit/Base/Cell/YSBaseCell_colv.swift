@@ -21,12 +21,12 @@ open class YSBaseCell_colv: UICollectionViewCell {
         setupUI()
     }
     
-    /// 设置属性
+    /// 先执行setupProperty，后执行setupUI
     open func setupProperty(){
         
     }
     
-    /// 设置UI
+    /// 先执行setupProperty，后执行setupUI
     open func setupUI(){
         
     }

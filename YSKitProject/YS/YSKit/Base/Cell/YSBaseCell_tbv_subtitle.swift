@@ -21,12 +21,12 @@ open class YSBaseCell_tbv_subtitle: UITableViewCell {
         setupUI()
     }
     
-    /// 设置属性
+    /// 先执行setupProperty，后执行setupUI
     open func setupProperty(){
-        selectionStyle = .none
+        selectionStyle = .default
     }
     
-    /// 设置UI
+    /// 先执行setupProperty，后执行setupUI
     open func setupUI(){
         
     }

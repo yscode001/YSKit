@@ -1,10 +1,11 @@
 import UIKit
 
-public class YSModal_presentingVC: UIPresentationController {
+public class YSModalPresentingVC: UIPresentationController {
     
-    private var ys_maskView_alpha:CGFloat = 0
-    private var ys_animateDuration:TimeInterval = 0.25
-    private lazy var ys_maskView_modalCustomHeight: UIView = {
+    private var maskViewAlpha:CGFloat = 0
+    private var animateDuration:TimeInterval = 0.25
+    
+    private lazy var maskView: UIView = {
         let v = UIView()
         if let rect = self.containerView?.bounds {
             v.frame = rect
@@ -20,11 +21,11 @@ public class YSModal_presentingVC: UIPresentationController {
     public override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
         super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
         
-        if case let vc as YSModal_presentedVC = presentedViewController {
-            ys_maskView_alpha = vc.setupModalMaskView().alpha
+        if case let vc as YSModalPresentedVC = presentedViewController {
+            maskViewAlpha = vc.setupModalMaskView().alpha
         }
-        else if case let vc as YSModal_presentedNavC = presentedViewController {
-            ys_maskView_alpha = vc.setupModalMaskView().alpha
+        else if case let vc as YSModalPresentedNavC = presentedViewController {
+            maskViewAlpha = vc.setupModalMaskView().alpha
         }
     }
     
@@ -36,21 +37,21 @@ public class YSModal_presentingVC: UIPresentationController {
         guard let containerV = containerView else{
             return
         }
-        if !containerV.subviews.contains(ys_maskView_modalCustomHeight){
-            containerV.addSubview(ys_maskView_modalCustomHeight)
-            if case let vc as YSModal_presentedVC = presentedViewController {
-                ys_maskView_modalCustomHeight.backgroundColor = vc.setupModalMaskView().bgC
+        if !containerV.subviews.contains(maskView){
+            containerV.addSubview(maskView)
+            if case let vc as YSModalPresentedVC = presentedViewController {
+                maskView.backgroundColor = vc.setupModalMaskView().maskViewBGC
             }
-            else if case let vc as YSModal_presentedNavC = presentedViewController {
-                ys_maskView_modalCustomHeight.backgroundColor = vc.setupModalMaskView().bgC
+            else if case let vc as YSModalPresentedNavC = presentedViewController {
+                maskView.backgroundColor = vc.setupModalMaskView().maskViewBGC
             }
         }
-        ys_maskView_modalCustomHeight.alpha = 0
-        UIView.animate(withDuration: ys_animateDuration) {[weak self] in
-            guard let se = self else{
+        maskView.alpha = 0
+        UIView.animate(withDuration: animateDuration) {[weak self] in
+            guard let `self` = self else{
                 return
             }
-            se.ys_maskView_modalCustomHeight.alpha = se.ys_maskView_alpha
+            self.maskView.alpha = self.maskViewAlpha
         }
     }
     
@@ -58,11 +59,11 @@ public class YSModal_presentingVC: UIPresentationController {
     public override func dismissalTransitionWillBegin() {
         super.dismissalTransitionWillBegin()
         
-        UIView.animate(withDuration: ys_animateDuration) {[weak self] in
-            guard let se = self else{
+        UIView.animate(withDuration: animateDuration) {[weak self] in
+            guard let `self` = self else{
                 return
             }
-            se.ys_maskView_modalCustomHeight.alpha = 0
+            self.maskView.alpha = 0
         }
     }
     
@@ -71,7 +72,7 @@ public class YSModal_presentingVC: UIPresentationController {
         super.dismissalTransitionDidEnd(completed)
         
         if completed {
-            ys_maskView_modalCustomHeight.removeFromSuperview()
+            maskView.removeFromSuperview()
         }
     }
     
@@ -103,6 +104,7 @@ public class YSModal_presentingVC: UIPresentationController {
         containerV.addConstraint(NSLayoutConstraint(item: presentedV, attribute: .height, relatedBy: .equal, toItem: containerV, attribute: .height, multiplier: 0, constant: UIScreen.main.bounds.size.height))
     }
     
+    /// 点击遮罩视图，进行dismiss操作
     @objc private func maskViewClick(){
         presentedViewController.dismiss(animated: true, completion: nil)
     }

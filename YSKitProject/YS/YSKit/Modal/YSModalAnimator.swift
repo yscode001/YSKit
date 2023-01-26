@@ -1,10 +1,10 @@
 import UIKit
 
-open class YSModal_animator: NSObject, UIViewControllerTransitioningDelegate {
+open class YSModalAnimator: NSObject, UIViewControllerTransitioningDelegate {
     
     private let sw = UIScreen.main.bounds.width
-    private weak var presentedVC:YSModal_presentedVC?
-    private weak var presentedNavC:YSModal_presentedNavC?
+    private weak var presentedVC:YSModalPresentedVC?
+    private weak var presentedNavC:YSModalPresentedNavC?
     
     // 展现or解除
     private var isPresent:Bool = false
@@ -13,15 +13,15 @@ open class YSModal_animator: NSObject, UIViewControllerTransitioningDelegate {
     private weak var transitionContext:UIViewControllerContextTransitioning?
     
     public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        if let vc = presented as? YSModal_presentedVC{
+        if let vc = presented as? YSModalPresentedVC{
             presentedVC = vc
             presentedNavC = nil
-            return YSModal_presentingVC(presentedViewController: presented, presenting: presenting)
+            return YSModalPresentingVC(presentedViewController: presented, presenting: presenting)
         }
-        if let vc = presented as? YSModal_presentedNavC{
+        if let vc = presented as? YSModalPresentedNavC{
             presentedVC = nil
             presentedNavC = vc
-            return YSModal_presentingVC(presentedViewController: presented, presenting: presenting)
+            return YSModalPresentingVC(presentedViewController: presented, presenting: presenting)
         }
         return nil
     }
@@ -40,7 +40,7 @@ open class YSModal_animator: NSObject, UIViewControllerTransitioningDelegate {
 }
 
 // MARK: - 转场动画
-extension YSModal_animator:UIViewControllerAnimatedTransitioning,CAAnimationDelegate{
+extension YSModalAnimator:UIViewControllerAnimatedTransitioning,CAAnimationDelegate{
     
     public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.25
@@ -72,7 +72,7 @@ extension YSModal_animator:UIViewControllerAnimatedTransitioning,CAAnimationDele
         }
     }
     
-    private func presentedDirection() -> YSModal_direction{
+    private func presentedDirection() -> YSModalType{
         if let _ = presentedVC{
             return presentedVC?.setupModalDirectionAndLength().direction ?? .toTop
         }

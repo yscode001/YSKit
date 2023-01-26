@@ -23,4 +23,15 @@ public class Printer{
             Swift.print(item)
         }
     }
+    
+    /// 打印日志
+    /// - Parameters:
+    ///   - _items: 打印的内容
+    ///   - separator: separator
+    ///   - terminator: terminator
+    public class func print(_items: Any..., separator: String = " ", terminator: String = "\n"){
+        if enable{
+            Swift.print(_items, separator, terminator)
+        }
+    }
 }

@@ -33,3 +33,9 @@ class EnvCfg{
     class var isTest:Bool {return env == .test}
     class var isOnline:Bool {return env == .online}
 }
+
+extension EnvCfg{
+    
+    /// 是否启用打印日志的功能
+    static var enableLog:Bool{return isDevelop}
+}

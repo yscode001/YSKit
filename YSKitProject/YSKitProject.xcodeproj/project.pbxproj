@@ -27,13 +27,16 @@
 		318ADFE0296FA812000B7957 /* NetworkBaseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318ADFDA296FA812000B7957 /* NetworkBaseUrl.swift */; };
 		318ADFE1296FA812000B7957 /* NetworkRequestObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318ADFDB296FA812000B7957 /* NetworkRequestObject.swift */; };
 		318ADFE2296FA812000B7957 /* NetworkServerCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318ADFDC296FA812000B7957 /* NetworkServerCode.swift */; };
+		319398582983650D0088EE34 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319398572983650D0088EE34 /* Document.swift */; };
+		3193985B298366830088EE34 /* EnvEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3193985A298366830088EE34 /* EnvEnum.swift */; };
+		3193985D298367370088EE34 /* GenderEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3193985C298367370088EE34 /* GenderEnum.swift */; };
 		31A5919A2979164F00983FB5 /* KeyChainAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A591992979164F00983FB5 /* KeyChainAccount.swift */; };
 		31A5919D297918BA00983FB5 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A5919C297918BA00983FB5 /* NotificationName.swift */; };
 		31D189C02967BBAC0032F4E9 /* TabC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189BF2967BBAC0032F4E9 /* TabC.swift */; };
 		31D189C72967BEA00032F4E9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189C62967BEA00032F4E9 /* Color.swift */; };
 		31D189C92967C0030032F4E9 /* Color_common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189C82967C0030032F4E9 /* Color_common.swift */; };
 		31D189CC2967C0B50032F4E9 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189CB2967C0B50032F4E9 /* BaseVC.swift */; };
-		31D189D22967C2C80032F4E9 /* EnvCfg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189D12967C2C80032F4E9 /* EnvCfg.swift */; };
+		31D189D22967C2C80032F4E9 /* AppCfg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189D12967C2C80032F4E9 /* AppCfg.swift */; };
 		31D189DA2967C6280032F4E9 /* SquareVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189D92967C6280032F4E9 /* SquareVC.swift */; };
 		31D189DC2967C6310032F4E9 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189DB2967C6310032F4E9 /* ProfileVC.swift */; };
 		31D189DE2967C6390032F4E9 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189DD2967C6390032F4E9 /* HomeVC.swift */; };
@@ -70,13 +73,16 @@
 		318ADFDA296FA812000B7957 /* NetworkBaseUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkBaseUrl.swift; sourceTree = "<group>"; };
 		318ADFDB296FA812000B7957 /* NetworkRequestObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestObject.swift; sourceTree = "<group>"; };
 		318ADFDC296FA812000B7957 /* NetworkServerCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServerCode.swift; sourceTree = "<group>"; };
+		319398572983650D0088EE34 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		3193985A298366830088EE34 /* EnvEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvEnum.swift; sourceTree = "<group>"; };
+		3193985C298367370088EE34 /* GenderEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderEnum.swift; sourceTree = "<group>"; };
 		31A591992979164F00983FB5 /* KeyChainAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainAccount.swift; sourceTree = "<group>"; };
 		31A5919C297918BA00983FB5 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		31D189BF2967BBAC0032F4E9 /* TabC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabC.swift; sourceTree = "<group>"; };
 		31D189C62967BEA00032F4E9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		31D189C82967C0030032F4E9 /* Color_common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color_common.swift; sourceTree = "<group>"; };
 		31D189CB2967C0B50032F4E9 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
-		31D189D12967C2C80032F4E9 /* EnvCfg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvCfg.swift; sourceTree = "<group>"; };
+		31D189D12967C2C80032F4E9 /* AppCfg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCfg.swift; sourceTree = "<group>"; };
 		31D189D92967C6280032F4E9 /* SquareVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareVC.swift; sourceTree = "<group>"; };
 		31D189DB2967C6310032F4E9 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		31D189DD2967C6390032F4E9 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -123,11 +129,13 @@
 			isa = PBXGroup;
 			children = (
 				3105BB2125BBC65700A2E401 /* AppDelegate */,
+				3105BB2225BBC66100A2E401 /* AppFunction */,
 				3186CE7425F7628C00A92E7C /* CodableDefaultValue */,
 				31D189C52967BE7C0032F4E9 /* Color */,
-				31D189D02967C2BA0032F4E9 /* Config */,
+				31D189D02967C2BA0032F4E9 /* Configuration */,
 				31D189CD2967C0F70032F4E9 /* ConstExt */,
-				3105BB2225BBC66100A2E401 /* Function */,
+				31939856298364F70088EE34 /* Document */,
+				31939859298366710088EE34 /* Enum */,
 				3105BB2025BBC64900A2E401 /* SupportFiles */,
 				3169E69C296F9F9300348CFA /* YSAssist */,
 			);
@@ -153,7 +161,7 @@
 			name = AppDelegate;
 			sourceTree = "<group>";
 		};
-		3105BB2225BBC66100A2E401 /* Function */ = {
+		3105BB2225BBC66100A2E401 /* AppFunction */ = {
 			isa = PBXGroup;
 			children = (
 				31D35FD329682DE700050D69 /* Werewolf */,
@@ -165,7 +173,7 @@
 				31D189CA2967C0A70032F4E9 /* Base */,
 				31D189BE2967BB9A0032F4E9 /* Main */,
 			);
-			path = Function;
+			path = AppFunction;
 			sourceTree = "<group>";
 		};
 		31409BC82967CEA100F37939 /* Msg */ = {
@@ -268,6 +276,23 @@
 			path = NetworkHelper;
 			sourceTree = "<group>";
 		};
+		31939856298364F70088EE34 /* Document */ = {
+			isa = PBXGroup;
+			children = (
+				319398572983650D0088EE34 /* Document.swift */,
+			);
+			path = Document;
+			sourceTree = "<group>";
+		};
+		31939859298366710088EE34 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				3193985A298366830088EE34 /* EnvEnum.swift */,
+				3193985C298367370088EE34 /* GenderEnum.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		31D189BE2967BB9A0032F4E9 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,12 +329,12 @@
 			path = ConstExt;
 			sourceTree = "<group>";
 		};
-		31D189D02967C2BA0032F4E9 /* Config */ = {
+		31D189D02967C2BA0032F4E9 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				31D189D12967C2C80032F4E9 /* EnvCfg.swift */,
+				31D189D12967C2C80032F4E9 /* AppCfg.swift */,
 			);
-			path = Config;
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 		31D189D32967C5870032F4E9 /* Home */ = {
@@ -519,6 +544,7 @@
 				318ADFDD296FA812000B7957 /* NetworkManager.swift in Sources */,
 				3105BB0A25BBC61C00A2E401 /* AppDelegate.swift in Sources */,
 				3186CE7125F7625A00A92E7C /* CodableDefaultValue.swift in Sources */,
+				319398582983650D0088EE34 /* Document.swift in Sources */,
 				3169E6AF296F9F9300348CFA /* UIFont+ext.swift in Sources */,
 				3142B1072967EB5E0021E233 /* BaseNavVC.swift in Sources */,
 				31A5919A2979164F00983FB5 /* KeyChainAccount.swift in Sources */,
@@ -527,11 +553,12 @@
 				318ADFE0296FA812000B7957 /* NetworkBaseUrl.swift in Sources */,
 				3178AF0D29680630008F759B /* LoginVC.swift in Sources */,
 				31D189C92967C0030032F4E9 /* Color_common.swift in Sources */,
-				31D189D22967C2C80032F4E9 /* EnvCfg.swift in Sources */,
+				31D189D22967C2C80032F4E9 /* AppCfg.swift in Sources */,
 				31D189C02967BBAC0032F4E9 /* TabC.swift in Sources */,
 				3169E6B1296F9F9300348CFA /* UILabel+font.swift in Sources */,
 				31D189DC2967C6310032F4E9 /* ProfileVC.swift in Sources */,
 				318ADFDE296FA812000B7957 /* NetworkResponseJson.swift in Sources */,
+				3193985B298366830088EE34 /* EnvEnum.swift in Sources */,
 				31D189DE2967C6390032F4E9 /* HomeVC.swift in Sources */,
 				318ADFDF296FA812000B7957 /* NetworkHelper.swift in Sources */,
 				318ADFE1296FA812000B7957 /* NetworkRequestObject.swift in Sources */,
@@ -540,6 +567,7 @@
 				31F85C48297A40F20080A259 /* UserDefaultsKey.swift in Sources */,
 				31D189DA2967C6280032F4E9 /* SquareVC.swift in Sources */,
 				31409BCB2967CEB000F37939 /* MsgVC.swift in Sources */,
+				3193985D298367370088EE34 /* GenderEnum.swift in Sources */,
 				3169E6B9296F9F9300348CFA /* CurUser.swift in Sources */,
 				3169E6B0296F9F9300348CFA /* UITextView+font.swift in Sources */,
 				31D189C72967BEA00032F4E9 /* Color.swift in Sources */,

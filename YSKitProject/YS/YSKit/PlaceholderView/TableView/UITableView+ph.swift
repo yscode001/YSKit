@@ -1,15 +1,15 @@
 //
-//  UITableView+placeholder.swift
+//  UITableView+ph.swift
 //  YSKit
 //
 //  Created by yaoshuai on 2020/12/24.
 //
 
-import Foundation
-
 private extension UITableView{
     
-    func hasRow() -> Bool{
+    /// UITableView是否有内容
+    /// - Returns: UITableView是否有内容
+    func hasRows() -> Bool{
         for section in 0..<self.numberOfSections{
             if self.numberOfRows(inSection: section) > 0{
                 return true
@@ -20,14 +20,13 @@ private extension UITableView{
 }
 
 // MARK: - 决定placeholderView是否显示
-
 extension YSOriginalProtocol where OriginalType: UITableView{
     
     /// 如果无数据显示某种类型的placeholderView，有数据隐藏所有的placeholderView
-    public func placeholder_show_ifHasNoData(type: YSPlaceholderType){
+    public func placeholder_show_ifHasNoData(type: YSPlaceholderEnum){
         DispatchQueue.main.async { [weak originalObj] in
             guard let originalView = originalObj else{ return }
-            if originalView.hasRow(){
+            if originalView.hasRows(){
                 placeholder_hide()
             } else{
                 placeholder_show(type: type)

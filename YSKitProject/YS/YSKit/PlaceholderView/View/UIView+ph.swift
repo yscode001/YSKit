@@ -1,11 +1,9 @@
 //
-//  UIView+placeholder.swift
+//  UIView+ph.swift
 //  YSKit
 //
 //  Created by yaoshuai on 2020/12/24.
 //
-
-import Foundation
 
 // MARK: - 定义placeholderView的类型
 
@@ -14,7 +12,7 @@ private extension UIView{
     /// 当前view的子视图emptyV
     var emptyV:(UIView & YSPlaceholderProtocol)?{
         let firstV = subviews.first { (subv) -> Bool in
-            if let phv = subv as? YSPlaceholderProtocol, phv.placeholderType == .empty{
+            if let phv = subv as? YSPlaceholderProtocol, phv.placeholderEnum == .empty{
                 return true
             }
             return false
@@ -25,7 +23,7 @@ private extension UIView{
     /// 当前view的子视图loadingV
     var loadingV:(UIView & YSPlaceholderProtocol)?{
         let firstV = subviews.first { (subv) -> Bool in
-            if let phv = subv as? YSPlaceholderProtocol, phv.placeholderType == .loading{
+            if let phv = subv as? YSPlaceholderProtocol, phv.placeholderEnum == .loading{
                 return true
             }
             return false
@@ -36,7 +34,7 @@ private extension UIView{
     /// 当前view的子视图errorV
     var errorV:(UIView & YSPlaceholderProtocol)?{
         let firstV = subviews.first { (subv) -> Bool in
-            if let phv = subv as? YSPlaceholderProtocol, phv.placeholderType == .error{
+            if let phv = subv as? YSPlaceholderProtocol, phv.placeholderEnum == .error{
                 return true
             }
             return false
@@ -47,7 +45,7 @@ private extension UIView{
     /// 当前view的子视图signInV
     var signInV:(UIView & YSPlaceholderProtocol)?{
         let firstV = subviews.first { (subv) -> Bool in
-            if let phv = subv as? YSPlaceholderProtocol, phv.placeholderType == .signIn{
+            if let phv = subv as? YSPlaceholderProtocol, phv.placeholderEnum == .signIn{
                 return true
             }
             return false
@@ -65,7 +63,7 @@ private extension YSPlaceholderProtocol where Self: UIView {
         DispatchQueue.main.async { [weak self] in
             guard let `self` = self else{ return }
             for subv in superV.subviews{
-                if let phv = subv as? YSPlaceholderProtocol, phv.placeholderType == self.placeholderType{
+                if let phv = subv as? YSPlaceholderProtocol, phv.placeholderEnum == self.placeholderEnum{
                     subv.removeFromSuperview()
                 }
             }
@@ -124,25 +122,25 @@ extension YSOriginalProtocol where OriginalType: UIView{
 extension YSOriginalProtocol where OriginalType: UIView{
     
     /// 显示某种类型的placeholderView
-    public func placeholder_show(type: YSPlaceholderType){
+    public func placeholder_show(type: YSPlaceholderEnum){
         DispatchQueue.main.async { [weak originalObj] in
             guard let originalView = originalObj else{ return }
-            if let loadingView = originalView.loadingV, loadingView.placeholderType == type, loadingView.isHidden{
+            if let loadingView = originalView.loadingV, loadingView.placeholderEnum == type, loadingView.isHidden{
                 originalView.bringSubviewToFront(loadingView)
                 loadingView.isHidden = false
                 loadingView.doSomeThingAfter(show: true)
             }
-            if let errorView = originalView.errorV, errorView.placeholderType == type, errorView.isHidden{
+            if let errorView = originalView.errorV, errorView.placeholderEnum == type, errorView.isHidden{
                 originalView.bringSubviewToFront(errorView)
                 errorView.isHidden = false
                 errorView.doSomeThingAfter(show: true)
             }
-            if let emptyView = originalView.emptyV, emptyView.placeholderType == type, emptyView.isHidden{
+            if let emptyView = originalView.emptyV, emptyView.placeholderEnum == type, emptyView.isHidden{
                 originalView.bringSubviewToFront(emptyView)
                 emptyView.isHidden = false
                 emptyView.doSomeThingAfter(show: true)
             }
-            if let signInView = originalView.signInV, signInView.placeholderType == type, signInView.isHidden{
+            if let signInView = originalView.signInV, signInView.placeholderEnum == type, signInView.isHidden{
                 originalView.bringSubviewToFront(signInView)
                 signInView.isHidden = false
                 signInView.doSomeThingAfter(show: true)

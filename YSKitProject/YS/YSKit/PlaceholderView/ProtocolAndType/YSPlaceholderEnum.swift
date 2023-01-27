@@ -1,14 +1,12 @@
 //
-//  YSPlaceholderType.swift
-//  Pods
+//  YSPlaceholderEnum.swift
+//  YSKit
 //
 //  Created by yaoshuai on 2020/12/24.
 //
 
-import Foundation
-
 /// UIView的phaceholder的类型
-public enum YSPlaceholderType{
+public enum YSPlaceholderEnum{
     
     /// 空数据
     case empty

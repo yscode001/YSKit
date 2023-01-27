@@ -21,7 +21,7 @@ class BaseNavVC: BaseVC{
             if let rootVC = self.navigationController?.children.first, rootVC == self{
                 // 当前是rootVC，不设置《返回按钮》
             } else{
-                var backItemContent = Ctor.barButtonItemContent(imageName: "chevron.backward", title: "", titleColor: UIColor.clear)
+                let backItemContent = Ctor.barButtonItemContent(imageName: "chevron.backward", title: "", titleColor: UIColor.clear)
                 item.leftBarButtonItem = Ctor.barButtonItem(alignment: .leading, style: .image, content: backItemContent, target: self, action: #selector(self.backItemClick))
             }
         }

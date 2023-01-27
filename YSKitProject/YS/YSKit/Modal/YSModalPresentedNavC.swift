@@ -27,15 +27,9 @@ open class YSModalPresentedNavC: YSNavC {
         modalTransitionStyle = .coverVertical
     }
     
-    /// 设置弹出方向和长度
-    /// - Returns: 弹出方向和长度
-    open func setupModalDirectionAndLength() -> (direction: YSModalType, length: CGFloat){
-        return (.toTop, UIScreen.main.bounds.size.height * 0.5)
-    }
-    
-    /// 设置遮罩视图的背景色和透明度
-    /// - Returns: 遮罩视图的背景色和透明度
-    open func setupModalMaskView() -> (maskViewBGC: UIColor, alpha: CGFloat){
-        return (UIColor.black, 0.5)
+    /// 设置模态窗口类型
+    /// - Returns: 模态窗口类型
+    open func setupModalEnum() -> YSModalEnum{
+        return .defaultDirectionModalEnum
     }
 }

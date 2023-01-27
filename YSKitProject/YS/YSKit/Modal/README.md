@@ -1,5 +1,6 @@
 # YSModal
-模态弹框(向上、下、左、右，半屏有遮罩)，常用于操作类弹框
+- 方向模态弹框(向上、下、左、右，半屏有遮罩)，常用于操作类弹框
+- 中心点淡入淡出弹框
 
 <img src="sample.jpg" width = "300" height = "529" />
 
@@ -25,14 +26,29 @@ class PresentedVC: YSModalPresentedVC {
         view.backgroundColor = UIColor.orange
     }
     
-    // 重写此方法，设置遮罩颜色和透明度
-    override func setupModalMaskView() -> (maskViewBGC: UIColor, alpha: CGFloat) {
-        return (UIColor.black, 0.5)
-    }
-    
-    // 重写此方法，设置弹框方向和长度
-    override func setupModalDirectionAndLength() -> (direction: YSModalType, length: CGFloat) {
-        return (.toRight, 200)
+    // 重写此方法，设置Modal类型
+    override func setupModalEnum() -> YSModalEnum {
+        
+        // 默认方向弹框
+        return .defaultDirectionModalEnum
+        
+        // 默认中心点淡入淡出弹框
+        return .defaultMiddleCenterFadeInEnum
+        
+        // 向上弹框
+        return .toTop(length: 100, maskViewBackgroundColor: .black, maskViewAlpha: 0.5)
+        
+        // 向下弹框
+        return .toBottom(length: 100, maskViewBackgroundColor: .black, maskViewAlpha: 0.5)
+        
+        // 向左弹框
+        return .toLeft(length: 100, maskViewBackgroundColor: .black, maskViewAlpha: 0.5)
+        
+        // 向右弹框
+        return .toRight(length: 100, maskViewBackgroundColor: .black, maskViewAlpha: 0.5)
+        
+        // 中心点淡入淡出弹框
+        return .middleCenterFadeIn(width: 200, height: 400, maskViewBackgroundColor: .black, maskViewAlpha: 0.5)
     }
 
     @IBAction func dismissAction(_ sender: UIButton) {

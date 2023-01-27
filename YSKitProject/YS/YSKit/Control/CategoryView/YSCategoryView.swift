@@ -44,7 +44,7 @@ public class YSCategoryView: UIControl {
     
     internal convenience init(titleList: [String], style: YSCategoryViewStyle, contentSV: UIScrollView?) {
         // 这里先给个默认值，否则会报约束冲突，外界可随意布局，反正都是自动布局
-        let rect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50)
+        let rect = CGRect(x: 0, y: 0, width: UIScreen.ys.mainWidth, height: 50)
         self.init(frame: rect)
         self.style = style
         

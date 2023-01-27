@@ -2,8 +2,8 @@ import UIKit
 
 public class YSModalPresentingVC: UIPresentationController {
     
-    private var maskViewAlpha:CGFloat = 0
-    private var animateDuration:TimeInterval = 0.25
+    private var maskViewAlpha: CGFloat = 0
+    private let animateDuration: TimeInterval = 0.25
     
     private lazy var maskView: UIView = {
         let v = UIView()
@@ -22,10 +22,10 @@ public class YSModalPresentingVC: UIPresentationController {
         super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
         
         if case let vc as YSModalPresentedVC = presentedViewController {
-            maskViewAlpha = vc.setupModalMaskView().alpha
+            maskViewAlpha = vc.setupModalEnum().maskViewBackgroundColorAndAlpha.alpha
         }
         else if case let vc as YSModalPresentedNavC = presentedViewController {
-            maskViewAlpha = vc.setupModalMaskView().alpha
+            maskViewAlpha = vc.setupModalEnum().maskViewBackgroundColorAndAlpha.alpha
         }
     }
     
@@ -40,10 +40,16 @@ public class YSModalPresentingVC: UIPresentationController {
         if !containerV.subviews.contains(maskView){
             containerV.addSubview(maskView)
             if case let vc as YSModalPresentedVC = presentedViewController {
-                maskView.backgroundColor = vc.setupModalMaskView().maskViewBGC
+                maskView.backgroundColor = vc.setupModalEnum().maskViewBackgroundColorAndAlpha.backgroundColor
+                if vc.setupModalEnum().isMiddleCenterFadeInModal.isMiddleCenterFadeInModal{
+                    vc.view.alpha = 0
+                }
             }
             else if case let vc as YSModalPresentedNavC = presentedViewController {
-                maskView.backgroundColor = vc.setupModalMaskView().maskViewBGC
+                maskView.backgroundColor = vc.setupModalEnum().maskViewBackgroundColorAndAlpha.backgroundColor
+                if vc.setupModalEnum().isMiddleCenterFadeInModal.isMiddleCenterFadeInModal{
+                    vc.view.alpha = 0
+                }
             }
         }
         maskView.alpha = 0

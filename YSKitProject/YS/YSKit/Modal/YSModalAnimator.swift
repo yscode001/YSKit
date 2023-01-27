@@ -2,12 +2,12 @@ import UIKit
 
 open class YSModalAnimator: NSObject, UIViewControllerTransitioningDelegate {
     
-    private let sw = UIScreen.main.bounds.width
-    private weak var presentedVC:YSModalPresentedVC?
-    private weak var presentedNavC:YSModalPresentedNavC?
+    private let animateDuration: TimeInterval = 0.25
+    private weak var presentedVC: YSModalPresentedVC?
+    private weak var presentedNavC: YSModalPresentedNavC?
     
     // 展现or解除
-    private var isPresent:Bool = false
+    private var isPresent: Bool = false
     
     // 转场上下文，注意：会对展现的控制器强引用：控制器 -> 动画器 -> 转场上下文 -> 控制器，循环引用，所以这里用Weak修饰
     private weak var transitionContext:UIViewControllerContextTransitioning?
@@ -23,6 +23,8 @@ open class YSModalAnimator: NSObject, UIViewControllerTransitioningDelegate {
             presentedNavC = vc
             return YSModalPresentingVC(presentedViewController: presented, presenting: presenting)
         }
+        presentedVC = nil
+        presentedNavC = nil
         return nil
     }
     
@@ -43,7 +45,7 @@ open class YSModalAnimator: NSObject, UIViewControllerTransitioningDelegate {
 extension YSModalAnimator:UIViewControllerAnimatedTransitioning,CAAnimationDelegate{
     
     public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.25
+        return animateDuration
     }
     
     // 转场动画核心方法
@@ -51,7 +53,7 @@ extension YSModalAnimator:UIViewControllerAnimatedTransitioning,CAAnimationDeleg
         self.transitionContext = transitionContext
         let containerV = transitionContext.containerView
         
-        // 获取目标视图 - 展现取toView,解除取fromView
+        // 获取目标视图 - 展现取toView, 解除取fromView
         let sourceV = transitionContext.view(forKey: .from)
         let destinationV = transitionContext.view(forKey: .to)
         
@@ -72,103 +74,113 @@ extension YSModalAnimator:UIViewControllerAnimatedTransitioning,CAAnimationDeleg
         }
     }
     
-    private func presentedDirection() -> YSModalType{
-        if let _ = presentedVC{
-            return presentedVC?.setupModalDirectionAndLength().direction ?? .toTop
+    private func presentedModalEnum() -> YSModalEnum{
+        if let vc = presentedVC{
+            return vc.setupModalEnum()
         }
-        if let _ = presentedNavC{
-            return presentedNavC?.setupModalDirectionAndLength().direction ?? .toTop
+        if let vc = presentedNavC{
+            return vc.setupModalEnum()
         }
-        return .toTop
+        return .defaultDirectionModalEnum
     }
     
-    private func presentedLength() -> CGFloat{
-        let sw = UIScreen.main.bounds.width
-        let sh = UIScreen.main.bounds.height
-        let direction = presentedDirection()
-        if direction == .toTop || direction == .toBottom{ // 上下弹框
-            var length = sh * 0.5
-            if let _ = presentedVC{
-                length = presentedVC?.setupModalDirectionAndLength().length ?? sh * 0.5
-            }
-            else if let _ = presentedNavC{
-                length = presentedNavC?.setupModalDirectionAndLength().length ?? sh * 0.5
-            }
-            if length < 0{
-                length = 0
-            } else if length > sh{
-                length = sh
-            }
-            return length
-        } else{ // 左右弹框
-            var length = sw * 0.5
-            if let _ = presentedVC{
-                length = presentedVC?.setupModalDirectionAndLength().length ?? sw * 0.5
-            }
-            else if let _ = presentedNavC{
-                length = presentedNavC?.setupModalDirectionAndLength().length ?? sh * 0.5
-            }
-            if length < 0{
-                length = 0
-            } else if length > sw{
-                length = sw
-            }
-            return length
+    private func presentedValues() -> (length: CGFloat, width: CGFloat, height: CGFloat){
+        let directionTB = presentedModalEnum().isDirectionToTopOrBottomModal
+        if directionTB.isDirectionToTopOrBottomModal{
+            // 上下弹框
+            return (directionTB.length.ys.clamp(0, UIScreen.ys.mainHeight), 0, 0)
         }
+        let directionLR = presentedModalEnum().isDirectionToLeftOrRightModal
+        if directionLR.isDirectionToLeftOrRightModal{
+            // 左右弹框
+            return (directionLR.length.ys.clamp(0, UIScreen.ys.mainWidth), 0, 0)
+        }
+        let middleCenterFadeIn = presentedModalEnum().isMiddleCenterFadeInModal
+        if middleCenterFadeIn.isMiddleCenterFadeInModal{
+            // 中心点淡入弹框
+            return (0, middleCenterFadeIn.width.ys.clamp(0, UIScreen.ys.mainWidth), middleCenterFadeIn.height.ys.clamp(0, UIScreen.ys.mainHeight))
+        }
+        return (0, 0, 0)
     }
     
     private func animateAction_present(view: UIView){
-        let sw = UIScreen.main.bounds.width
-        let sh = UIScreen.main.bounds.height
-        var fromFrame:CGRect
-        var toFrame:CGRect
-        switch presentedDirection() {
-        case .toTop:
-            fromFrame = CGRect(x: 0, y: sh, width: sw, height: presentedLength())
-            toFrame = CGRect(x: 0, y: sh - presentedLength(), width: sw, height: presentedLength())
-        case .toBottom:
-            fromFrame = CGRect(x: 0, y: -presentedLength(), width: sw, height: presentedLength())
-            toFrame = CGRect(x: 0, y: 0, width: sw, height: presentedLength())
-        case .toLeft:
-            fromFrame = CGRect(x: sw, y: 0, width: presentedLength(), height: sh)
-            toFrame = CGRect(x: sw - presentedLength(), y: 0, width: presentedLength(), height: sh)
-        case .toRight:
-            fromFrame = CGRect(x: -presentedLength(), y: 0, width: presentedLength(), height: sh)
-            toFrame = CGRect(x: 0, y: 0, width: presentedLength(), height: sh)
+        let sw = UIScreen.ys.mainWidth
+        let sh = UIScreen.ys.mainHeight
+        let values = presentedValues()
+        let modalEnum = presentedModalEnum()
+        if modalEnum.isDirectionModal.isDirectionModal{
+            var fromFrame: CGRect = .zero
+            var toFrame: CGRect = .zero
+            switch modalEnum {
+            case .toTop:
+                fromFrame = CGRect(x: 0, y: sh, width: sw, height: values.length)
+                toFrame = CGRect(x: 0, y: sh - values.length, width: sw, height: values.length)
+            case .toBottom:
+                fromFrame = CGRect(x: 0, y: -values.length, width: sw, height: values.length)
+                toFrame = CGRect(x: 0, y: 0, width: sw, height: values.length)
+            case .toLeft:
+                fromFrame = CGRect(x: sw, y: 0, width: values.length, height: sh)
+                toFrame = CGRect(x: sw - values.length, y: 0, width: values.length, height: sh)
+            case .toRight:
+                fromFrame = CGRect(x: -values.length, y: 0, width: values.length, height: sh)
+                toFrame = CGRect(x: 0, y: 0, width: values.length, height: sh)
+            default: break
+            }
+            animateAction_changeFrame(view: view, from: fromFrame, to: toFrame)
         }
-        view.frame = fromFrame
-        UIView.animate(withDuration: 0.25, animations: {
-            view.frame = toFrame
-        }) { (_) in
-            //一定要结束转场动画，否则视图不让交互
-            self.transitionContext?.completeTransition(true)
+        else if modalEnum.isMiddleCenterFadeInModal.isMiddleCenterFadeInModal{
+            view.alpha = 0
+            view.frame = CGRect(x: (sw - values.width) * 0.5, y: (sh - values.height) * 0.5, width: values.width, height: values.height)
+            UIView.animate(withDuration: animateDuration, animations: {
+                view.alpha = 1
+            }) { (_) in
+                // 一定要结束转场动画，否则视图不让交互
+                self.transitionContext?.completeTransition(true)
+            }
         }
     }
     
     private func animateAction_dismiss(view: UIView){
-        let sw = UIScreen.main.bounds.width
-        let sh = UIScreen.main.bounds.height
-        var fromFrame:CGRect
-        var toFrame:CGRect
-        switch presentedDirection() {
-        case .toTop:
-            toFrame = CGRect(x: 0, y: sh, width: sw, height: presentedLength())
-            fromFrame = CGRect(x: 0, y: sh - presentedLength(), width: sw, height: presentedLength())
-        case .toBottom:
-            toFrame = CGRect(x: 0, y: -presentedLength(), width: sw, height: presentedLength())
-            fromFrame = CGRect(x: 0, y: 0, width: sw, height: presentedLength())
-        case .toLeft:
-            toFrame = CGRect(x: sw, y: 0, width: presentedLength(), height: sh)
-            fromFrame = CGRect(x: sw - presentedLength(), y: 0, width: presentedLength(), height: sh)
-        case .toRight:
-            toFrame = CGRect(x: -presentedLength(), y: 0, width: presentedLength(), height: sh)
-            fromFrame = CGRect(x: 0, y: 0, width: presentedLength(), height: sh)
+        let sw = UIScreen.ys.mainWidth
+        let sh = UIScreen.ys.mainHeight
+        let values = presentedValues()
+        let modalEnum = presentedModalEnum()
+        if modalEnum.isDirectionModal.isDirectionModal{
+            var fromFrame:CGRect = .zero
+            var toFrame:CGRect = .zero
+            switch modalEnum {
+            case .toTop:
+                toFrame = CGRect(x: 0, y: sh, width: sw, height: values.length)
+                fromFrame = CGRect(x: 0, y: sh - values.length, width: sw, height: values.length)
+            case .toBottom:
+                toFrame = CGRect(x: 0, y: -values.length, width: sw, height: values.length)
+                fromFrame = CGRect(x: 0, y: 0, width: sw, height: values.length)
+            case .toLeft:
+                toFrame = CGRect(x: sw, y: 0, width: values.length, height: sh)
+                fromFrame = CGRect(x: sw - values.length, y: 0, width: values.length, height: sh)
+            case .toRight:
+                toFrame = CGRect(x: -values.length, y: 0, width: values.length, height: sh)
+                fromFrame = CGRect(x: 0, y: 0, width: values.length, height: sh)
+            default: break
+            }
+            animateAction_changeFrame(view: view, from: fromFrame, to: toFrame)
         }
-        view.frame = fromFrame
-        UIView.animate(withDuration: 0.25, animations: {
-            view.frame = toFrame
+        else if modalEnum.isMiddleCenterFadeInModal.isMiddleCenterFadeInModal{
+            UIView.animate(withDuration: animateDuration, animations: {
+                view.alpha = 0
+            }) { (_) in
+                // 一定要结束转场动画，否则视图不让交互
+                self.transitionContext?.completeTransition(true)
+            }
+        }
+    }
+    
+    private func animateAction_changeFrame(view: UIView, from: CGRect, to: CGRect){
+        view.frame = from
+        UIView.animate(withDuration: animateDuration, animations: {
+            view.frame = to
         }) { (_) in
-            //一定要结束转场动画，否则视图不让交互
+            // 一定要结束转场动画，否则视图不让交互
             self.transitionContext?.completeTransition(true)
         }
     }

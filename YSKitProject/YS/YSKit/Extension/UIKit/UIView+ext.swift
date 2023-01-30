@@ -12,23 +12,17 @@ public extension YSOriginalProtocol where OriginalType: UIView{
     
     /// 批量添加子视图
     func addSubviews(_ subviews: UIView...){
-        for subV in subviews{
-            originalObj.addSubview(subV)
-        }
+        subviews.forEach{originalObj.addSubview($0)}
     }
     
     /// 批量添加子视图
     func addSubviews(_ subviewArray: [UIView]){
-        for subV in subviewArray{
-            originalObj.addSubview(subV)
-        }
+        subviewArray.forEach{originalObj.addSubview($0)}
     }
     
     /// 移除全部子视图
     func removeAllSubviews(){
-        for subV in originalObj.subviews.reversed(){
-            subV.removeFromSuperview()
-        }
+        originalObj.subviews.forEach{$0.removeFromSuperview()}
     }
     
     /// 移除部分子视图

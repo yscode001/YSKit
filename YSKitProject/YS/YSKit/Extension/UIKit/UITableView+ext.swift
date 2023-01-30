@@ -194,4 +194,12 @@ public extension YSOriginalProtocol where OriginalType: UITableView{
             reloadRow(at: indexp, with: with)
         }
     }
+    
+    func reloadData(complete: @escaping() -> Void){
+        UIView.animate(withDuration: 0, animations: {
+            originalObj.reloadData()
+        }, completion: { _ in
+            complete()
+        })
+    }
 }

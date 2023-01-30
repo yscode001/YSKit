@@ -108,4 +108,12 @@ public extension YSOriginalProtocol where OriginalType: UICollectionView{
             reloadItem(at: indexp)
         }
     }
+    
+    func reloadData(complete: @escaping() -> Void){
+        UIView.animate(withDuration: 0, animations: {
+            originalObj.reloadData()
+        }, completion: { _ in
+            complete()
+        })
+    }
 }

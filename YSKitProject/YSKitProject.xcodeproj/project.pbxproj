@@ -32,6 +32,9 @@
 		3193985D298367370088EE34 /* GenderEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3193985C298367370088EE34 /* GenderEnum.swift */; };
 		31A5919A2979164F00983FB5 /* KeyChainAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A591992979164F00983FB5 /* KeyChainAccount.swift */; };
 		31A5919D297918BA00983FB5 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A5919C297918BA00983FB5 /* NotificationName.swift */; };
+		31C462A929850783006667C9 /* AppDelegate+noti.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C462A829850783006667C9 /* AppDelegate+noti.swift */; };
+		31C462AB298507C5006667C9 /* AppDelegate+link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C462AA298507C5006667C9 /* AppDelegate+link.swift */; };
+		31C462AD2985080B006667C9 /* AppDelegate+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C462AC2985080B006667C9 /* AppDelegate+init.swift */; };
 		31D189C02967BBAC0032F4E9 /* TabC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189BF2967BBAC0032F4E9 /* TabC.swift */; };
 		31D189C72967BEA00032F4E9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189C62967BEA00032F4E9 /* Color.swift */; };
 		31D189C92967C0030032F4E9 /* Color_common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D189C82967C0030032F4E9 /* Color_common.swift */; };
@@ -78,6 +81,9 @@
 		3193985C298367370088EE34 /* GenderEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderEnum.swift; sourceTree = "<group>"; };
 		31A591992979164F00983FB5 /* KeyChainAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainAccount.swift; sourceTree = "<group>"; };
 		31A5919C297918BA00983FB5 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
+		31C462A829850783006667C9 /* AppDelegate+noti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+noti.swift"; sourceTree = "<group>"; };
+		31C462AA298507C5006667C9 /* AppDelegate+link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+link.swift"; sourceTree = "<group>"; };
+		31C462AC2985080B006667C9 /* AppDelegate+init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+init.swift"; sourceTree = "<group>"; };
 		31D189BF2967BBAC0032F4E9 /* TabC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabC.swift; sourceTree = "<group>"; };
 		31D189C62967BEA00032F4E9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		31D189C82967C0030032F4E9 /* Color_common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color_common.swift; sourceTree = "<group>"; };
@@ -157,6 +163,9 @@
 			isa = PBXGroup;
 			children = (
 				3105BB0925BBC61C00A2E401 /* AppDelegate.swift */,
+				31C462AC2985080B006667C9 /* AppDelegate+init.swift */,
+				31C462AA298507C5006667C9 /* AppDelegate+link.swift */,
+				31C462A829850783006667C9 /* AppDelegate+noti.swift */,
 			);
 			name = AppDelegate;
 			sourceTree = "<group>";
@@ -555,9 +564,11 @@
 				31D189C92967C0030032F4E9 /* Color_common.swift in Sources */,
 				31D189D22967C2C80032F4E9 /* AppCfg.swift in Sources */,
 				31D189C02967BBAC0032F4E9 /* TabC.swift in Sources */,
+				31C462AB298507C5006667C9 /* AppDelegate+link.swift in Sources */,
 				3169E6B1296F9F9300348CFA /* UILabel+font.swift in Sources */,
 				31D189DC2967C6310032F4E9 /* ProfileVC.swift in Sources */,
 				318ADFDE296FA812000B7957 /* NetworkResponseJson.swift in Sources */,
+				31C462A929850783006667C9 /* AppDelegate+noti.swift in Sources */,
 				3193985B298366830088EE34 /* EnvEnum.swift in Sources */,
 				31D189DE2967C6390032F4E9 /* HomeVC.swift in Sources */,
 				318ADFDF296FA812000B7957 /* NetworkHelper.swift in Sources */,
@@ -570,6 +581,7 @@
 				3193985D298367370088EE34 /* GenderEnum.swift in Sources */,
 				3169E6B9296F9F9300348CFA /* CurUser.swift in Sources */,
 				3169E6B0296F9F9300348CFA /* UITextView+font.swift in Sources */,
+				31C462AD2985080B006667C9 /* AppDelegate+init.swift in Sources */,
 				31D189C72967BEA00032F4E9 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

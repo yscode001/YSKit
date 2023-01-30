@@ -12,12 +12,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        Printer.enable(enable: AppCfg.enablePrintLog)
-        
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
-        window?.rootViewController = TabC()
+        setup_didFinishLaunching(application, launchOptions)
         
         return true
+    }
+}
+extension AppDelegate{
+    func applicationWillResignActive(_ application: UIApplication) {
+       
+    }
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        
+    }
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        
+    }
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        
+    }
+    func applicationWillTerminate(_ application: UIApplication) {
+        
     }
 }

@@ -16,13 +16,15 @@ target 'YSKitProject' do
   # 常用工具库
   pod 'Alamofire', '5.6.4'
   pod 'Socket.IO-Client-Swift', '16.0.1'
+  
+  pod 'SwifterSwift', '5.2.0'
   pod 'SnapKit', '5.6.0'
   pod 'SDWebImage', '5.14.3'
   pod 'MJRefresh', '3.7.5'
-  pod 'SwiftyJSON', '5.0.1'
   pod 'SAMKeychain', '1.5.3'
   pod 'SVProgressHUD', '2.2.5'
   pod 'Toast-Swift', '5.0.1'
+  pod 'SwiftyJSON', '5.0.1'
   pod 'YBPopupMenu', '1.1.9'
   pod 'IQKeyboardManagerSwift', '6.5.11'
   pod 'JSBadgeView', '2.0.0'

@@ -17,10 +17,16 @@ public class Printer{
     }
     
     /// 打印日志
-    /// - Parameter item: 打印的内容
-    public class func print(_ item: Any){
+    /// - Parameters:
+    ///   - item: 打印的内容
+    ///   - alsoPrintCurrentThread: 打印时是否带上当前线程
+    public class func printItem(_ item: Any, _ alsoPrintCurrentThread: Bool = true){
         if enable{
-            Swift.print(item)
+            if alsoPrintCurrentThread{
+                Swift.print(Thread.current, item, separator: " ", terminator: "\n")
+            } else{
+                Swift.print(item)
+            }
         }
     }
     
@@ -29,7 +35,7 @@ public class Printer{
     ///   - _items: 打印的内容
     ///   - separator: separator
     ///   - terminator: terminator
-    public class func print(_items: Any..., separator: String = " ", terminator: String = "\n"){
+    public class func printItems(_items: Any..., separator: String = " ", terminator: String = "\n"){
         if enable{
             Swift.print(_items, separator, terminator)
         }

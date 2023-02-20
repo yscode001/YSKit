@@ -6,4 +6,8 @@
 //
 
 class HomeVC: BaseVC{
+    
+    override func viewDidLoad(firstTime: Bool) {
+        super.viewDidLoad(firstTime: firstTime)
+    }
 }

@@ -120,9 +120,9 @@ extension CurUser{
             if sendInfoChangedEvent{
                 CurUser.infoChanged.accept(())
             }
-            Printer.print("当前用户信息保存成功")
+            Printer.printItem("当前用户信息保存成功")
         }else{
-            Printer.print("当前用户信息保存失败")
+            Printer.printItem("当前用户信息保存失败")
         }
     }
 }

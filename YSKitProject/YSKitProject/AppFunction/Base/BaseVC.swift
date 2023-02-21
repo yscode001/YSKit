@@ -7,7 +7,7 @@
 
 class BaseVC: YSBaseVC{
     
-    lazy var diaposeBag: DisposeBag = DisposeBag()
+    lazy var disposeBag: DisposeBag = DisposeBag()
     
     override func viewDidLoad(firstTime: Bool) {
         super.viewDidLoad(firstTime: firstTime)

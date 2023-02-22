@@ -35,9 +35,9 @@ public class Printer{
     ///   - _items: 打印的内容
     ///   - separator: separator
     ///   - terminator: terminator
-    public class func printItems(_items: Any..., separator: String = " ", terminator: String = "\n"){
+    public class func printItems(_ items: Any..., separator: String = " ", terminator: String = "\n"){
         if enable{
-            Swift.print(_items, separator, terminator)
+            Swift.print(items, separator, terminator)
         }
     }
 }

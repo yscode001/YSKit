@@ -20,7 +20,7 @@ public class Printer{
     /// - Parameters:
     ///   - item: 打印的内容
     ///   - alsoPrintCurrentThread: 打印时是否带上当前线程
-    public class func printItem(_ item: Any, _ alsoPrintCurrentThread: Bool = true){
+    public class func printItem(_ item: Any, _ alsoPrintCurrentThread: Bool = false){
         if enable{
             if alsoPrintCurrentThread{
                 Swift.print(Thread.current, item, separator: " ", terminator: "\n")

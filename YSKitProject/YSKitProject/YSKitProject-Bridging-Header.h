@@ -5,6 +5,7 @@
 @import YSVendor;
 
 @import RxSwift;
+@import RxSwiftExt;
 @import RxCocoa;
 @import RxDataSources;
 

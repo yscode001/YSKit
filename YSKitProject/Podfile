@@ -10,6 +10,7 @@ target 'YSKitProject' do
   
   # Rx
   pod 'RxSwift', '6.5.0'
+  pod 'RxSwiftExt', '6.0.1'
   pod 'RxCocoa', '6.5.0'
   pod 'RxDataSources', '5.0.0'
   pod 'RxAlamofire', '6.1.1'

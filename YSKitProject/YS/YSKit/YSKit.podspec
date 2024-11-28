@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary                   = "iOS开发工具库"
   s.license                   = "MIT"
   s.author                    = {"ys" => "yscode@126.com"}
-  s.platform                  = :ios, "10.0"
+  s.platform                  = :ios, "13.0"
   s.frameworks                = "UIKit", "WebKit", "UserNotifications"
   s.swift_version             = "5.3"
   s.requires_arc              = true
